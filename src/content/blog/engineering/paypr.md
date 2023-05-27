@@ -1,8 +1,8 @@
 ---
 title: "Paypr"
-pubDate: 'Mar 23 2021'
+pubDate: "Mar 23 2021"
 description: "A script to make a perfectly sized wallpaper from any image."
-heroImage: '/placeholder-hero.jpg'
+heroImage: "/placeholder-hero.jpg"
 ---
 
 # Paypr

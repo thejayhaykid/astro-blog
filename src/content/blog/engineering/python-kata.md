@@ -1,8 +1,8 @@
 ---
 title: "Babysitter Kata"
-pubDate: 'Nov 26 2019'
+pubDate: "Nov 26 2019"
 description: "Using test driven development to solve a problem."
-heroImage: '/placeholder-hero.jpg'
+heroImage: "/placeholder-hero.jpg"
 ---
 
 _Note: This post is still a work in progress._

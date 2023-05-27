@@ -1,8 +1,8 @@
 ---
 title: "Introduction to Flavors of the Month"
-pubDate: 'Nov 12 2020'
+pubDate: "Nov 12 2020"
 description: "An introduction to my flavors of the month concept"
-heroImage: '/placeholder-hero.jpg'
+heroImage: "/placeholder-hero.jpg"
 ---
 
 I have a lot of interests. I love learning about new things and always try to learn as much as I can about something when I get a new interest. I have a tough time controlling when something new piques my interest, so over the years I have learned to ride the wave as there are some staples that come back around constantly. Over the years, this has been going on long enough that my wife has come to expect this from me; so much so that she named this my "Flavor of the Month" cycle. So in an attempt to get some clarity and intentionality to my flavors of the month and to help track them, I'm going to include them in my blog.

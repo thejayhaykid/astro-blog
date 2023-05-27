@@ -1,8 +1,8 @@
 ---
 title: "Thirty Logos Design Challenge: Day 1"
-pubDate: 'Apr 18 2020'
+pubDate: "Apr 18 2020"
 description: "A Logo for a coworking office space name Space"
-heroImage: '/placeholder-hero.jpg'
+heroImage: "/placeholder-hero.jpg"
 ---
 
 # Day 1
@@ -22,7 +22,7 @@ heroImage: '/placeholder-hero.jpg'
 > And if this helps, some of our competitors are Industrious and WeWork.
 >
 > Regards,
-> 
+>
 > Mary Anderson
 > **Space - Project Coordinator**
 
@@ -32,7 +32,7 @@ heroImage: '/placeholder-hero.jpg'
 
 ![First Sketches](/blog-images/design/thirty-logos/day-1/Day_1_Sketches.jpg)
 
-As I was exploring ideas for both space as in "the final frontier" and office spaces. So you can see in the different explorations some office chairs, office tables with chairs, but also some rockets and space ships. After some searching and referring to the competitors logos that were mentioned in the brief, I determined that the ideas I had for office chairs and office space would not get the look I was going for. 
+As I was exploring ideas for both space as in "the final frontier" and office spaces. So you can see in the different explorations some office chairs, office tables with chairs, but also some rockets and space ships. After some searching and referring to the competitors logos that were mentioned in the brief, I determined that the ideas I had for office chairs and office space would not get the look I was going for.
 
 I decided to continue to explore the bottom right sketch, the planet, with the word space and having the 'C' be a moon with an orbit around the planet. I knew I would need to find a font where the 'C' was very circular and I wanted the planet to be in tighter, so I just started continuing on with that.
 
@@ -70,5 +70,5 @@ After getting the idea and the font down, the last thing was just to bring it al
 
 ---
 
-< [My personal introduction to the challenge](/design/thirty-logos-challenge/intro) || 
+< [My personal introduction to the challenge](/design/thirty-logos-challenge/intro) ||
 [Day 2: Grind](/design/thirty-logos-challenge/day-2) >
