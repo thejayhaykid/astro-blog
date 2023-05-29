@@ -1,13 +1,10 @@
 ---
-import Layout from "../layouts/BlogPost.astro";
 import {Content as About} from "../content/about/about.md"
-import Header from "../components/Header.astro";
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Header from "../components/Header.astro";
 ---
 
-<head>
-  <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-</head>
+<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 <Header />
 <About />
