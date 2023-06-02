@@ -1,5 +1,4 @@
 ---
-import ContactForm from "../components/ContactForm.jsx";
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Header from "../components/Header.astro";
@@ -9,6 +8,48 @@ import Header from "../components/Header.astro";
 <Header />
 <div class="w-screen">
   <div class="flex flex-row justify-center align-middle w-full">
-    <ContactForm client:only="react" />
+    <div
+      class="flex flex-col w-[80vw] justify-center align-middle content-center lg:max-w-xl self-center grow-2"
+    >
+      <h1 class="pb-1 text-3xl">Contact me</h1>
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        class="flex flex-col lg:max-w-700 gap-4 rounded-5 justify-center align-middle max-w-full"
+      >
+        <div
+          class="flex md:flex-row md:gap-1 justify-between w-full flex-col gap-4"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Your name"
+            class="p-1 rounded-5 rounded border border-gray-400 sm:w-full"
+          />
+          <input
+            placeholder="Email"
+            type="email"
+            name="email"
+            class="p-1 rounded-5 rounded border border-gray-400 sm:w-full"
+          />
+        </div>
+        <input
+          type="text"
+          name="subject"
+          placeholder="Subject"
+          class="p-1 rounded border border-gray-400 sm:w-full"
+        />
+        <textarea
+          name="message"
+          placeholder="Message"
+          class="p-1 rounded border border-gray-400"></textarea>
+        <button
+          type="submit"
+          class="p-1 rounded cursor-pointer bg-blue-700 hover:bg-blue-800 active:bg-blue-900 text-white md:max-w-25 disabled:bg-blue-400 disabled:cursor-not-allowed"
+          >Send</button
+        >
+      </form>
+    </div>
   </div>
 </div>
