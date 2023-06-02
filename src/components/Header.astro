@@ -1,26 +1,42 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
 ---
 
-<header>
-  <h2>
-    {SITE_TITLE}
-  </h2>
-  <nav>
-    <HeaderLink href="/">Home</HeaderLink>
-    <HeaderLink href="/blog">Blog</HeaderLink>
-    <HeaderLink href="/about">About</HeaderLink>
-    <HeaderLink href="/resume">Resume</HeaderLink>
-    <HeaderLink href="/contact">Contact</HeaderLink>
-    <HeaderLink href="/links">Links</HeaderLink>
+<header
+  class="mx-auto flex flex-row flex-wrap justify-between gap-12 items-center py-4 md:py-0 px-4 text-lg dark:bg-gray-800 dark:text-white text-gray-900 w-screen"
+>
+  <img src="/JH.png" class="text-2xl font-bold h-20 block" />
+  <button id="hamburger" class="md:hidden pr-12 block"
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-6 h-6 cursor-pointer md:hidden block"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
+    </svg>
+  </button>
+  <nav class="hidden w-full md:flex md:items-start md:w-auto md:pr-4">
+    <HeaderLink href="/" class="hover:text-gray-500">Home</HeaderLink>
+    <HeaderLink href="/blog" class="hover:text-gray-500">Blog</HeaderLink>
+    <HeaderLink href="/about" class="hover:text-gray-500">About</HeaderLink>
+    <HeaderLink href="/resume" class="hover:text-gray-500">Resume</HeaderLink>
+    <HeaderLink href="/contact" class="hover:text-gray-500">Contact</HeaderLink>
+    <HeaderLink href="/links" class="hover:text-gray-500">Links</HeaderLink>
   </nav>
+  <script>
+    const showMenu = () => {
+      const menu = document.querySelector("nav");
+      menu?.classList.toggle("hidden");
+      menu?.classList.toggle("flex");
+      menu?.classList.toggle("flex-col");
+      menu?.classList.toggle("align-middle");
+    };
+    document.querySelector("#hamburger")?.addEventListener("click", showMenu);
+  </script>
 </header>
-<style>
-  header {
-    margin: 0em 0 2em;
-  }
-  h2 {
-    margin: 0.5em 0;
-  }
-</style>

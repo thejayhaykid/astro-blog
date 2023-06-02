@@ -1,5 +1,5 @@
 ---
-import {Content as About} from "../content/about/about.md"
+import ContactForm from "../components/ContactForm.jsx";
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Header from "../components/Header.astro";
@@ -7,4 +7,6 @@ import Header from "../components/Header.astro";
 
 <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 <Header />
-<About />
+<div class="flex flex-row justify-center align-middle w-screen">
+  <ContactForm client:only="react" />
+</div>
