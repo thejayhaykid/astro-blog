@@ -68,7 +68,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex flex-col w-[90vw] justify-center align-middle content-center lg:max-w-xl self-center grow-2">
+    <div className="flex flex-col w-[80vw] justify-center align-middle content-center lg:max-w-xl self-center grow-2">
       <h1 className="pb-1 text-3xl">Contact me</h1>
       <form
         name="contact"
