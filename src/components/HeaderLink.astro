@@ -14,7 +14,7 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
   class:list={[
     className,
     { active: isActive },
-    "pt-4 md:flex md:justify-between md:pt-0 inline-block decoration-none md:mx-4",
+    "p-4 md:flex md:justify-between decoration-none md:mx-4 hover:bg-gray-100 hover:text-gray-900 rounded",
   ]}
   {...props}
 >

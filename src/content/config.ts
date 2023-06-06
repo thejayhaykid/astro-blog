@@ -18,10 +18,10 @@ const blog = defineCollection({
   }),
 });
 
-const about = defineCollection({
+const general = defineCollection({
   schema: z.object({
     updatedDate: z.string().optional(),
   }),
 });
 
-export const collections = { blog, about };
+export const collections = { blog, general };
