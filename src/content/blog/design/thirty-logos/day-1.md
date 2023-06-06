@@ -2,7 +2,7 @@
 title: "Thirty Logos Design Challenge: Day 1"
 pubDate: "Apr 18 2020"
 description: "A Logo for a coworking office space name Space"
-heroImage: "/placeholder-hero.jpg"
+heroImage: "/blog-images/design/thirty-logos/day-1/Artboard1.png"
 ---
 
 # Day 1

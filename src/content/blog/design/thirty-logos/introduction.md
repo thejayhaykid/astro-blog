@@ -2,7 +2,7 @@
 title: "Thirty Logos Design Challenge: Introduction"
 pubDate: "Apr 11 2020"
 description: "An introduction to me taking on the thirty day logo challenge."
-heroImage: "/placeholder-hero.jpg"
+heroImage: "/blog-images/design/thirty-logos/intro/cover.jpg"
 ---
 
 ## Introduction

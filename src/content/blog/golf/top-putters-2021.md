@@ -2,7 +2,7 @@
 title: "My Top Putters of 2021"
 pubDate: "Jul 30 2021"
 description: "My Top 5 Putters of the Year"
-heroImage: "/placeholder-hero.jpg"
+heroImage: "/blog-images/golf/2021-putters/all.png"
 ---
 
 # Best Designed Putters of 2021

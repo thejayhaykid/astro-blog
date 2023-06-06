@@ -2,7 +2,7 @@
 title: "Thirty Logos Design Challenge: Day 2"
 pubDate: "Apr 20 2020"
 description: "A logo for a coffee shop called The Grind Coffee Shop"
-heroImage: "/placeholder-hero.jpg"
+heroImage: "/blog-images/design/thirty-logos/day-2/next-steps.png"
 ---
 
 # Day 2
