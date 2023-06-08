@@ -2,16 +2,19 @@
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 <Header />
-<div class="w-screen">
-  <div class="flex flex-row justify-center align-middle w-full">
+<div class="w-screen dark:bg-gray-900 dark:text-gray-50 min-h-screen">
+  <div
+    class="flex flex-row justify-center align-middle w-full dark:bg-gray-900 dark:text-gray-50"
+  >
     <div
-      class="flex flex-col w-[80vw] justify-center align-middle content-center lg:max-w-xl self-center grow-2"
+      class="flex flex-col w-[80vw] justify-center align-middle content-center lg:max-w-xl self-center grow-2 dark:bg-gray-900 dark:text-gray-50"
     >
-      <h1 class="pb-1 text-3xl">Contact me</h1>
+      <h1 class="pb-1 text-3xl dark:text-gray-50">Contact me</h1>
       <form
         name="contact"
         method="POST"
@@ -54,3 +57,4 @@ import Header from "../components/Header.astro";
     </div>
   </div>
 </div>
+<Footer />
