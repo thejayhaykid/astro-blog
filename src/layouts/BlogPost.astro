@@ -30,9 +30,21 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
   <body>
     <Header />
-    <main class="dark:bg-gray-900 dark:text-gray-50">
-      <article>
-        {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+    <main
+      class="dark:bg-gray-900 dark:text-gray-50 flex flex-row justify-center"
+    >
+      <article
+        class="prose dark:prose-invert prose-code:bg-slate-200 prose-code:text-slate-800 dark:prose-code:bg-gray-800 dark:prose-code:text-gray-100 flex flex-col prose-base"
+      >
+        {
+          heroImage && (
+            <img
+              class="object-cover border-b-2 shadow-md max-w-2xl w-auto max-h-64"
+              src={heroImage}
+              alt={title}
+            />
+          )
+        }
         <h1 class="title">{title}</h1>
         <FormattedDate date={pubDate} />
         {
