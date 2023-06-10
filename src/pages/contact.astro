@@ -11,7 +11,7 @@ import Footer from "../components/Footer.astro";
   class="w-screen dark:bg-gray-900 dark:text-gray-50 min-h-screen flex flex-col align-center"
 >
   <div
-    class="border-2 border-red-900 bg-red-200 text-red-900 p-6 flex flex-row justify-center self-center align-middle w-full md:max-w-lg m-8"
+    class="border-2 border-red-900 bg-red-200 text-red-900 p-6 flex flex-row justify-center self-center align-middle w-full md:max-w-lg m-8 rounded-md"
   >
     <p>
       There seems to be issues with the form not actually getting all the way to
@@ -33,7 +33,7 @@ import Footer from "../components/Footer.astro";
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        class="flex flex-col lg:max-w-700 gap-4 rounded-5 justify-center align-middle max-w-full"
+        class="flex flex-col lg:max-w-700 gap-4 rounded-md justify-center align-middle max-w-full"
       >
         <div
           class="flex md:flex-row md:gap-1 justify-between w-full flex-col gap-4"
@@ -43,14 +43,14 @@ import Footer from "../components/Footer.astro";
             disabled
             name="name"
             placeholder="Your name"
-            class="p-1 rounded-5 rounded border border-gray-400 sm:w-full"
+            class="p-1 rounded-md rounded border border-gray-400 sm:w-full"
           />
           <input
             placeholder="Email"
             disabled
             type="email"
             name="email"
-            class="p-1 rounded-5 rounded border border-gray-400 sm:w-full"
+            class="p-1 rounded-md rounded border border-gray-400 sm:w-full"
           />
         </div>
         <input
@@ -64,11 +64,11 @@ import Footer from "../components/Footer.astro";
           name="message"
           disabled
           placeholder="Message"
-          class="p-1 rounded border border-gray-400"></textarea>
+          class="p-1 rounded-md border border-gray-400"></textarea>
         <button
           type="submit"
           disabled
-          class="p-1 rounded cursor-pointer bg-blue-700 hover:bg-blue-800 active:bg-blue-900 text-white md:max-w-25 disabled:bg-blue-400 disabled:cursor-not-allowed"
+          class="p-1 rounded-md cursor-pointer bg-blue-700 hover:bg-blue-800 active:bg-blue-900 text-white md:max-w-25 disabled:bg-blue-400 disabled:cursor-not-allowed"
           >Send</button
         >
       </form>
