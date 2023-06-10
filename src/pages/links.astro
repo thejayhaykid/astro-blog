@@ -1,5 +1,4 @@
 ---
-import { Content } from "../content/general/about.md";
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Header from "../components/Header.astro";
@@ -7,10 +6,12 @@ import Header from "../components/Header.astro";
 
 <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 <Header />
-<div class="min-h-screen dark:bg-gray-900 dark:text-gray-50">
+<div
+  class="flex flex-row w-screen justify-center content-start min-h-screen dark:bg-gray-900 dark:text-gray-50"
+>
   <article
-    class="prose prose-lg max-w-none dark:prose-invert dark:prose-h1:text-gray-50 dark:prose-h2:text-gray-50 dark:prose-h3:text-gray-50 dark:bg-gray-900 dark:text-gray-50"
+    class="prose prose-lg max-w-none dark:prose-invert dark:prose-h1:text-gray-50 dark:prose-h2:text-gray-50 dark:prose-h3:text-gray-50 dark:bg-gray-900 dark:text-gray-50 mt-4"
   >
-    <Content />
+    <h1>🚧 Still a work in progress 🚧</h1>
   </article>
 </div>
