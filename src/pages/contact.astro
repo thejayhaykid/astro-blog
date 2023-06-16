@@ -10,7 +10,7 @@ import Footer from "../components/Footer.astro";
 <div
   class="w-screen dark:bg-gray-900 dark:text-gray-50 min-h-screen flex flex-col align-center"
 >
-  <div
+  <!-- <div
     class="border-2 border-red-900 bg-red-200 text-red-900 p-6 flex flex-row justify-center self-center align-middle w-full md:max-w-lg m-8 rounded-md"
   >
     <p>
@@ -20,7 +20,7 @@ import Footer from "../components/Footer.astro";
         href="mailto:jake@jakehayes.net">email me</a
       >.
     </p>
-  </div>
+  </div> -->
   <div
     class="flex flex-row justify-center align-middle w-full dark:bg-gray-900 dark:text-gray-50"
   >
@@ -40,14 +40,12 @@ import Footer from "../components/Footer.astro";
         >
           <input
             type="text"
-            disabled
             name="name"
             placeholder="Your name"
             class="p-1 rounded-md rounded border border-gray-400 sm:w-full"
           />
           <input
             placeholder="Email"
-            disabled
             type="email"
             name="email"
             class="p-1 rounded-md rounded border border-gray-400 sm:w-full"
@@ -55,19 +53,16 @@ import Footer from "../components/Footer.astro";
         </div>
         <input
           type="text"
-          disabled
           name="subject"
           placeholder="Subject"
           class="p-1 rounded border border-gray-400 sm:w-full"
         />
         <textarea
           name="message"
-          disabled
           placeholder="Message"
           class="p-1 rounded-md border border-gray-400"></textarea>
         <button
           type="submit"
-          disabled
           class="p-1 rounded-md cursor-pointer bg-blue-700 hover:bg-blue-800 active:bg-blue-900 text-white md:max-w-25 disabled:bg-blue-400 disabled:cursor-not-allowed"
           >Send</button
         >
