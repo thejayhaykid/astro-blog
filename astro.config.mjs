@@ -9,6 +9,6 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: "https://www.jakehayes.net",
   integrations: [mdx(), sitemap(), tailwind()],
-  output: "server",
+  output: "hybrid",
   adapter: netlify(),
 });
