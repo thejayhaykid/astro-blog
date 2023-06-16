@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import ContactForm from "../components/ContactForm.astro";
 ---
 
 <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
@@ -28,63 +29,7 @@ import Footer from "../components/Footer.astro";
       class="flex flex-col pt-6 w-[80vw] justify-center align-middle content-center lg:max-w-xl self-center grow-2 dark:bg-gray-900 dark:text-gray-50"
     >
       <h1 class="pb-1 text-3xl dark:text-gray-50 pb-4">Contact me</h1>
-      <form
-        netlify
-        netlify-honeypot
-        name="feedback"
-        method="POST"
-        action="/"
-        class="flex flex-col lg:max-w-700 rounded-md justify-center align-middle max-w-full"
-      >
-        <p class="hidden">
-          <label>
-            Don’t fill this out if you’re human: <input name="bot-field" />
-          </label>
-        </p>
-        <input type="hidden" name="form-name" value="feedback" />
-        <div
-          class="flex md:flex-row md:gap-1 justify-between w-full flex-col pt-4"
-        >
-          <div class="flex flex-col flex-nowrap w-full">
-            <label for="name">Name</label>
-            <input
-              type="text"
-              name="name"
-              placeholder="Your name"
-              required
-              class="p-1 rounded-md rounded border border-gray-400 w-full"
-            />
-          </div>
-          <div class="flex flex-col flex-nowrap w-full">
-            <label for="email">Email</label>
-            <input
-              placeholder="Email"
-              type="email"
-              name="email"
-              required
-              class="p-1 rounded-md rounded border border-gray-400 sm:w-full"
-            />
-          </div>
-        </div>
-        <label class="pt-4" for="subject">Subject</label>
-        <input
-          type="text"
-          name="subject"
-          placeholder="Subject"
-          class="p-1 pb-4 rounded border border-gray-400 sm:w-full"
-        />
-        <label class="m-1" for="message">Message</label>
-        <textarea
-          name="message"
-          placeholder="Message"
-          required
-          class="p-1 rounded-md border border-gray-400"></textarea>
-        <button
-          type="submit"
-          class="p-1 mt-4 rounded-md cursor-pointer bg-blue-700 hover:bg-blue-800 active:bg-blue-900 text-white md:max-w-25 disabled:bg-blue-400 disabled:cursor-not-allowed"
-          >Send</button
-        >
-      </form>
+      <ContactForm />
     </div>
   </div>
 </div>
