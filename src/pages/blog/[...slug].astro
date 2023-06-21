@@ -1,6 +1,9 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
 import BlogPost from "../../layouts/BlogPost.astro";
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import { SITE_DESCRIPTION } from "../../consts";
 
 const posts = await getCollection("blog");
 let postPage: any = undefined;
@@ -14,8 +17,12 @@ if (!postPage) {
   Astro.redirect("/blog");
 }
 const { Content } = await postPage.render();
+
+const title = `JH | ${postPage.data.title}`;
 ---
 
+<BaseHead title={title} description={SITE_DESCRIPTION} />
+<Header />
 <BlogPost {...postPage.data}>
   <Content />
 </BlogPost>
