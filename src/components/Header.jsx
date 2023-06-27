@@ -1,6 +1,6 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars2Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars2Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const nav = [
   { name: "Blog", href: "blog", current: false },
@@ -16,36 +16,31 @@ function classNames(...classes) {
 
 export default function Header() {
   const [navigation, setNavigation] = useState(nav);
+  console.log(`In Header`);
+
   useEffect(() => {
+    console.log(`In useEffect`);
     const page = window.location.pathname.split("/")[1];
+    let tempNav = [];
 
     navigation.forEach((item) => {
       if (item.href === page) {
-        setNavigation((prevNav) => {
-          return [
-            ...prevNav,
-            {
-              name: item.name,
-              href: item.href,
-              current: (item.current = true),
-            },
-          ];
+        tempNav.push({
+          name: item.name,
+          href: item.href,
+          current: (item.current = true),
         });
       } else {
-        setNavigation((prevNav) => {
-          return [
-            ...prevNav,
-            {
-              name: item.name,
-              href: item.href,
-              current: (item.current = false),
-            },
-          ];
+        tempNav.push({
+          name: item.name,
+          href: item.href,
+          current: (item.current = false),
         });
       }
     });
 
-    console.log(navigation);
+    setNavigation(tempNav);
+    console.log(tempNav);
   }, []);
 
   return (
@@ -69,18 +64,20 @@ export default function Header() {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
-                  <img
-                    className="block h-8 w-auto lg:hidden"
-                    src="/JH.png"
-                    alt="Jake Hayes"
-                  />
-                  <img
-                    className="hidden h-8 w-auto lg:block"
-                    src="/JH.png"
-                    alt="Jake Hayes"
-                  />
-                </div>
+                <a href="/">
+                  <div className="flex flex-shrink-0 items-center">
+                    <img
+                      className="block h-8 w-auto lg:hidden"
+                      src="/JH.png"
+                      alt="Jake Hayes"
+                    />
+                    <img
+                      className="hidden h-8 w-auto lg:block"
+                      src="/JH.png"
+                      alt="Jake Hayes"
+                    />
+                  </div>
+                </a>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (

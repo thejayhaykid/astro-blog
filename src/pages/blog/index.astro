@@ -1,6 +1,6 @@
 ---
 import BaseHead from "../../components/BaseHead.astro";
-import Header from "../../components/Header.astro";
+import Header from "../../components/Header.jsx";
 import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
@@ -36,7 +36,7 @@ const title = `${SITE_TITLE} | Blog`;
     </style>
   </head>
   <body>
-    <Header />
+    <Header client:only="react" />
     <main
       class="flex flex-col gap-4 align-middle items-center justify-center w-screen dark:bg-gray-900 dark:text-gray-50"
     >

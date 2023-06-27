@@ -1,7 +1,7 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Header from "../components/Header.astro";
+import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.astro";
 // import ContactForm from "../components/ContactForm.astro";
 import ContactForm from "../components/ContactForm.jsx";
@@ -11,7 +11,7 @@ const title = `${SITE_TITLE} | Contact`;
 ---
 
 <BaseHead title={title} description={SITE_DESCRIPTION} />
-<Header />
+<Header client:only="react" />
 <!-- <div
   class="w-screen dark:bg-gray-900 dark:text-gray-50 min-h-screen flex flex-col align-center"
 >

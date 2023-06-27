@@ -1,13 +1,13 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Header from "../components/Header.astro";
+import Header from "../components/Header.jsx";
 
 const title = `${SITE_TITLE} | Links`;
 ---
 
 <BaseHead title={title} description={SITE_DESCRIPTION} />
-<Header />
+<Header client:only="react" />
 <div
   class="flex flex-row w-screen justify-center content-start min-h-screen dark:bg-gray-900 dark:text-gray-50"
 >

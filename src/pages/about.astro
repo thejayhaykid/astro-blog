@@ -11,7 +11,7 @@ const title = `${SITE_TITLE} | About`;
 <head>
   <BaseHead title={title} description={SITE_DESCRIPTION} />
 </head>
-<Header />
+<Header client:only="react" />
 <div
   class="min-h-screen dark:bg-gray-900 dark:text-gray-50 pt-6 flex flex-row justify-center"
 >
