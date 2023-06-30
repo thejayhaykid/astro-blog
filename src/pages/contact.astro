@@ -1,37 +1,29 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Header from "../components/Header.astro";
+import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.astro";
-import ContactForm from "../components/ContactForm.astro";
+// import ContactForm from "../components/ContactForm.astro";
+import ContactForm from "../components/ContactForm.jsx";
 export const prerender = true;
+
+const title = `${SITE_TITLE} | Contact`;
 ---
 
-<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-<Header />
-<div
+<BaseHead title={title} description={SITE_DESCRIPTION} />
+<Header client:load />
+<!-- <div
   class="w-screen dark:bg-gray-900 dark:text-gray-50 min-h-screen flex flex-col align-center"
 >
-  <!-- <div
-    class="border-2 border-red-900 bg-red-200 text-red-900 p-6 flex flex-row justify-center self-center align-middle w-full md:max-w-lg m-8 rounded-md"
-  >
-    <p>
-      There seems to be issues with the form not actually getting all the way to
-      me. Feel free to <a
-        class="no-underline hover:underline text-red-800"
-        href="mailto:jake@jakehayes.net">email me</a
-      >.
-    </p>
-  </div> -->
   <div
     class="flex flex-row justify-center align-middle w-full dark:bg-gray-900 dark:text-gray-50"
   >
     <div
       class="flex flex-col pt-6 w-[80vw] justify-center align-middle content-center lg:max-w-xl self-center grow-2 dark:bg-gray-900 dark:text-gray-50"
     >
-      <h1 class="pb-1 text-3xl dark:text-gray-50 pb-4">Contact me</h1>
-      <ContactForm />
-    </div>
+      <h1 class="pb-1 text-3xl dark:text-gray-50 pb-4">Contact me</h1> -->
+<div class="min-h-screen dark:bg-gray-900"><ContactForm client:only="react" /></div>
+<!-- </div>
   </div>
-</div>
+</div> -->
 <Footer />

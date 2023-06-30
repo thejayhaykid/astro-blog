@@ -1,7 +1,7 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Header from "../components/Header.astro";
+import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.astro";
 import { Content as ResumeContent } from "../content/general/resume.md";
 
@@ -9,7 +9,7 @@ const title = `${SITE_TITLE} | Resume`;
 ---
 
 <BaseHead title={title} description={SITE_DESCRIPTION} />
-<Header />
+<Header client:load />
 <div
   class="flex flex-row w-screen justify-center content-start dark:bg-gray-900"
 >
