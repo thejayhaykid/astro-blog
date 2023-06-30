@@ -121,7 +121,7 @@ export default function ContactForm() {
                 </label>
                 <div className="mt-2.5">
                   <input
-                    type="tel"
+                    type="text"
                     name="subject"
                     id="subject"
                     autoComplete="none"
