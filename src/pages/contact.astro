@@ -11,7 +11,7 @@ const title = `${SITE_TITLE} | Contact`;
 ---
 
 <BaseHead title={title} description={SITE_DESCRIPTION} />
-<Header client:only="react" />
+<Header client:load />
 <!-- <div
   class="w-screen dark:bg-gray-900 dark:text-gray-50 min-h-screen flex flex-col align-center"
 >
@@ -22,7 +22,7 @@ const title = `${SITE_TITLE} | Contact`;
       class="flex flex-col pt-6 w-[80vw] justify-center align-middle content-center lg:max-w-xl self-center grow-2 dark:bg-gray-900 dark:text-gray-50"
     >
       <h1 class="pb-1 text-3xl dark:text-gray-50 pb-4">Contact me</h1> -->
-<div class="min-h-screen dark:bg-gray-900"><ContactForm /></div>
+<div class="min-h-screen dark:bg-gray-900"><ContactForm client:only="react" /></div>
 <!-- </div>
   </div>
 </div> -->

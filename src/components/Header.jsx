@@ -16,10 +16,8 @@ function classNames(...classes) {
 
 export default function Header() {
   const [navigation, setNavigation] = useState(nav);
-  console.log(`In Header`);
 
   useEffect(() => {
-    console.log(`In useEffect`);
     const page = window.location.pathname.split("/")[1];
     let tempNav = [];
 
@@ -40,7 +38,6 @@ export default function Header() {
     });
 
     setNavigation(tempNav);
-    console.log(tempNav);
   }, []);
 
   return (

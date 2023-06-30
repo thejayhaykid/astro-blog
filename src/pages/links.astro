@@ -7,7 +7,7 @@ const title = `${SITE_TITLE} | Links`;
 ---
 
 <BaseHead title={title} description={SITE_DESCRIPTION} />
-<Header client:only="react" />
+<Header client:load />
 <div
   class="flex flex-row w-screen justify-center content-start min-h-screen dark:bg-gray-900 dark:text-gray-50"
 >

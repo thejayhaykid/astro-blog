@@ -9,7 +9,7 @@ const title = `${SITE_TITLE} | Resume`;
 ---
 
 <BaseHead title={title} description={SITE_DESCRIPTION} />
-<Header client:only="react" />
+<Header client:load />
 <div
   class="flex flex-row w-screen justify-center content-start dark:bg-gray-900"
 >
