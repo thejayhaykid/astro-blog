@@ -12,8 +12,10 @@ const title = `${SITE_TITLE} | Contact`;
 <BaseHead title={title} description={SITE_DESCRIPTION} />
 <Header client:load />
 <div
-  class="w-screen dark:bg-gray-900 dark:text-gray-50 min-h-screen flex flex-col align-center"
+  class="w-screen dark:bg-gray-900 dark:text-gray-50 flex flex-col align-center"
 >
-  <div class="min-h-screen dark:bg-gray-900"><ContactForm /></div>
+  <div class="dark:bg-gray-900 min-h-[var(--screen-height)]">
+    <ContactForm />
+  </div>
   <Footer />
 </div>

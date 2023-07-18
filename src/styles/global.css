@@ -8,6 +8,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+:root {
+  --screen-height: calc(100vh - 136px);
+}
+
 body {
   font-family: Verdana, sans-serif;
   margin: auto;
