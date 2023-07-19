@@ -3,11 +3,11 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars2Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const nav = [
-  { name: "Blog", href: "blog", current: false },
-  { name: "About", href: "about", current: false },
-  { name: "Resume", href: "resume", current: false },
-  { name: "Contact", href: "contact", current: false },
-  { name: "Links", href: "links", current: false },
+  { name: "Blog", href: "/blog", current: false },
+  { name: "About", href: "/about", current: false },
+  { name: "Resume", href: "/resume", current: false },
+  { name: "Contact", href: "/contact", current: false },
+  { name: "Links", href: "/links", current: false },
 ];
 
 function classNames(...classes) {
