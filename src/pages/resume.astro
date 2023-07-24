@@ -8,15 +8,21 @@ import { Content as ResumeContent } from "../content/general/resume.md";
 const title = `${SITE_TITLE} | Resume`;
 ---
 
-<BaseHead title={title} description={SITE_DESCRIPTION} />
-<Header client:load />
-<div
-  class="flex flex-row w-screen justify-center content-start dark:bg-gray-900"
->
-  <article
-    class="prose prose-md prose-h1:underline dark:prose-invert self-center max-w-4xl p-4 dark:bg-gray-900 dark:text-gray-50"
-  >
-    <ResumeContent />
-  </article>
-</div>
-<Footer />
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header client:load />
+    <div
+      class="flex flex-row w-screen justify-center content-start dark:bg-gray-900"
+    >
+      <article
+        class="prose prose-md prose-h1:underline dark:prose-invert self-center max-w-4xl p-4 dark:bg-gray-900 dark:text-gray-50"
+      >
+        <ResumeContent />
+      </article>
+    </div>
+    <Footer />
+  </body>
+</html>

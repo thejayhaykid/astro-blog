@@ -6,13 +6,17 @@ import Header from "../components/Header.jsx";
 const title = `${SITE_TITLE} | Links`;
 ---
 
-<BaseHead title={title} description={SITE_DESCRIPTION} />
-<Header client:load />
-<div
-  class="flex flex-row w-screen justify-center content-start min-h-[var(--screen-height)] dark:bg-gray-900 dark:text-gray-50 pt-8"
->
-  <h1>🚧 Still a work in progress 🚧</h1>
-  <!-- <div>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header client:load />
+    <div
+      class="flex flex-row w-screen justify-center content-start min-h-[var(--screen-height)] dark:bg-gray-900 dark:text-gray-50 pt-8"
+    >
+      <h1>🚧 Still a work in progress 🚧</h1>
+      <!-- <div>
     <h2 class="font-medium text-gray-500 dark:text-gray-200">My Links</h2>
     <ul
       role="list"
@@ -160,4 +164,6 @@ const title = `${SITE_TITLE} | Links`;
       </li>
     </ul>
   </div> -->
-</div>
+    </div>
+  </body>
+</html>

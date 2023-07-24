@@ -9,13 +9,19 @@ export const prerender = true;
 const title = `${SITE_TITLE} | Contact`;
 ---
 
-<BaseHead title={title} description={SITE_DESCRIPTION} />
-<Header client:load />
-<div
-  class="w-screen dark:bg-gray-900 dark:text-gray-50 flex flex-col align-center"
->
-  <div class="dark:bg-gray-900 min-h-[var(--screen-height)]">
-    <ContactForm />
-  </div>
-  <Footer />
-</div>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header client:load />
+    <div
+      class="w-screen dark:bg-gray-900 dark:text-gray-50 flex flex-col align-center"
+    >
+      <div class="dark:bg-gray-900 min-h-[var(--screen-height)]">
+        <ContactForm />
+      </div>
+      <Footer />
+    </div>
+  </body>
+</html>
