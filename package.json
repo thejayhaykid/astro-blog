@@ -27,6 +27,7 @@
     "@types/react-dom": "^18.0.6",
     "astro": "^2.5.0",
     "autoprefixer": "^10.4.14",
+    "fast-xml-parser": "^4.2.6",
     "postcss": "^8.4.24",
     "prettier-plugin-astro": "^0.9.1",
     "react": "^18.0.0",
