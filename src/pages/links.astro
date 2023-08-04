@@ -1,16 +1,83 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import type { Link } from "../types/Link.types";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.astro";
-
-import PortfolioLinks from "../components/links/PortfolioLinks.astro";
-import GeneralLinks from "../components/links/GeneralLinks.astro";
-import SellingLinks from "../components/links/SellingLinks.astro";
+import LinkGroup from "../components/LinkGroup.astro";
 
 const title = `${SITE_TITLE} | Links`;
 
 // General website, twitter (x?), stashtag.app, letterboxd, redbubble, gumroad, amazon (once I have things to sell on there)
+const generalLinks: Link[] = [
+  {
+    primaryHeader: "My website",
+    secondaryHeader: "Homepage of this site!",
+    imageUrl: "/JH.png",
+    linkUrl: "/",
+    sideText2: "Astro + Tailwind",
+  },
+  {
+    primaryHeader: "Letterboxd",
+    secondaryHeader: "One of the few social media sites I use",
+    imageUrl: "/link-images/letterboxd-logo.png",
+    linkUrl: "https://letterboxd.com/jakehayes/",
+  },
+];
+
+const portfolioLinks: Link[] = [
+  {
+    primaryHeader: "GitHub",
+    secondaryHeader: "Where I store (most of) my code",
+    imageUrl: "/link-images/github.png",
+    linkUrl: "https://github.com/thejayhaykid/",
+  },
+  {
+    primaryHeader: "Stashtag",
+    secondaryHeader: "Random little client only utilities I've built",
+    imageUrl: "/link-images/stashtag.app.png",
+    linkUrl: "https://www.stashtag.app",
+    sideText2: "React + CharkraUI",
+  },
+  {
+    primaryHeader: "ProgressGif",
+    secondaryHeader: "Contributed to this app that is in Apple's App Store",
+    imageUrl: "/link-images/progressgif.png",
+    linkUrl: "https://aheze.github.io/ProgressGif/",
+    sideText2: "Swift + UIKit",
+  },
+  {
+    primaryHeader: "Paypr",
+    secondaryHeader:
+      "Python utility to turn any image into a 16:9 ratio wallpaper",
+    imageUrl: "/link-images/github.png",
+    linkUrl: "https://github.com/thejayhaykid/paypr",
+    sideText2: "Python",
+  },
+];
+
+const sellingLinks: Link[] = [
+  {
+    primaryHeader: "Redbubble",
+    secondaryHeader: "Stickers and other things I've designed",
+    imageUrl: "/link-images/redbubble.png",
+    linkUrl: "https://thejayhaykid.redbubble.com",
+  },
+  {
+    primaryHeader: "Gumroad",
+    secondaryHeader:
+      "Digital assets, currently only Notion templates, more to come",
+    imageUrl: "/link-images/gumroad.png",
+    linkUrl: "https://jakejhayes.gumroad.com/",
+  },
+  {
+    primaryHeader: "Buy Me A Coffee",
+    secondaryHeader:
+      "Nothing to buy, but if you like what I do, you can support me here",
+    imageUrl: "/link-images/buy-me-a-coffee.png",
+    linkUrl: "https://www.buymeacoffee.com/jakehayes",
+  },
+];
 ---
 
 <html lang="en">
@@ -23,31 +90,38 @@ const title = `${SITE_TITLE} | Links`;
       class="flex flex-col w-screen overflow-y-auto items-center min-h-[var(--screen-height)] dark:bg-gray-900 dark:text-gray-200 pt-8"
     >
       <div class="my-8">
-        <h2 class="text-2xl font-bold pb-2 text-gray-950 dark:text-gray-50">
+        <h2
+          class="text-2xl font-bold pb-2 text-gray-950 dark:text-gray-50 sm:pl-2"
+        >
           General Links
         </h2>
-        <h6 class="text-sm text-gray-500 dark:text-gray-400 pb-2">
+        <h6 class="text-sm text-gray-500 dark:text-gray-400 pb-2 sm:pl-2">
           <em>These are links to my profiles on other websites</em>
         </h6>
-        <GeneralLinks />
+        <LinkGroup links={generalLinks} />
+        <!-- <GeneralLinks /> -->
       </div>
       <div class="my-8">
-        <h2 class="text-2xl font-bold pb-2 text-gray-950 dark:text-gray-50">
+        <h2
+          class="text-2xl font-bold pb-2 text-gray-950 dark:text-gray-50 sm:pl-2"
+        >
           Things I've made
         </h2>
-        <h6 class="text-sm text-gray-500 dark:text-gray-400 pb-2">
-          <em>Hopefully this list grows soon</em>
+        <h6 class="text-sm text-gray-500 dark:text-gray-400 pb-2 sm:pl-2">
+          <em>Hopefully this list continues growing</em>
         </h6>
-        <PortfolioLinks />
+        <LinkGroup links={portfolioLinks} />
       </div>
       <div class="my-8">
-        <h2 class="text-2xl font-bold pb-2 text-gray-950 dark:text-gray-50">
+        <h2
+          class="text-2xl font-bold pb-2 text-gray-950 dark:text-gray-50 sm:pl-2"
+        >
           Buy some stuff
         </h2>
-        <h6 class="text-sm text-gray-500 dark:text-gray-400 pb-2">
+        <h6 class="text-sm text-gray-500 dark:text-gray-400 pb-2 sm:pl-2">
           <em>Or not, but here are some options</em>
         </h6>
-        <SellingLinks />
+        <LinkGroup links={sellingLinks} />
       </div>
     </div>
     <Footer />
