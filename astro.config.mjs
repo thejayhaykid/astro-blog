@@ -18,4 +18,7 @@ export default defineConfig({
       destination: "/not-found",
     },
   },
+  experimental: {
+    assets: true,
+  }
 });

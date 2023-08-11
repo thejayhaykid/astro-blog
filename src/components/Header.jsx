@@ -65,12 +65,12 @@ export default function Header() {
                   <div className="flex flex-shrink-0 items-center">
                     <img
                       className="block h-8 w-auto lg:hidden"
-                      src="/JH.png"
+                      src="/navbar-logo.svg"
                       alt="Jake Hayes"
                     />
                     <img
                       className="hidden h-8 w-auto lg:block"
-                      src="/JH.png"
+                      src="/navbar-logo.svg"
                       alt="Jake Hayes"
                     />
                   </div>

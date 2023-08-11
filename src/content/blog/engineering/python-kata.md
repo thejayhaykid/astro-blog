@@ -2,7 +2,7 @@
 title: "Babysitter Kata"
 pubDate: "Nov 26 2019"
 description: "Using test driven development to solve a problem."
-heroImage: "/blog-images/tech/2020/03/kata-cover-image.jpg"
+heroImage: "/_astro/kata-cover-image.hash.jpg"
 ---
 
 _Note: This post is still a work in progress._
