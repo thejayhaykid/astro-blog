@@ -2,7 +2,7 @@
 title: "Paypr"
 pubDate: "Mar 23 2021"
 description: "A script to make a perfectly sized wallpaper from any image."
-heroImage: "/_astro/paypr-after.hash.png"
+heroImage: "/blog-images/tech/2021/03/paypr-after.png"
 ---
 
 # Paypr
@@ -21,8 +21,8 @@ Give it a try for yourself! Or fork the code and submit a PR if you can think of
 
 ## Before
 
-![Before](../../../assets/blog-images/tech/2021/03/paypr-before.jpg)
+![Before](/blog-images/tech/2021/03/paypr-before.jpg)
 
 ## After
 
-![After](../../../assets/blog-images/tech/2021/03/paypr-after.png)
+![After](/blog-images/tech/2021/03/paypr-after.png)
