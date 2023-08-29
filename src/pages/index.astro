@@ -3,6 +3,12 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+import golf from "../assets/home/golf-sm.png";
+import wedding from "../assets/home/wedding.png";
+import me from "../assets/home/me-sm.png";
+import lake from "../assets/home/lake.png";
+import cj from "../assets/home/cj.png";
 ---
 
 <!DOCTYPE html>
@@ -67,7 +73,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 >
                   <div class="relative">
                     <img
-                      src="/home/golf-sm.png"
+                      src={golf.src}
                       alt=""
                       class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                     />
@@ -82,7 +88,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 >
                   <div class="relative">
                     <img
-                      src="/home/wedding.png"
+                      src={wedding.src}
                       alt=""
                       class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                     />
@@ -93,7 +99,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                   </div>
                   <div class="relative">
                     <img
-                      src="/home/me-sm.png"
+                      src={me.src}
                       alt=""
                       class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                     />
@@ -106,7 +112,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 <div class="w-44 flex-none space-y-8 pt-32 sm:pt-0">
                   <div class="relative">
                     <img
-                      src="/home/lake.png"
+                      src={lake.src}
                       alt=""
                       class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                     />
@@ -117,7 +123,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                   </div>
                   <div class="relative">
                     <img
-                      src="home/cj.png"
+                      src={cj.src}
                       alt=""
                       class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                     />
