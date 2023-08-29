@@ -29,7 +29,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
   </head>
 
   <body>
-    <Header />
     <main
       class="dark:bg-gray-900 dark:text-gray-50 flex flex-row justify-center"
     >
@@ -39,7 +38,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         {
           heroImage && (
             <img
-              class="object-cover border-b-2 shadow-md max-w-2xl w-auto max-h-64"
+              class="object-cover border-b-2 shadow-md w-auto max-h-64"
               src={heroImage}
               alt={title}
             />
