@@ -19,7 +19,7 @@ if (!postPage) {
 }
 const { Content } = await postPage.render();
 
-const title = `JH | ${postPage.data.title}`;
+const title = `${postPage.data.title} | JH`;
 ---
 
 <BaseHead title={title} description={SITE_DESCRIPTION} />
