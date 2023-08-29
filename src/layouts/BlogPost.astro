@@ -3,6 +3,9 @@ import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import { JOB_TITLE } from "../consts";
+
+import me from "../assets/me.png";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -42,14 +45,33 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         class="prose dark:prose-invert prose-code:bg-slate-200 prose-code:text-slate-800 dark:prose-code:bg-gray-800 dark:prose-code:text-gray-100 flex flex-col prose-base p-4 md:p-0"
       >
         <h1 class="title">{title}</h1>
-        <FormattedDate date={pubDate} />
-        {
-          updatedDate && (
-            <div class="last-updated-on">
-              Last updated on <FormattedDate date={updatedDate} />
+        <div class="flex items-center gap-x-6">
+          <img
+            class="h-28 w-28 rounded-full object-cover"
+            src={me.src}
+            alt=""
+          />
+          <div>
+            <h3
+              class="text-base font-semibold leading-7 tracking-tight text-gray-900"
+            >
+              Jake Hayes
+            </h3>
+            <p class="text-sm font-semibold leading-6 text-indigo-600 -mt-2">
+              {JOB_TITLE}
+            </p>
+            <div class="-mt-6">
+              <FormattedDate date={pubDate} />
             </div>
-          )
-        }
+            {
+              updatedDate && (
+                <div class="last-updated-on">
+                  Last updated on <FormattedDate date={updatedDate} />
+                </div>
+              )
+            }
+          </div>
+        </div>
         <hr />
         <slot />
       </article>
