@@ -43,7 +43,7 @@ export default function Header() {
   return (
     <Disclosure
       as="nav"
-      className="dark:bg-gray-800 border-b-2 border-gray-800"
+      className="bg-white dark:bg-gray-800 border-b-2 border-gray-800 sticky top-0 z-50 shadow-md dark:shadow-none"
     >
       {({ open }) => (
         <>
@@ -65,12 +65,12 @@ export default function Header() {
                   <div className="flex flex-shrink-0 items-center">
                     <img
                       className="block h-8 w-auto lg:hidden"
-                      src="/JH.png"
+                      src="/navbar-logo.svg"
                       alt="Jake Hayes"
                     />
                     <img
                       className="hidden h-8 w-auto lg:block"
-                      src="/JH.png"
+                      src="/navbar-logo.svg"
                       alt="Jake Hayes"
                     />
                   </div>
