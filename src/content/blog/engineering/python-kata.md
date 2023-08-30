@@ -58,8 +58,14 @@ The other package in requirements.txt file other than pytest is [Click](https://
 
 ## I have never done TDD before
 
-But I am familiar with it.
+But I am familiar with [Test-driven development (TDD)](https://en.m.wikipedia.org/wiki/Test-driven_development).
 
 And I don't like it.
 
-Well, strict TDD is very restricting and slows down my process a lot. Which is
+_From Wikipedia:_
+
+> Test-driven development (TDD) is a software development process relying on software requirements being converted to test cases before software is fully developed, and tracking all software development by repeatedly testing the software against all test cases. This is as opposed to software being developed first and test cases created later.
+
+"Red, Green, Repeat"
+
+Well, strict TDD is very restricting and slows down my process a lot. Which is a good structure when you are starting out. And looking at the time on this, I was pretty early in my career at the time.
