@@ -1,13 +1,14 @@
 ---
 title: "Babysitter Kata"
 pubDate: "Nov 26 2019"
+updatedDate: "Aug 30, 2023"
 description: "Using test driven development to solve a problem."
 heroImage: "/blog-images/tech/2020/03/kata-cover-image.jpg"
 category: "Programming Exercise"
 tags: ["Python", "Exercise", "CLI"]
 ---
 
-[Description of the Problem](https://github.com/PillarTechnology/kata-babysitter)
+### [Description of the Problem](https://github.com/PillarTechnology/kata-babysitter):
 
 > # Babysitter Kata
 >
@@ -54,3 +55,11 @@ Having never used pytest before, I decided to buy [Brian's book](https://pragpro
 After establishing that I was going to use pytest, I planned out the rest of what I was going to use for this project. To make it easier to develop on multiple machines I decided to use virtualenv. This way to use this package on another machine, all I would need to do (after using pip to install virtualenv) is install the packages in the requirements.txt file using `pip install -r requirements.txt` and then the package is ready to go.
 
 The other package in requirements.txt file other than pytest is [Click](https://click.palletsprojects.com/en/7.x/). Click is a very powerful package that makes adding a command line interface (CLI) to your python package very easy. Using decorators and functions, defining a CLI is very easy.
+
+## I have never done TDD before
+
+But I am familiar with it.
+
+And I don't like it.
+
+Well, strict TDD is very restricting and slows down my process a lot. Which is
