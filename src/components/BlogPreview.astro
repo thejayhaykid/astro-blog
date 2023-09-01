@@ -6,7 +6,7 @@ import me from "../assets/me.png";
 const { post } = Astro.props;
 ---
 
-<article class="relative isolate flex flex-col gap-8 lg:flex-row">
+<article class="relative isolate flex flex-col gap-8 lg:flex-row max-w-[95vw]">
   <div
     class="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0"
   >
@@ -45,29 +45,36 @@ const { post } = Astro.props;
           {post.data.title}
         </a>
       </h3>
+      {
+        post.data.tags && (
+          <span class="text-xs text-gray-500 dark:text-gray-400">
+            {post.data.tags.join(", ")}
+          </span>
+        )
+      }
       <p class="mt-5 text-sm leading-6 text-gray-600 dark:text-gray-300">
         {post.data.description}
       </p>
-    </div>
-    <div
-      class="mt-6 flex border-t border-gray-900/5 dark:border-gray-100/5 pt-6"
-    >
-      <div class="relative flex items-center gap-x-4">
-        <img
-          src={me.src}
-          alt="Author"
-          class="h-10 w-10 rounded-full bg-gray-50 dark:bg-gray-900 object-cover"
-        />
-        <div class="text-sm leading-6">
-          <p class="font-semibold text-gray-900 dark:text-gray-50">
-            <a href="/about">
-              <span class="absolute inset-0"></span>
-              Jake Hayes
-            </a>
-          </p>
-          <p class="text-gray-600 dark:text-gray-300">
-            {JOB_TITLE}
-          </p>
+      <div
+        class="mt-6 flex border-t border-gray-900/5 dark:border-gray-100/5 pt-6"
+      >
+        <div class="relative flex items-center gap-x-4">
+          <img
+            src={me.src}
+            alt="Author"
+            class="h-10 w-10 rounded-full bg-gray-50 dark:bg-gray-900 object-cover"
+          />
+          <div class="text-sm leading-6">
+            <p class="font-semibold text-gray-900 dark:text-gray-50">
+              <a href="/about">
+                <span class="absolute inset-0"></span>
+                Jake Hayes
+              </a>
+            </p>
+            <p class="text-gray-600 dark:text-gray-300">
+              {JOB_TITLE}
+            </p>
+          </div>
         </div>
       </div>
     </div>

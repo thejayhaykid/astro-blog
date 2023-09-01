@@ -56,6 +56,8 @@ After establishing that I was going to use pytest, I planned out the rest of wha
 
 The other package in requirements.txt file other than pytest is [Click](https://click.palletsprojects.com/en/7.x/). Click is a very powerful package that makes adding a command line interface (CLI) to your python package very easy. Using decorators and functions, defining a CLI is very easy.
 
+![Red Green Repeat](../../../../public/blog-images/tech/2023/red-green.jpg)
+
 ## I have never done TDD before
 
 But I am familiar with [Test-driven development (TDD)](https://en.m.wikipedia.org/wiki/Test-driven_development).
@@ -68,4 +70,20 @@ _From Wikipedia:_
 
 "Red, Green, Repeat"
 
-Well, strict TDD is very restricting and slows down my process a lot. Which is a good structure when you are starting out. And looking at the time on this, I was pretty early in my career at the time.
+Well, strict TDD is very restricting and slows down my process a lot. Which is a good structure when you are starting out. And looking at the time on this, I was pretty early in my career at the time. But when doing TDD, it is difficult to ensure that
+
+---
+
+## Where to start
+
+---
+
+## Gaining Momentum
+
+---
+
+## Review and Submit
+
+---
+
+## Conclusion

@@ -12,13 +12,4 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), tailwind(), react()],
   output: "server",
   adapter: netlify(),
-  redirects: {
-    "/*": {
-      status: 404,
-      destination: "/not-found",
-    },
-  },
-  experimental: {
-    assets: true,
-  }
 });
