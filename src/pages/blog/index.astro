@@ -8,9 +8,12 @@ import FormattedDate from "../../components/FormattedDate.astro";
 import me from "../../assets/me.png";
 import BlogPreview from "../../components/BlogPreview.astro";
 
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const posts = (await getCollection("blog"))
+  .filter((post) => {
+    if (process.env.NODE_ENV !== "development") return !post.data.draft;
+    else return true;
+  })
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const title = `${SITE_TITLE} | Blog`;
 ---

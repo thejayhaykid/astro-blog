@@ -6,6 +6,7 @@ description: "Using test driven development to solve a problem."
 heroImage: "/blog-images/tech/2020/03/kata-cover-image.jpg"
 category: "Programming Exercise"
 tags: ["Python", "Exercise", "CLI"]
+draft: false
 ---
 
 ### [Description of the Problem](https://github.com/PillarTechnology/kata-babysitter):

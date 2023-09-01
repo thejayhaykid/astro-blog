@@ -3,6 +3,7 @@ title: "Paypr"
 pubDate: "Mar 23 2021"
 description: "A script to make a perfectly sized wallpaper from any image."
 heroImage: "/blog-images/tech/2021/03/paypr-after.png"
+draft: false
 ---
 
 # Paypr
