@@ -9,25 +9,13 @@ import me from "../assets/me.png";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, tags, category } =
+  Astro.props;
 ---
 
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
-    <style>
-      .title {
-        font-size: 2em;
-        margin: 0.25em 0 0;
-      }
-      hr {
-        border-top: 1px solid #ddd;
-        margin: 1rem 0;
-      }
-      .last-updated-on {
-        font-style: italic;
-      }
-    </style>
   </head>
 
   <body>
@@ -44,7 +32,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
       <article
         class="prose dark:prose-invert prose-code:bg-slate-200 prose-code:text-slate-800 dark:prose-code:bg-gray-800 dark:prose-code:text-gray-100 flex flex-col prose-base p-4 md:p-0"
       >
-        <h1 class="title">{title}</h1>
+        <h1 class="text-4xl mt-2">{title}</h1>
         <div class="flex items-center gap-x-6">
           <img
             class="h-28 w-28 rounded-full object-cover"
@@ -65,14 +53,42 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
             </div>
             {
               updatedDate && (
-                <div class="last-updated-on">
+                <div class="italic -mt-2">
                   Last updated on <FormattedDate date={updatedDate} />
                 </div>
               )
             }
           </div>
         </div>
-        <hr />
+        {
+          category && (
+            <h6>
+              <a
+                class="text-sm font-semibold leading-6 text-indigo-600 no-underline hover:underline"
+                href={`/tag/${String(category)}/`}
+              >
+                {category}
+              </a>
+            </h6>
+          )
+        }
+        {
+          tags && (
+            <ul class="inline-flex flex-wrap gap-x-2 gap-y-1 list-none pl-0 -my-2">
+              {tags.map((tag) => (
+                <li>
+                  <a
+                    class="text-sm font-thin text-indigo-600 no-underline hover:underline"
+                    href={`/tag/${String(tag)}/`}
+                  >
+                    #{tag}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )
+        }
+        <hr class="my-4" />
         <slot />
       </article>
     </main>
