@@ -3,4 +3,4 @@
   to = "/404"
   status = 404
 [functions]
-  node_bundler = false
+  node_bundler = "esbundler"
