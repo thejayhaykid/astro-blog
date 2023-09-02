@@ -1,5 +1,5 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import { getCollection } from "astro:content";
 import BlogPost from "../../layouts/BlogPost.astro";
 import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.jsx";
@@ -10,6 +10,7 @@ const posts = await getCollection("blog");
 let postPage: any = undefined;
 posts.map((post) => {
   if (Astro.params.slug === post.slug) {
+    if (post.data.draft) Astro.redirect("/blog");
     postPage = post;
   }
 });
