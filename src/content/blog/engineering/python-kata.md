@@ -3,7 +3,7 @@ title: "Babysitter Kata"
 pubDate: "Nov 26 2019"
 updatedDate: "Aug 30, 2023"
 description: "Using test driven development to solve a problem."
-heroImage: "/blog-images/tech/2020/03/kata-cover-image.jpg"
+heroImage: "./blog-images/2020/03/kata-cover-image.jpg"
 category: "Programming Exercise"
 tags: ["Python", "Exercise", "CLI"]
 draft: true
