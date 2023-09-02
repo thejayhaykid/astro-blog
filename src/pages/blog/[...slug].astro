@@ -10,7 +10,8 @@ const posts = await getCollection("blog");
 let postPage: any = undefined;
 posts.map((post) => {
   if (Astro.params.slug === post.slug) {
-    if (post.data.draft) Astro.redirect("/blog");
+    if (post.data.draft && process.env.NODE_ENV !== "development")
+      Astro.redirect("/blog");
     postPage = post;
   }
 });

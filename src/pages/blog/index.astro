@@ -9,7 +9,7 @@ import me from "../../assets/me.png";
 import BlogPreview from "../../components/BlogPreview.astro";
 
 const posts = (await getCollection("blog"))
-  .filter((post) => !post.data.draft)
+  .filter((post) => process.env.NODE_ENV !== "development" || !post.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const title = `${SITE_TITLE} | Blog`;
