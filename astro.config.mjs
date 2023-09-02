@@ -12,7 +12,4 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), tailwind(), react()],
   output: "server",
   adapter: netlify(),
-  experimental: {
-    assets: true,
-  },
 });
