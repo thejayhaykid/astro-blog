@@ -5,6 +5,7 @@ updatedDate: "Aug 28, 2023"
 description: "How did I get here?"
 heroImage: "/blog-images/tech/2023/journey.jpg"
 category: "Engineering Life"
+draft: true
 ---
 
 # Outline
