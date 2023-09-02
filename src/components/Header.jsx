@@ -43,7 +43,7 @@ export default function Header() {
   return (
     <Disclosure
       as="nav"
-      className="bg-white dark:bg-gray-800 border-b-2 border-gray-800 sticky top-0 z-50 shadow-md dark:shadow-none"
+      className="bg-white dark:bg-gray-800 border-b border-gray-400 dark:border-gray-800 sticky top-0 z-50 shadow-md dark:shadow-none"
     >
       {({ open }) => (
         <>
