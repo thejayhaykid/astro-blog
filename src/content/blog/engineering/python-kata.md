@@ -57,7 +57,7 @@ After establishing that I was going to use pytest, I planned out the rest of wha
 
 The other package in requirements.txt file other than pytest is [Click](https://click.palletsprojects.com/en/7.x/). Click is a very powerful package that makes adding a command line interface (CLI) to your python package very easy. Using decorators and functions, defining a CLI is very easy.
 
-![Red Green Repeat](./blog-images/2023/red-green.jpg)
+<!-- ![Red Green Repeat](./blog-images/2023/red-green.jpg) -->
 
 ## I have never done TDD before
 
