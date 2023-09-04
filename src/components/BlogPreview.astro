@@ -9,7 +9,7 @@ const { post } = Astro.props;
 <article class="relative isolate flex flex-col gap-8 lg:flex-row max-w-[95vw]">
   <a href={`/blog/${post.slug}/`}>
     <div
-      class="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0"
+      class="relative w-screen aspect-[16/9] sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0"
     >
       <img
         src={post.data.heroImage}
@@ -25,7 +25,7 @@ const { post } = Astro.props;
     </div>
   </a>
   <div>
-    <div class="flex items-center gap-x-4 text-xs">
+    <div class="flex items-center gap-x-4 text-xs pl-2 md:pl-0">
       <time datetime="2020-03-16" class="text-gray-500">
         <FormattedDate date={post.data.pubDate} />
       </time>
@@ -42,7 +42,7 @@ const { post } = Astro.props;
     </div>
     <div class="group relative max-w-xl">
       <h3
-        class="mt-3 text-lg font-semibold leading-6 text-gray-900 dark:text-gray-50 group-hover:text-gray-600 dark:group-hover:text-gray-300"
+        class="mt-3 pl-2 md:pl-0 text-lg font-semibold leading-6 text-gray-900 dark:text-gray-50 group-hover:text-gray-600 dark:group-hover:text-gray-300"
       >
         <a href={`/blog/${post.slug}/`}>
           <span class="absolute inset-0"></span>
@@ -51,12 +51,14 @@ const { post } = Astro.props;
       </h3>
       {
         post.data.tags && (
-          <span class="text-xs text-gray-500 dark:text-gray-400">
+          <span class="text-xs pl-2 md:pl-0 text-gray-500 dark:text-gray-400">
             {post.data.tags.join(", ")}
           </span>
         )
       }
-      <p class="mt-5 text-sm leading-6 text-gray-600 dark:text-gray-300">
+      <p
+        class="mt-5 pl-2 md:pl-0 text-sm leading-6 text-gray-600 dark:text-gray-300"
+      >
         {post.data.description}
       </p>
       <div
@@ -66,7 +68,7 @@ const { post } = Astro.props;
           <img
             src={me.src}
             alt="Author"
-            class="h-10 w-10 rounded-full bg-gray-50 dark:bg-gray-900 object-cover"
+            class="h-10 w-10 ml-2 md:ml-0 rounded-full bg-gray-50 dark:bg-gray-900 object-cover"
           />
           <div class="text-sm leading-6">
             <p class="font-semibold text-gray-900 dark:text-gray-50">
