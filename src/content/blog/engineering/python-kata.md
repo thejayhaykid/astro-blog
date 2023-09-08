@@ -1,7 +1,7 @@
 ---
 title: "Babysitter Kata"
 pubDate: "Nov 26 2019"
-updatedDate: "Aug 30, 2023"
+updatedDate: "Sep 8, 2023"
 description: "Using test driven development to solve a problem."
 heroImage: "/blog-images/tech/2020/03/kata-cover-image.jpg"
 category: "Programming Exercise"
@@ -69,7 +69,7 @@ _From Wikipedia:_
 
 > Test-driven development (TDD) is a software development process relying on software requirements being converted to test cases before software is fully developed, and tracking all software development by repeatedly testing the software against all test cases. This is as opposed to software being developed first and test cases created later.
 
-"Red, Green, Repeat"
+> Red, Green, Repeat
 
 Well, strict TDD is very restricting and slows down my process a lot. Which is a good structure when you are starting out. And looking at the time on this, I was pretty early in my career at the time. But when doing TDD, it is difficult to ensure that
 
@@ -77,14 +77,77 @@ Well, strict TDD is very restricting and slows down my process a lot. Which is a
 
 ## Where to start
 
+Following TDD as required for this exercise, you need to start with a test. My first ["real commit"](https://github.com/thejayhaykid/babysitter-kata/commit/6b410171369ecb2581de8b269521677928c2694a) is really just project setup which will vary depending on your tech stack. You can see mine is setting up a Python project with `virtualenv` to manage dependencies.
+
+My first commit beyond setup is a [failing test only](https://github.com/thejayhaykid/babysitter-kata/commit/3c73d70ea74c15f297537aecfb8dae1e5b68bbc3).
+
+> Red, Green, Repeat
+
+It's a simple unit test that is guranteed to fail because it is trying to initialize a class that doesn't exist yet.
+
+```python
+from babysitter import Sitter
+
+def test_event_occurred():
+    """ First test simulating a babysitting event occurred. """
+    expected = "Successful event."
+    e1 = Sitter()
+    assert expected == e1.babysit()
+```
+
+Now we need that test to pass. Looking at the test, we need to be able to initialize a class that has a defined function call babysit that returns a string of "Successful event." Easy enough, let's [add that in](https://github.com/thejayhaykid/babysitter-kata/commit/0a6e279edda8e4af54c68395c9bc7bd9cbf6beab):
+
+```python
+""" This is the babysitter class """
+
+class Sitter:
+    def __init__(self):
+        self.name = "test"
+
+    def babysit(self):
+        return "Successful event."
+```
+
+We've gotten through the difficult task of starting. But we still have a lot to get through to meet the requirements.
+
 ---
 
 ## Gaining Momentum
+
+I'm not going to go through every single commit, you can look at the [commit history](https://github.com/thejayhaykid/babysitter-kata/commits/master) if you would like to do that. But that process or pattern needs to be repeated as you incrementally create a test for every requirement and then update the code so that test passes. The advantage of TDD, is that you should not have to worry about if a change you made caused you to no longer pass a previously solved requirement. If that's the case then a previous test will start failing.
+
+This gives you built-in regression testing, which is an amazing thing to have as you continue to develop. I have worked on many enterprise level applications in my career, and in my experience it is far more common to not have close to enough automated testing compared to the other way around. A robust, automated test suite is a luxury that I never take for granted.
+
+The important thing to follow as you are working this out is to continually revisit the requirements and make sure that every one is covered by at least one test.
+
+Finding edge cases requires critical thought on the problem at hand and figuring out what can throw that out of the happy path. Reading the requirements above, the prompt already points out some edge cases for this particular problem that will need testing to ensure they are covered.
+
+For example, this requirement
+
+> should be prevented from mistakes when entering times (e.g. end time before start time, or outside of allowable work hours)
+
+Points out that you need to make sure there is a test trying to make the end time before the start time and makes sure it gets an expected error state rather than allowing the user to continue.
 
 ---
 
 ## Review and Submit
 
----
+So you have created your complete and robust test suite, and they all pass because you crafted the class that, in this case, perfectly calculates what a babysitter should charge parents after sitting for them. Now what?
 
-## Conclusion
+You will want to start your review by going through the requirements one by one and lining each one up to a specific test. Again, returning to the requirement from the previous section, I have the following test:
+
+```python
+def test_end_time_earlier_than_start_time():
+    """ Ensuring that you cannot complete an event before it is started. """
+    expected = "ERROR: Cannot end before start"
+    e1 = Sitter("1900", "1700")
+    assert expected == e1.babysit()
+```
+
+Continue for each requirement making sure you really are in the "Review" phase.
+
+Next, double check your spelling. Just trust me on this. If you are doing an exercise like this as a step in a job interview process, you do not want something as simple as a few simple spelling errors to hold back your evaluation. In this day and age you can even get an AI assistant to check your spelling for you as well.
+
+Finally, if you have the option of having another software developer review it you should take advantage of that. At the time in my career that I completed this exercise I did not have that luxury. Looking at the code nearly 5 years later, I wish I did. Or, if you can be that person for someone else, try to see if you can do that for them. Having a second set of eyes look at something is always helpful for finding small mistakes that your own eyes glaze over because you have been staring at this code for so long.
+
+And that's it, if you are turning this in to someone, send it in. Do it. Don't wait anymore, there's no reason to. Just do it. Go. Now.
