@@ -10,6 +10,6 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: "https://www.jakehayes.net",
   integrations: [mdx(), sitemap(), tailwind(), react()],
-  output: "server",
+  output: "hybrid",
   adapter: netlify(),
 });
