@@ -3,10 +3,13 @@ import HeaderLink from "./HeaderLink.astro";
 ---
 
 <header
-  class="mx-auto flex flex-row flex-wrap justify-between gap-12 items-center p-4 md:py-0 text-lg text-gray-900 w-screen pr-4 border-b drop-shadow-md dark:bg-gray-900 dark:text-gray-50 dark:border-b-gray-700"
+  class="mx-auto flex flex-row flex-wrap justify-between gap-12 items-center p-4 md:py-0 text-lg text-gray-900 w-screen pr-4 border-b dark:bg-gray-900 dark:text-gray-50 dark:border-b-gray-700"
 >
   <a href="/"
-    ><img src="/JH.png" class="text-2xl pl-4 font-bold h-20 block" /></a
+    ><img
+      src="/JH.png"
+      class="object-contain text-2xl w-12 h-12 pl-4 font-bold block"
+    /></a
   >
   <button id="hamburger" class="md:hidden pr-12 block"
     ><svg
