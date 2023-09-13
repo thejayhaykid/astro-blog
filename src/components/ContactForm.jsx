@@ -23,7 +23,7 @@ export default function ContactForm() {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", name, email, subject, message }),
     })
-      .then(() => alert("Thank you!"))
+      .then(() => window.location.replace("/success"))
       .catch((error) => alert(error));
   };
 
