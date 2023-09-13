@@ -4,7 +4,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.astro";
 import ContactForm from "../components/ContactForm.astro";
-export const prerender = true;
 
 const title = `${SITE_TITLE} | Contact`;
 ---
@@ -14,7 +13,7 @@ const title = `${SITE_TITLE} | Contact`;
     <BaseHead title={title} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <Header client:load />
+    <Header client:only />
     <div
       class="w-screen dark:bg-gray-900 dark:text-gray-50 flex flex-col align-center"
     >

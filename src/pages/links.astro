@@ -94,7 +94,7 @@ const sellingLinks: Link[] = [
     <BaseHead title={title} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <Header client:load />
+    <Header client:only />
     <div
       class="flex flex-col w-screen overflow-y-auto items-center min-h-[var(--screen-height)] dark:bg-gray-900 dark:text-gray-200 pt-8"
     >

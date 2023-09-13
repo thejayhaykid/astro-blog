@@ -26,7 +26,7 @@ const title = `${postPage.data.title} | JH`;
 ---
 
 <BaseHead title={title} description={SITE_DESCRIPTION} />
-<Header client:load />
+<Header client:only />
 <BlogPost {...postPage.data}>
   <Content />
 </BlogPost>
