@@ -49,13 +49,13 @@ draft: false
 
 ## Initial Thoughts
 
-For this exercise I was given the option to select my own language from a list, I decided to go with Python as it is one of the languages I am most comfortable with. After spending over a year listening to both the [PythonBytes](https://pythonbytes.fm/) and [Test & Code](https://testandcode.com/) podcasts, I had heard enough from [Brian Okken](https://twitter.com/brianokken) to use [pytest](https://docs.pytest.org/en/latest/) as the "test" part of my test driven development.
+For this exercise I decided to go with Python as it is one of the languages I am most comfortable with. Thanks to the  [PythonBytes](https://pythonbytes.fm/) and [Test & Code](https://testandcode.com/) podcasts, I am using [`pytest`](https://docs.pytest.org/en/latest/) as the testing framework.
 
-Having never used pytest before, I decided to buy [Brian's book](https://pragprog.com/book/bopytest/python-testing-with-pytest) so that I could get a good foundation of how pytest specifically worked. _As a side note, I would recommend pytest if you are working on a python project._ So I spent a couple of hours storming through that book so that I would have some idea of what I was doing.
+Having never used `pytest` before, but [Brian Okken's book](https://pragprog.com/book/bopytest/python-testing-with-pytest) helped me get started. _As a side note, I would recommend_ `_pytest_` _if you are working on a python project._ So I spent a couple of hours storming through that book so that I would have some idea of what I was doing.
 
-After establishing that I was going to use pytest, I planned out the rest of what I was going to use for this project. To make it easier to develop on multiple machines I decided to use virtualenv. This way to use this package on another machine, all I would need to do (after using pip to install virtualenv) is install the packages in the requirements.txt file using `pip install -r requirements.txt` and then the package is ready to go.
+After establishing that I was going to use `pytest`, I planned out the rest of what I was going to use for this project. To make it easier to develop on different machines I decided to use `virtualenv`. All I would need to do is `pip install -r requirements.txt` and then you are ready to go anywhere else.
 
-The other package in requirements.txt file other than pytest is [Click](https://click.palletsprojects.com/en/7.x/). Click is a very powerful package that makes adding a command line interface (CLI) to your python package very easy. Using decorators and functions, defining a CLI is very easy.
+The other package in `requirements.txt` file other than `pytest` is [Click](https://click.palletsprojects.com/en/7.x/). Click is a powerful package that makes adding a command line interface (CLI) to Python very easy. Using decorators and functions, defining a CLI is simple.
 
 ![Red Green Repeat](/blog-images/tech/2023/red-green.jpg)
 
@@ -69,21 +69,19 @@ _From Wikipedia:_
 
 > Test-driven development (TDD) is a software development process relying on software requirements being converted to test cases before software is fully developed, and tracking all software development by repeatedly testing the software against all test cases. This is as opposed to software being developed first and test cases created later.
 
-> Red, Green, Repeat
+_"Red, Green, Repeat"_
 
-Well, strict TDD is very restricting and slows down my process a lot. Which is a good structure when you are starting out. And looking at the time on this, I was pretty early in my career at the time. But when doing TDD, it is difficult to ensure that
-
----
+Strict TDD is very restricting and slows down my process a lot. Which is a good structure when you are starting out. And looking at the time on this, I was pretty early in my career at the time. But when doing TDD, it is difficult to ensure that
 
 ## Where to start
 
-Following TDD as required for this exercise, you need to start with a test. My first ["real commit"](https://github.com/thejayhaykid/babysitter-kata/commit/6b410171369ecb2581de8b269521677928c2694a) is really just project setup which will vary depending on your tech stack. You can see mine is setting up a Python project with `virtualenv` to manage dependencies.
+Following TDD as required for this exercise, you need to start with a test. My first ["real commit"](https://github.com/thejayhaykid/babysitter-kata/commit/6b410171369ecb2581de8b269521677928c2694a) is project setup which will vary depending on your tech stack. You can see mine is setting up a Python project with `virtualenv` to manage dependencies.
 
 My first commit beyond setup is a [failing test only](https://github.com/thejayhaykid/babysitter-kata/commit/3c73d70ea74c15f297537aecfb8dae1e5b68bbc3).
 
 > Red, Green, Repeat
 
-It's a simple unit test that is guranteed to fail because it is trying to initialize a class that doesn't exist yet.
+This fails due to initializing a class that doesn't exist yet.
 
 ```python
 from babysitter import Sitter
@@ -95,7 +93,7 @@ def test_event_occurred():
     assert expected == e1.babysit()
 ```
 
-Now we need that test to pass. Looking at the test, we need to be able to initialize a class that has a defined function call babysit that returns a string of "Successful event." Easy enough, let's [add that in](https://github.com/thejayhaykid/babysitter-kata/commit/0a6e279edda8e4af54c68395c9bc7bd9cbf6beab):
+Now I need that test to pass. I a class that has a defined function call babysit and returns a string of "Successful event." Easy enough, let's [add that in](https://github.com/thejayhaykid/babysitter-kata/commit/0a6e279edda8e4af54c68395c9bc7bd9cbf6beab):
 
 ```python
 """ This is the babysitter class """
@@ -114,11 +112,11 @@ We've gotten through the difficult task of starting. But we still have a lot to 
 
 ## Gaining Momentum
 
-I'm not going to go through every single commit, you can look at the [commit history](https://github.com/thejayhaykid/babysitter-kata/commits/master) if you would like to do that. But that process or pattern needs to be repeated as you incrementally create a test for every requirement and then update the code so that test passes. The advantage of TDD, is that you should not have to worry about if a change you made caused you to no longer pass a previously solved requirement. If that's the case then a previous test will start failing.
+I'm not going to go through every single commit, you can look at the [commit history](https://github.com/thejayhaykid/babysitter-kata/commits/master) if you would like to do that. But that pattern needs to repeat as you create a test for every requirement and then update the code so that test passes. The advantage of TDD, is that you should not have to worry about if a change you made caused you to no longer pass a solved requirement. If that's the case then previous tests will start failing.
 
-This gives you built-in regression testing, which is an amazing thing to have as you continue to develop. I have worked on many enterprise level applications in my career, and in my experience it is far more common to not have close to enough automated testing compared to the other way around. A robust, automated test suite is a luxury that I never take for granted.
+This gives you built-in regression testing, which is an amazing thing to have as you continue to develop. In my experience it is common to not have enough automated testing compared to the other way around. A robust, automated test suite is a luxury that I never take for granted.
 
-The important thing to follow as you are working this out is to continually revisit the requirements and make sure that every one is covered by at least one test.
+The important thing to follow as you are working this out is to revisit the requirements and make sure that every one is covered by at least one test.
 
 Finding edge cases requires critical thought on the problem at hand and figuring out what can throw that out of the happy path. Reading the requirements above, the prompt already points out some edge cases for this particular problem that will need testing to ensure they are covered.
 
