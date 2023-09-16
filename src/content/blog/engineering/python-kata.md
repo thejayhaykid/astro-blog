@@ -1,5 +1,5 @@
 ---
-title: "Babysitter Kata"
+title: "My Process on a Coding Challenge"
 pubDate: "Nov 26 2019"
 updatedDate: "Sep 8, 2023"
 description: "Using test driven development to solve a problem."
@@ -112,27 +112,25 @@ We've gotten through the difficult task of starting. But we still have a lot to 
 
 ## Gaining Momentum
 
-I'm not going to go through every single commit, you can look at the [commit history](https://github.com/thejayhaykid/babysitter-kata/commits/master) if you would like to do that. But that pattern needs to repeat as you create a test for every requirement and then update the code so that test passes. The advantage of TDD, is that you should not have to worry about if a change you made caused you to no longer pass a solved requirement. If that's the case then previous tests will start failing.
+I'm not going to go through every single commit, you can look at the [commit history](https://github.com/thejayhaykid/babysitter-kata/commits/master) if you would like to do that. ollow that pattern as you create a test for every requirement and then update the code so that test passes. With TDD, you should not have to worry about a change you made causing you to no longer pass a handled requirement. If that's the case then previous tests will start failing. This gives you built-in regression testing. In my experience it is common to not have enough automated testing compared to the other way around. A robust, automated test suite is a luxury that I never take for granted.
 
-This gives you built-in regression testing, which is an amazing thing to have as you continue to develop. In my experience it is common to not have enough automated testing compared to the other way around. A robust, automated test suite is a luxury that I never take for granted.
+Make a checklist of the requirements and make sure that every one is covered by at least one test.
 
-The important thing to follow as you are working this out is to revisit the requirements and make sure that every one is covered by at least one test.
-
-Finding edge cases requires critical thought on the problem at hand and figuring out what can throw that out of the happy path. Reading the requirements above, the prompt already points out some edge cases for this particular problem that will need testing to ensure they are covered.
+Find edge cases, think on the problem at hand and figuring out what can throw that out of the happy path. In the requirements above, they already point out a few edge cases.
 
 For example, this requirement
 
 > should be prevented from mistakes when entering times (e.g. end time before start time, or outside of allowable work hours)
 
-Points out that you need to make sure there is a test trying to make the end time before the start time and makes sure it gets an expected error state rather than allowing the user to continue.
+So make a test that ensures that passes.
 
 ---
 
 ## Review and Submit
 
-So you have created your complete and robust test suite, and they all pass because you crafted the class that, in this case, perfectly calculates what a babysitter should charge parents after sitting for them. Now what?
+You have now created your complete and robust test suite. All tests pass. Your class calculates what a babysitter should charge parents after sitting for them. Now what?
 
-You will want to start your review by going through the requirements one by one and lining each one up to a specific test. Again, returning to the requirement from the previous section, I have the following test:
+It's time to review. Go through the requirements one by one and line up each one up to a specific test. Return to the requirement from the previous section, I have the following test:
 
 ```python
 def test_end_time_earlier_than_start_time():
@@ -144,8 +142,8 @@ def test_end_time_earlier_than_start_time():
 
 Continue for each requirement making sure you really are in the "Review" phase.
 
-Next, double check your spelling. Just trust me on this. If you are doing an exercise like this as a step in a job interview process, you do not want something as simple as a few simple spelling errors to hold back your evaluation. In this day and age you can even get an AI assistant to check your spelling for you as well.
+Next, double check your spelling. Trust me on this. If you are doing this as a step in a job interview process, you do not want spelling errors to hold back your evaluation. You can even get an AI assistant to check your spelling for you as well.
 
-Finally, if you have the option of having another software developer review it you should take advantage of that. At the time in my career that I completed this exercise I did not have that luxury. Looking at the code nearly 5 years later, I wish I did. Or, if you can be that person for someone else, try to see if you can do that for them. Having a second set of eyes look at something is always helpful for finding small mistakes that your own eyes glaze over because you have been staring at this code for so long.
+Finally, have another software developer review it if you can. At the time in my career that I completed this exercise I did not have that luxury. Looking at the code nearly 5 years later, I wish I did. Or, if you can be that person for someone else, try to see if you can do that for them. A second set of eyes is always helpful. Your own eyes glaze over mistakes.
 
-And that's it, if you are turning this in to someone, send it in. Do it. Don't wait anymore, there's no reason to. Just do it. Go. Now.
+And that is it, mark it as done, send it to whoever needs it, you're good from there.
