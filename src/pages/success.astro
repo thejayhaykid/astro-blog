@@ -1,6 +1,7 @@
 ---
+export const prerender = true;
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.jsx";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
@@ -14,7 +15,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     />
   </head>
   <body>
-    <Header client:load />
+    <Header />
     <div class="bg-white dark:bg-gray-900 min-h-[var(--screen-height)]">
       <main
         class="grid min-h-full place-items-center bg-white dark:bg-gray-900 px-6 py-24 sm:py-32 lg:px-8"

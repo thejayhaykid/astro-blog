@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.jsx";
 import Footer from "../../components/Footer.astro";
@@ -9,10 +10,7 @@ import me from "../../assets/me.png";
 import BlogPreview from "../../components/BlogPreview.astro";
 
 const posts = (await getCollection("blog"))
-  .filter((post) => {
-    if (process.env.NODE_ENV !== "development") return !post.data.draft;
-    else return true;
-  })
+  .filter((post) => process.env.NODE_ENV === "development" || !post.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const title = `${SITE_TITLE} | Blog`;
@@ -43,10 +41,10 @@ const title = `${SITE_TITLE} | Blog`;
   <body>
     <Header client:load />
     <main
-      class="flex flex-col gap-4 align-middle items-center justify-center w-screen dark:bg-gray-900 dark:text-gray-50 min-h-[var(--screen-height)]"
+      class="flex flex-col gap-4 align-middle items-center justify-center w-screen max-w-[95vw] dark:bg-gray-900 dark:text-gray-50 min-h-[var(--screen-height)]"
     >
       <div class="bg-white dark:bg-gray-900 py-4 sm:py-4">
-        <div class="w-full px-2 lg:px-8">
+        <div class="w-full lg:px-8">
           <h2
             class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl"
           >
