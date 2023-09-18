@@ -35,12 +35,12 @@ const { title, description, pubDate, updatedDate, heroImage, tags, category } =
         )
       }
       <article
-        class="prose dark:prose-invert flex flex-col prose-base p-4 md:p-0"
+        class="prose dark:prose-invert flex flex-col prose-base p-4 pr-0 mr-0 md:p-0 max-w-[100vw]"
       >
-        <h1 class="text-4xl mt-2 max-w-[100vw] flex overflow-x-clip">
+        <h1 class="text-3xl mt-2 max-w-[100vw] flex overflow-x-clip px-1">
           {title}
         </h1>
-        <div class="flex items-center gap-x-6">
+        <div class="flex items-center gap-x-6 max-w-[100vw]">
           <img
             class="h-28 w-28 rounded-full object-cover"
             src={me.src}
@@ -95,7 +95,7 @@ const { title, description, pubDate, updatedDate, heroImage, tags, category } =
             </ul>
           )
         }
-        <hr class="my-4" />
+        <hr class="my-4 max-w-[100vw] px-4" />
         <slot />
       </article>
     </main>
