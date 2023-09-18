@@ -19,7 +19,9 @@ const { title, description, pubDate, updatedDate, heroImage, tags, category } =
   </head>
 
   <body>
-    <main class="dark:bg-gray-900 dark:text-gray-50 flex flex-col items-center">
+    <main
+      class="dark:bg-gray-900 dark:text-gray-50 flex flex-col items-center max-w-[100vw]"
+    >
       {
         heroImage && (
           <img
@@ -30,9 +32,11 @@ const { title, description, pubDate, updatedDate, heroImage, tags, category } =
         )
       }
       <article
-        class="prose dark:prose-invert prose-code:bg-slate-200 prose-code:text-slate-800 dark:prose-code:bg-gray-800 dark:prose-code:text-gray-100 flex flex-col prose-base p-4 md:p-0"
+        class="prose dark:prose-invert prose-code:bg-slate-200 prose-code:text-slate-800 dark:prose-code:bg-gray-800 dark:prose-code:text-gray-100 flex flex-col prose-base p-4 md:p-0 max-w-[100vw]"
       >
-        <h1 class="text-4xl mt-2">{title}</h1>
+        <h1 class="text-4xl mt-2 max-w-[100vw] flex overflow-x-clip">
+          {title}
+        </h1>
         <div class="flex items-center gap-x-6">
           <img
             class="h-28 w-28 rounded-full object-cover"
