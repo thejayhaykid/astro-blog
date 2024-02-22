@@ -5,7 +5,7 @@ updatedDate: "Jun 20 2023"
 
 # About Me
 
-Hello there! I’m Jake Hayes, a lead software engineer with nearly 7 years of experience in the industry. From an early age, I’ve had a natural affinity for computers and technology, which fueled my passion for problem-solving.
+Hello there! I’m Jake Hayes, a lead software engineer with 7 years of experience in the industry. From an early age, I’ve had a natural affinity for computers and technology, which fueled my passion for problem-solving.
 
 As a full stack developer, my expertise lies in React and frontend development. I’ve had the opportunity to lead total app rewrites, transforming outdated systems into modern React frontends, combined with various backend technologies. Additionally, I’ve gained valuable experience through my consulting work.
 
