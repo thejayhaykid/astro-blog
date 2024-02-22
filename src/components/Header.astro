@@ -1,49 +1,99 @@
 ---
+import { map } from "astro/zod";
+import Links from "../pages/links.astro";
 import HeaderLink from "./HeaderLink.astro";
+
+const menuLinks = [
+  { href: "/", text: "Home" },
+  { href: "/blog", text: "Blog" },
+  { href: "/about", text: "About" },
+  { href: "/resume", text: "Resume" },
+  { href: "/contact", text: "Contact" },
+  { href: "/links", text: "Links" },
+];
 ---
 
-<header
-  class="mx-auto flex flex-row flex-wrap justify-between gap-12 items-center p-4 md:py-0 text-lg text-gray-900 w-screen pr-4 border-b dark:bg-gray-900 dark:text-gray-50 dark:border-b-gray-700"
->
-  <a href="/"
-    ><img
-      src="/JH.png"
-      class="object-contain text-2xl w-12 h-12 pl-4 font-bold block"
-    /></a
+<div class="flex flex-col">
+  <header
+    class="flex items-center justify-between p-4 transition-all duration-300 bg-white dark:bg-gray-900"
   >
-  <button id="hamburger" class="md:hidden pr-12 block"
-    ><svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="1.5"
-      stroke="currentColor"
-      class="w-6 h-6 cursor-pointer md:hidden block"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
-    </svg>
-  </button>
+    <a href="/" class="flex pl-2 lg:pl-8 items-center">
+      <img class="w-12 h-12 mr-4" src="/JH.png" alt="Your Logo" />
+    </a>
+
+    <nav class="hidden lg:flex items-center space-x-6">
+      <ul class="flex space-x-6 dark:text-white text-gray-900">
+        {
+          menuLinks.map((link) => (
+            <HeaderLink href={link.href}>{link.text}</HeaderLink>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <button id="hamburger" class="lg:hidden pr-2 block"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6 cursor-pointer md:hidden block"
+        id="lines"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6 cursor-pointer md:hidden hidden"
+        id="close"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6.75 6.75l10.5 10.5m0-10.5L6.75 17.25"></path>
+      </svg>
+    </button>
+  </header>
   <nav
-    class="hidden w-full md:flex md:items-start md:w-auto md:pr-4 divide-y md:divide-y-0 transition-[display] ease-in-out duration-100"
+    id="mobile-nav"
+    class="bg-white dark:bg-gray-900 dark:text-gray-200 p-4 z-10 hidden transition-all duration-300"
   >
-    <HeaderLink href="/" class="hover:text-gray-500">Home</HeaderLink>
-    <HeaderLink href="/blog" class="hover:text-gray-500">Blog</HeaderLink>
-    <HeaderLink href="/about" class="hover:text-gray-500">About</HeaderLink>
-    <HeaderLink href="/resume" class="hover:text-gray-500">Resume</HeaderLink>
-    <HeaderLink href="/contact" class="hover:text-gray-500">Contact</HeaderLink>
-    <HeaderLink href="/links" class="hover:text-gray-500">Links</HeaderLink>
+    <ul class="flex flex-col space-y-4 dark:text-white dark:text-gray-900">
+      {
+        menuLinks.map((link) => (
+          <li class="w-full pb-2 border-b border-gray-900 dark:border-gray-200 transition-all duration-300">
+            <a
+              href={link.href}
+              class="hover:text-gray-600 dark:hover:text-gray-200"
+            >
+              {link.text}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </nav>
   <script>
     const showMenu = () => {
-      const menu = document.querySelector("nav");
+      const menu = document.getElementById("mobile-nav");
       menu?.classList.toggle("hidden");
       menu?.classList.toggle("flex");
       menu?.classList.toggle("flex-col");
       menu?.classList.toggle("align-middle");
+
+      const hamburger = document.getElementById("lines");
+      const close = document.getElementById("close");
+      hamburger?.classList.toggle("hidden");
+      close?.classList.toggle("hidden");
     };
     document.querySelector("#hamburger")?.addEventListener("click", showMenu);
   </script>
-</header>
+</div>

@@ -74,6 +74,12 @@ updatedDate: "May 27 2023"
 
 # SIDE PROJECTS
 
+## [Single-SPA Maintainer](https://single-spa.js.org)
+
+- Active in dedicated Slack server for the Single-SPA package
+- Attend monthly maintainer meetings to help align work and get the core team working together
+- Create and review pull requests related to issues brought up by the community
+
 ## [Stashtag.app](https://www.stashtag.app/)
 
 - Side project completed using [React](https://reactjs.org/) and [Chakra UI](https://chakra-ui.com/)
