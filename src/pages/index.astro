@@ -1,6 +1,6 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.jsx";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
@@ -17,7 +17,7 @@ import cj from "../assets/home/cj.png";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <Header client:load />
+    <Header />
     <div class="bg-white dark:bg-gray-900 min-h-[var(--screen-height)]">
       <main>
         <div

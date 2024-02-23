@@ -2,7 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import type { Link } from "../types/Link.types";
-import Header from "../components/Header.jsx";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import LinkGroup from "../components/LinkGroup.astro";
 
@@ -94,7 +94,7 @@ const sellingLinks: Link[] = [
     <BaseHead title={title} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <Header client:load />
+    <Header />
     <div
       class="flex flex-col w-screen overflow-y-auto items-center min-h-[var(--screen-height)] dark:bg-gray-900 dark:text-gray-200 pt-8"
     >

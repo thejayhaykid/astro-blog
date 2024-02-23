@@ -1,7 +1,7 @@
 ---
-import Layout from "../layouts/BlogPost.astro";
+// import Layout from "../layouts/BlogPost.astro";
 import { Content } from "../content/general/about.md";
-import Header from "../components/Header.jsx";
+import Header from "../components/Header.astro";
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
@@ -13,7 +13,7 @@ import golf from "../assets/golf.png";
 <head>
   <BaseHead title={title} description={SITE_DESCRIPTION} />
 </head>
-<Header client:load />
+<Header />
 <div
   class="min-h-[var(--screen-height)] dark:bg-gray-900 dark:text-gray-50 pt-6 flex flex-row justify-center"
 >
