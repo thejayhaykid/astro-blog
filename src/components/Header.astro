@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import HeaderLink from "./HeaderLink.astro";
+import JH from "../assets/JH.png";
 
 const menuLinks = [
   { href: "/", text: "Home" },
@@ -16,7 +18,7 @@ const menuLinks = [
     class="flex items-center justify-between p-4 transition-all duration-300 bg-white dark:bg-gray-900"
   >
     <a href="/" class="flex pl-2 lg:pl-8 items-center">
-      <img class="w-12 h-12 mr-4" src="/JH.png" alt="Your Logo" />
+      <Image class="w-12 h-12 mr-4" src={JH} alt="Icon" />
     </a>
 
     <nav class="hidden lg:flex items-center space-x-6">
