@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BlogPost from "../../layouts/BlogPost.astro";
 import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
 
 import { SITE_DESCRIPTION } from "../../consts";
 
@@ -29,3 +30,4 @@ const title = `${postPage.data.title} | JH`;
 <BlogPost {...postPage.data}>
   <Content />
 </BlogPost>
+<Footer />

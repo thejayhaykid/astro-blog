@@ -15,85 +15,80 @@ const { title, description, pubDate, updatedDate, heroImage, tags, category } =
   Astro.props;
 ---
 
-<html lang="en">
-  <head>
-    <BaseHead title={title} description={description} />
-  </head>
-
-  <body>
-    <main
-      class="dark:bg-gray-900 dark:text-gray-50 flex flex-col items-center max-w-[100vw]"
+<main
+  class="dark:bg-gray-900 dark:text-gray-50 flex flex-col items-center max-w-[100vw]"
+>
+  {
+    heroImage && (
+      <img
+        class="object-cover border-b-2 shadow-md dark:shadow-sm w-screen max-h-96 mb-8"
+        src={heroImage}
+        alt={title}
+      />
+    )
+  }
+  <div
+    class="flex flex-col p-4 pr-0 mr-0 md:p-0 max-w-prose w-full md:w-3/4 lg:w-1/2 xl:w-1/3ç"
+  >
+    <h1
+      class="text-3xl font-semibold mt-2 mb-6 max-w-[100vw] flex overflow-x-clip px-1"
     >
-      {
-        heroImage && (
-          <img
-            class="object-cover border-b-2 shadow-md dark:shadow-sm w-screen max-h-96 mb-8"
-            src={heroImage}
-            alt={title}
-          />
-        )
-      }
-      <article
-        class="prose dark:prose-invert flex flex-col prose-base p-4 pr-0 mr-0 md:p-0 max-w-[100vw]"
-      >
-        <h1 class="text-3xl mt-2 max-w-[100vw] flex overflow-x-clip px-1">
-          {title}
-        </h1>
-        <div class="flex items-center gap-x-6 max-w-[100vw]">
-          <Image class="h-28 w-28 rounded-full object-cover" src={me} alt="" />
-          <div>
-            <h3
-              class="text-base font-semibold leading-7 tracking-tight text-gray-900"
-            >
-              Jake Hayes
-            </h3>
-            <p class="text-sm font-semibold leading-6 text-indigo-600 -mt-2">
-              {JOB_TITLE}
-            </p>
-            <div class="-mt-6">
-              <FormattedDate date={pubDate} />
-            </div>
-            {
-              updatedDate && (
-                <div class="italic -mt-2">
-                  Last updated on <FormattedDate date={updatedDate} />
-                </div>
-              )
-            }
-          </div>
+      {title}
+    </h1>
+    <div class="flex items-center gap-x-6 max-w-[100vw]">
+      <Image class="h-28 w-28 rounded-full object-cover" src={me} alt="" />
+      <div>
+        <h3
+          class="text-base font-semibold leading-7 tracking-tight text-gray-900"
+        >
+          Jake Hayes
+        </h3>
+        <p class="text-sm font-semibold leading-6 text-indigo-600 mt-2">
+          {JOB_TITLE}
+        </p>
+        <div class="mt-6">
+          <FormattedDate date={pubDate} />
         </div>
         {
-          category && (
-            <h6>
+          updatedDate && (
+            <div class="italic mt-2">
+              Last updated on <FormattedDate date={updatedDate} />
+            </div>
+          )
+        }
+      </div>
+    </div>
+    {
+      category && (
+        <h6 class="mt-6">
+          <a
+            class="text-sm font-semibold leading-6 text-indigo-600 no-underline hover:underline"
+            href={`/tag/${String(category)}/`}
+          >
+            {category}
+          </a>
+        </h6>
+      )
+    }
+    {
+      tags && (
+        <ul class="inline-flex flex-wrap gap-x-2 gap-y-1 list-none pl-0 my-2">
+          {tags.map((tag) => (
+            <li>
               <a
-                class="text-sm font-semibold leading-6 text-indigo-600 no-underline hover:underline"
-                href={`/tag/${String(category)}/`}
+                class="text-sm font-thin text-indigo-600 no-underline hover:underline"
+                href={`/tag/${String(tag)}/`}
               >
-                {category}
+                #{tag}
               </a>
-            </h6>
-          )
-        }
-        {
-          tags && (
-            <ul class="inline-flex flex-wrap gap-x-2 gap-y-1 list-none pl-0 -my-2">
-              {tags.map((tag) => (
-                <li>
-                  <a
-                    class="text-sm font-thin text-indigo-600 no-underline hover:underline"
-                    href={`/tag/${String(tag)}/`}
-                  >
-                    #{tag}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )
-        }
-        <hr class="my-4 max-w-[100vw] px-4" />
-        <slot />
-      </article>
-    </main>
-    <Footer />
-  </body>
-</html>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+    <hr class="my-4 max-w-[100vw] px-4" />
+    <article class="prose dark:prose-invert prose-base w-full">
+      <slot />
+    </article>
+  </div>
+</main>
