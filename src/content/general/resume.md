@@ -100,14 +100,14 @@ updatedDate: "May 27 2023"
 
 - React
 - TypeScript
+- Full Stack Web Development
 - UI/UX Design
 - Docker
 - AWS
-- Python
 - GitHub
-- JavaScript
-- Java with Spring Boot
-- SQL Databases
+- Native Development
+- SwiftUI
+- Flutter
 
 ---
 
