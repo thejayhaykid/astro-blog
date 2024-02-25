@@ -33,9 +33,18 @@ export const getRelatedPosts = async (
     })
   );
 
-  if (relatedPosts.length > 3) {
+  if (relatedPosts.length >= 3) {
     return relatedPosts.slice(0, 3);
   }
+
+  // If there are less than 3 related posts, fill in with any other posts
+  relatedPosts = relatedPosts
+    .concat(
+      posts.filter((p: any) => {
+        return p.data.title !== title && !relatedPosts.includes(p);
+      })
+    )
+    .slice(0, 3);
 
   return relatedPosts;
 };
