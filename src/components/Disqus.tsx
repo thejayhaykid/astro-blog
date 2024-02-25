@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { DiscussionEmbed } from "disqus-react";
 
 const config = {
@@ -14,9 +15,16 @@ const config = {
 };
 
 const Disqus = ({ className, title }: DisqusProps) => {
+  const [openDisqus, setOpenDisqus] = useState(
+    localStorage.getItem("openDisqus") === "true" || false
+  );
   const { disqus } = config;
   disqus.settings.identifier = title;
   disqus.settings.title = title;
+
+  useEffect(() => {
+    localStorage.setItem("openDisqus", openDisqus ? "true" : "false");
+  }, [openDisqus]);
 
   return (
     <div className={className}>
