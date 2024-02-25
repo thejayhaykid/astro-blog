@@ -18,7 +18,7 @@ const { links } = Astro.props;
     links.map((link: Link) => (
       <li class="relative flex justify-between gap-x-6 px-4 py-5 hover:bg-gray-50 dark:hover:bg-gray-800 sm:px-6">
         <div class="flex min-w-0 gap-x-4">
-          <Image
+          <img
             class="h-12 w-12 flex-none rounded-full bg-gray-50 object-scale-down"
             src={link.imageUrl}
             alt={link.primaryHeader}
