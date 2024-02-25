@@ -88,7 +88,7 @@ const { title, description, pubDate, updatedDate, heroImage, tags, category } =
     <hr class="my-4 max-w-[100vw] px-4" />
     <article class="prose dark:prose-invert prose-base w-full">
       <slot />
-      <Disqus client:load title={title} className="mt-20" />
+      <Disqus client:only title={title} className="mt-20" />
     </article>
   </div>
 </main>
