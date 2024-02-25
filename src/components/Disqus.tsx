@@ -15,7 +15,7 @@ const config = {
 };
 
 const Disqus = ({ className, title }: DisqusProps) => {
-  const [openDisqus, setOpenDisqus] = useState(
+  const [openDisqus, setOpenDisqus] = useState<boolean>(
     localStorage.getItem("openDisqus") === "true" || false
   );
   const { disqus } = config;
@@ -29,10 +29,21 @@ const Disqus = ({ className, title }: DisqusProps) => {
   return (
     <div className={className}>
       {disqus.enable && (
-        <DiscussionEmbed
-          shortname={disqus.shortname}
-          config={disqus.settings}
-        />
+        <>
+          {openDisqus ? (
+            <DiscussionEmbed
+              shortname={disqus.shortname}
+              config={disqus.settings}
+            />
+          ) : (
+            <button
+              onClick={() => setOpenDisqus(true)}
+              className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Show Comments
+            </button>
+          )}
+        </>
       )}
     </div>
   );
