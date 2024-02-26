@@ -31,7 +31,7 @@ const menuLinks = [
       </ul>
     </nav>
 
-    <button id="hamburger" class="lg:hidden pr-2 block"
+    <button data-mobile-menu-btn class="lg:hidden pr-2 block"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -81,19 +81,30 @@ const menuLinks = [
       }
     </ul>
   </nav>
-  <script>
-    const showMenu = () => {
-      const menu = document.getElementById("mobile-nav");
-      menu?.classList.toggle("hidden");
-      menu?.classList.toggle("flex");
-      menu?.classList.toggle("flex-col");
-      menu?.classList.toggle("align-middle");
-
-      const hamburger = document.getElementById("lines");
-      const close = document.getElementById("close");
-      hamburger?.classList.toggle("hidden");
-      close?.classList.toggle("hidden");
-    };
-    document.querySelector("#hamburger")?.addEventListener("click", showMenu);
-  </script>
 </div>
+<script>
+  function showMenu(): void {
+    const menu = document.getElementById("mobile-nav");
+    menu?.classList.toggle("hidden");
+    menu?.classList.toggle("flex");
+    menu?.classList.toggle("flex-col");
+
+    const hamburger = document.getElementById("lines");
+    const close = document.getElementById("close");
+    hamburger?.classList.toggle("hidden");
+    close?.classList.toggle("hidden");
+  }
+
+  function addListeners(): void {
+    const menus = document.querySelectorAll("[data-mobile-menu-btn]");
+
+    menus.forEach((menu) =>
+      menu.addEventListener("click", () => {
+        showMenu();
+      })
+    );
+  }
+
+  document.addEventListener("astro:after-swap", addListeners);
+  addListeners();
+</script>
