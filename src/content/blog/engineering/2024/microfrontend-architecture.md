@@ -26,6 +26,7 @@ There are *technically* four options available.
 - [Webpack 5 Federated Modules](https://webpack.js.org/concepts/module-federation/)
 - [Web modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 - [SystemJS](https://github.com/systemjs/systemjs)
+
 However, Single-Spa does use SystemJS under the hood, if you are going to count that as a sub-option. I am partial to Single-Spa as I am \**disclaimer*\* an active maintainer on the project.
 
 ## What are the benefits of implementing it?
