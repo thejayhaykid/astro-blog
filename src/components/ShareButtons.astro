@@ -1,0 +1,35 @@
+---
+import EmailShareButton from "./shareButtons/Email.astro";
+import HackerNewsShareButton from "./shareButtons/HackerNews.astro";
+import RedditShareButton from "./shareButtons/Reddit.astro";
+import TwitterShareButton from "./shareButtons/Twitter.astro";
+import { SITE_TITLE } from "../consts";
+
+const btns = [
+  EmailShareButton,
+  HackerNewsShareButton,
+  RedditShareButton,
+  TwitterShareButton,
+];
+
+const { title, description, url = Astro.request.url } = Astro.props;
+---
+
+<hr class="my-8" />
+<h4 class="text-lg font-bold mb-2">Share this post</h4>
+<div class="my-4 h-8 w-full justify-around flex flex-row flex-nowrap basis-8">
+  <EmailShareButton
+    url={url}
+    title={title}
+    description={description}
+    via={SITE_TITLE}
+  />
+  <HackerNewsShareButton
+    url={url}
+    title={title}
+    description={description}
+    via={SITE_TITLE}
+  />
+  <RedditShareButton url={url} title={title} description={description} />
+  <TwitterShareButton url={url} description={title} via="@thejayhaykid" />
+</div>
