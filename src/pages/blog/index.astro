@@ -9,6 +9,7 @@ import { getCollection } from "astro:content";
 // import me from "../../assets/me.png";
 import BlogPreview from "../../components/BlogPreview.astro";
 
+import { ViewTransitions } from "astro:transitions";
 const posts = (await getCollection("blog"))
   .filter((post) => process.env.NODE_ENV === "development" || !post.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -37,6 +38,7 @@ const title = `${SITE_TITLE} | Blog`;
         color: #8e32dc;
       }
     </style>
+    <ViewTransitions />
   </head>
   <body>
     <Header />

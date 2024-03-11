@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import BlogPost from "../../layouts/BlogPost.astro";
 import BaseHead from "../../components/BaseHead.astro";
+import { ViewTransitions } from "astro:transitions";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 
@@ -26,6 +27,7 @@ const title = `${postPage.data.title} | JH`;
 ---
 
 <BaseHead title={title} description={SITE_DESCRIPTION} />
+<ViewTransitions />
 <Header />
 <BlogPost {...postPage.data}>
   <Content />

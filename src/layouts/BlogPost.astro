@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
-// import { ViewTransitions } from "astro:transitions";
 import Disqus from "../components/Disqus.tsx";
 import RelatedPosts from "../components/RelatedPosts.astro";
 import FormattedDate from "../components/FormattedDate.astro";
@@ -28,6 +27,7 @@ const relatedPosts = await getRelatedPosts(title, category, tags);
         class="object-cover border-b-2 shadow-md dark:shadow-sm w-screen max-h-96 mb-8"
         src={heroImage}
         alt={title}
+        transition:name="hero"
       />
     )
   }
