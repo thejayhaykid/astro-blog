@@ -11,5 +11,6 @@ export default defineConfig({
   site: "https://www.jakehayes.net",
   integrations: [mdx(), sitemap(), tailwind(), react()],
   output: "server",
-  adapter: netlify()
+  adapter: netlify(),
+  prefetch: true,
 });
