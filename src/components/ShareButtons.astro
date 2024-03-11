@@ -5,13 +5,6 @@ import RedditShareButton from "./shareButtons/Reddit.astro";
 import TwitterShareButton from "./shareButtons/Twitter.astro";
 import { SITE_TITLE } from "../consts";
 
-const btns = [
-  EmailShareButton,
-  HackerNewsShareButton,
-  RedditShareButton,
-  TwitterShareButton,
-];
-
 const { title, description, url = Astro.request.url } = Astro.props;
 ---
 
