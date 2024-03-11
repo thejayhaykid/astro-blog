@@ -27,8 +27,7 @@ const relatedPosts = await getRelatedPosts(title, category, tags);
         class="object-cover border-b-2 shadow-md dark:shadow-sm w-screen max-h-96 mb-8"
         src={heroImage}
         alt={title}
-        transition:name="hero"
-        transition:animate="slide"
+        transition:name={heroImage}
       />
     )
   }
