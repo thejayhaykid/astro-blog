@@ -1,5 +1,5 @@
 ---
-title: "To Be An Engineer is to be able to Work in any Tech Stack"
+title: "To Be An Engineer is to be Able to Work in Any Tech Stack"
 pubDate: "Mar 25, 2024"
 description: "We can do this"
 heroImage: "/blog-images/tech/2024/pine.jpg"
