@@ -25,7 +25,7 @@ As of this writing, I have spent half my professional career as a consultant and
 
 When that happens there's only so many things you have time for. You don't have time to whine or whinge or complain about how you don't like something. You master the skill of getting your feet under you and trying to get a passing knowledge of [the most important 20%](https://en.wikipedia.org/wiki/Pareto_principle).
 
-## You get better at this with time ⏲
+## You get better at this with time 🕰️
 
 Most of the highly used, enterprise level software languages are [C based](https://en.wikipedia.org/wiki/C_(programming_language)). That makes picking up a new C based language that much faster for every one. There are common patterns and principles in the world of software that you see across systems and technologies that make it easier to learn new things as you go. Your brain recognizes those and can help you speed up over time.
 
