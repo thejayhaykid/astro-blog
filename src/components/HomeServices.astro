@@ -1,0 +1,137 @@
+---
+import type { Service } from "../types/Services.types";
+const services: Service[] = [
+  {
+    title: "Small Business",
+    description: "Help you update your online presence.",
+    price: 15,
+    frequency: "month",
+    features: ["5 products", "Up to 1,000 subscribers", "Basic analytics"],
+    url: "services/smb",
+    primary: false,
+  },
+  {
+    title: "Golf",
+    description: "The essentials to provide your best work for clients.",
+    price: 30,
+    frequency: "month",
+    features: [
+      "5 products",
+      "Up to 1,000 subscribers",
+      "Basic analytics",
+      "48-hour support response time",
+    ],
+    url: "services/golf",
+    primary: true,
+  },
+  {
+    title: "Writing",
+    description: "A plan that scales with your rapidly growing business.",
+    price: 60,
+    frequency: "month",
+    features: [
+      "25 products",
+      "Up to 10,000 subscribers",
+      "Advanced analytics",
+      "24-hour support response time",
+      "Marketing automations",
+    ],
+    url: "services/writing",
+    primary: false,
+  },
+];
+---
+
+<div
+  class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-50 py-24 sm:py-32"
+>
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-4xl text-center">
+      <h2 class="text-base font-semibold leading-7 text-indigo-600">
+        Services
+      </h2>
+      <p
+        class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl"
+      >
+        What do I do for you?
+      </p>
+    </div>
+    <p
+      class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600 dark:text-gray-200"
+    >
+      Even if you don't find what you're looking for, I'm sure I can help you
+    </p>
+    <div
+      class="isolate mx-auto mt-10 flex flex-wrap max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4"
+    >
+      {
+        services.map((service) => (
+          <div
+            class={`
+      ${service.primary ? "ring-2 ring-indigo-600" : "ring-1 ring-gray-200"}
+      rounded-3xl p-8 max-w-sm
+    `}
+          >
+            <h3
+              id="tier-hobby"
+              class={`text-lg font-semibold leading-8 ${
+                service.primary
+                  ? "text-indigo-600 dark:text-indigo-200"
+                  : "text-gray-900 dark:text-gray-50"
+              }`}
+            >
+              {service.title}
+            </h3>
+            <p class="mt-4 text-sm leading-6 text-gray-600 dark:text-gray-200">
+              {service.description}
+            </p>
+            <p class="my-6 flex items-baseline gap-x-1">
+              <span class="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-50">
+                &nbsp;
+              </span>
+              <!-- <span class="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-200">
+                /{service.frequency}
+              </span> -->
+            </p>
+            <a
+              href={service.url}
+              aria-describedby="tier-hobby"
+              class={`${
+                service.primary
+                  ? "bg-indigo-600 text-white shadow-sm hover:bg-indigo-500"
+                  : "text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300"
+              }
+                  mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600
+                `}
+            >
+              See more
+            </a>
+            <ul
+              role="list"
+              class="mt-8 space-y-3 text-sm leading-6 text-gray-600"
+            >
+              {service.features.map((feature) => (
+                <li class="flex gap-x-3">
+                  <svg
+                    class="h-6 w-5 flex-none text-indigo-600 dark:text-indigo-200"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+<hr />

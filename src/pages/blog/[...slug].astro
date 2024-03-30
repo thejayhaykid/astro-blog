@@ -26,7 +26,11 @@ const { Content } = await postPage.render();
 const title = `${postPage.data.title} | JH`;
 ---
 
-<BaseHead title={title} description={SITE_DESCRIPTION} />
+<BaseHead
+  title={title}
+  description={SITE_DESCRIPTION}
+  image={postPage.heroImage}
+/>
 <ViewTransitions />
 <Header />
 <BlogPost {...postPage.data}>

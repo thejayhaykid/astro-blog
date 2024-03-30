@@ -1,0 +1,12 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const { title, description } = Astro.props;
+---
+
+<BaseHead title={`${title} | Jake Hayes`} description={description} />
+<Header />
+<slot />
+<Footer />
