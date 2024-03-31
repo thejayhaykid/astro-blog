@@ -4,39 +4,38 @@ const services: Service[] = [
   {
     title: "Small Business",
     description: "Help you update your online presence.",
-    price: 15,
-    frequency: "month",
-    features: ["5 products", "Up to 1,000 subscribers", "Basic analytics"],
-    url: "services/smb",
+    features: [
+      "Search Engine Optimization",
+      "Fast Static Sites",
+      "A developer who can talk to you in plain English",
+      "Help with anything web-related",
+    ],
+    url: "/services/smb",
     primary: false,
   },
   {
     title: "Golf",
     description: "The essentials to provide your best work for clients.",
-    price: 30,
-    frequency: "month",
     features: [
-      "5 products",
-      "Up to 1,000 subscribers",
-      "Basic analytics",
-      "48-hour support response time",
+      "Search Engine Optimization",
+      "Fast Static Sites",
+      "A passion for golf",
+      "Well designed websites for mobile and desktop",
     ],
-    url: "services/golf",
+    url: "/services/golf",
     primary: true,
   },
   {
     title: "Writing",
-    description: "A plan that scales with your rapidly growing business.",
-    price: 60,
-    frequency: "month",
+    description: "A technical writer who can make the complex accessible.",
     features: [
-      "25 products",
-      "Up to 10,000 subscribers",
-      "Advanced analytics",
-      "24-hour support response time",
-      "Marketing automations",
+      "Subject Matter Expertise",
+      "Nearly a decade of software experience",
+      "Clear and concise writing",
+      "Proofreading and editing",
+      "Search Engine Optimization",
     ],
-    url: "services/writing",
+    url: "/services/writing",
     primary: false,
   },
 ];
@@ -47,9 +46,7 @@ const services: Service[] = [
 >
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto max-w-4xl text-center">
-      <h2 class="text-base font-semibold leading-7 text-indigo-600">
-        Services
-      </h2>
+      <h2 class="text-base font-semibold leading-7 text-primary">Services</h2>
       <p
         class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl"
       >
@@ -68,7 +65,7 @@ const services: Service[] = [
         services.map((service) => (
           <div
             class={`
-      ${service.primary ? "ring-2 ring-indigo-600" : "ring-1 ring-gray-200"}
+      ${service.primary ? "ring-2 ring-primary" : "ring-1 ring-gray-200"}
       rounded-3xl p-8 max-w-sm
     `}
           >
@@ -76,32 +73,25 @@ const services: Service[] = [
               id="tier-hobby"
               class={`text-lg font-semibold leading-8 ${
                 service.primary
-                  ? "text-indigo-600 dark:text-indigo-200"
+                  ? "text-primary dark:text-indigo-200"
                   : "text-gray-900 dark:text-gray-50"
               }`}
             >
               {service.title}
             </h3>
-            <p class="mt-4 text-sm leading-6 text-gray-600 dark:text-gray-200">
+            <p class="mt-4 text-sm h-20 leading-6 text-gray-600 dark:text-gray-200">
               {service.description}
             </p>
-            <p class="my-6 flex items-baseline gap-x-1">
-              <span class="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-50">
-                &nbsp;
-              </span>
-              <!-- <span class="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-200">
-                /{service.frequency}
-              </span> -->
-            </p>
+            <div class="my-6 flex h-4 items-baseline gap-x-1" />
             <a
               href={service.url}
               aria-describedby="tier-hobby"
               class={`${
                 service.primary
-                  ? "bg-indigo-600 text-white shadow-sm hover:bg-indigo-500"
-                  : "text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300"
+                  ? "bg-primary text-white shadow-sm hover:bg-indigo-500"
+                  : "text-primary ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300"
               }
-                  mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600
+                  mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary
                 `}
             >
               See more
@@ -113,7 +103,7 @@ const services: Service[] = [
               {service.features.map((feature) => (
                 <li class="flex gap-x-3">
                   <svg
-                    class="h-6 w-5 flex-none text-indigo-600 dark:text-indigo-200"
+                    class="h-6 w-5 flex-none text-primary dark:text-indigo-200"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     aria-hidden="true"
