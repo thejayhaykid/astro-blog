@@ -39,7 +39,7 @@ const Disqus = ({ className, title }: DisqusProps) => {
             <div className="w-full flex justify-center">
               <button
                 onClick={() => setOpenDisqus(true)}
-                className="rounded-md w-96 bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                className="rounded-md w-96 bg-highlight px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
                 Show Comments
               </button>

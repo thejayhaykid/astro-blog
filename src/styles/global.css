@@ -13,7 +13,6 @@
 }
 
 body {
-  font-family: Verdana, sans-serif;
   margin: auto;
   /* padding: 20px;
   max-width: 65ch; */
@@ -24,18 +23,8 @@ body {
   line-height: 1.5;
   color: #444;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong,
-b {
-  color: #222;
-}
 a {
-  color: #3273dc;
+  color: #4f46e5;
 }
 nav a {
   margin-right: 10px;
@@ -68,8 +57,19 @@ pre > code {
   all: unset;
 }
 blockquote {
-  color: #222;
   padding: 2px 2px 2px 20px;
   margin: 0px;
   font-style: italic;
+}
+
+body {
+  @apply bg-primary text-primary;
+}
+
+.btn-primary {
+  @apply bg-highlight hover:bg-highlight-lighten text-white font-semibold py-2 px-4 rounded-md active:bg-highlight-darken;
+}
+
+.btn-outline {
+  @apply border border-highlight text-highlight hover:bg-highlight-lighten hover:text-white font-semibold py-2 px-4 rounded-md dark:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary;
 }

@@ -7,31 +7,109 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
-      },
-    },
-  },
-  daisyui: {
-    themes: [
-      {
-        mytheme: {
-          primary: "#4f46e5",
-          secondary: "#47E68B",
-          accent: "#E65347",
-          neutral: "#cdcdcd",
-          "base-100": "#ffffff",
-          info: "#605D91",
-          success: "#9affdc",
-          warning: "#fff129",
-          error: "#ffbab9",
+      backgroundColor: {
+        primary: {
+          DEFAULT: "#f9f9f9",
+          light: "#f9f9f9",
+          dark: "#111827",
+        },
+        secondary: {
+          DEFAULT: "#4f46e5",
+          light: "#f3f4f6",
+          dark: "#1f2937",
+        },
+        highlight: {
+          DEFAULT: "#4f46e5",
+          lighten: "#4338ca",
+          darken: "#6366f1",
         },
       },
-    ],
+      textColor: {
+        primary: {
+          DEFAULT: "#111827",
+          light: "#111827",
+          dark: "#f9f9f9",
+        },
+        secondary: {
+          DEFAULT: "#6b7280",
+          light: "#6b7280",
+          dark: "#d1d5db",
+        },
+        highlight: "#4f46e5",
+        inverted: "#f9f9f9",
+      },
+      borderColor: {
+        primary: {
+          DEFAULT: "#d1d5db",
+          light: "#d1d5db",
+          dark: "#6b7280",
+        },
+        secondary: {
+          DEFAULT: "#e5e7eb",
+          light: "#e5e7eb",
+          dark: "#374151",
+        },
+        highlight: "#4f46e5",
+      },
+      divideColor: {
+        primary: {
+          DEFAULT: "#d1d5db",
+          light: "#d1d5db",
+          dark: "#6b7280",
+        },
+        secondary: {
+          DEFAULT: "#e5e7eb",
+          light: "#e5e7eb",
+          dark: "#374151",
+        },
+        highlight: "#4f46e5",
+      },
+      ringColor: {
+        primary: {
+          DEFAULT: "#d1d5db",
+          light: "#d1d5db",
+          dark: "#6b7280",
+        },
+        secondary: {
+          DEFAULT: "#e5e7eb",
+          light: "#e5e7eb",
+          dark: "#374151",
+        },
+        highlight: "#4f46e5",
+      },
+      placeholderColor: {
+        primary: {
+          DEFAULT: "#6b7280",
+          light: "#6b7280",
+          dark: "#d1d5db",
+        },
+        secondary: {
+          DEFAULT: "#6b7280",
+          light: "#6b7280",
+          dark: "#d1d5db",
+        },
+        highlight: "#4f46e5",
+      },
+      outlineColor: {
+        primary: {
+          DEFAULT: "#6b7280",
+          light: "#6b7280",
+          dark: "#d1d5db",
+        },
+        secondary: {
+          DEFAULT: "#6b7280",
+          light: "#6b7280",
+          dark: "#d1d5db",
+        },
+        highlight: "#4f46e5",
+      },
+      scrollbarWidth: {
+        thin: "thin",
+      },
+    },
+    fontFamily: {
+      sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+    },
   },
-  plugins: [
-    require(`@tailwindcss/forms`),
-    require("@tailwindcss/typography"),
-    require("daisyui"),
-  ],
+  plugins: [require(`@tailwindcss/forms`), require("@tailwindcss/typography")],
 };
