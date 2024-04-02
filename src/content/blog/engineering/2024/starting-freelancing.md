@@ -24,6 +24,8 @@ I'm confident that the skills and experience I've gained over the past decade wi
 - **Website Audits:** I can provide comprehensive feedback on your current website's design, user experience (UX), performance, SEO, and more, leveraging my years of experience.
 - **Website Design:** If you need a fresh website design but plan to build it yourself, I can help you create a beautiful and functional layout.
 - **High-Performance Static Websites:** I can build a lightning-fast static website using modern technologies to give your business a competitive edge compared to drag-and-drop website builders.
+- **Blog Setup:** Need a platform to share your ideas with the world? I can help you set up a user-friendly blog and ensure it integrates seamlessly with your existing website.
+- **3rd Party Software Integration:** Do you have a favorite CRM, marketing automation tool, or analytics platform? I can integrate these tools with your website to streamline your workflow and enhance functionality.
 - **Technical Writing:** I can craft clear, concise, and user-friendly technical documentation, user manuals, API references, or any other content that effectively communicates complex information.
 - **Full-Service Development:** I can handle everything from initial design and implementation to website hosting, ongoing maintenance, and the creation of clear technical documentation.
 
