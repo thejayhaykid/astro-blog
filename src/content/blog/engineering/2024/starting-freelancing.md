@@ -1,7 +1,7 @@
 ---
 title: "The Side Hustle Journey Begins: Freelancing"
 description: "Letting my passion for good software lead me to helping others"
-pubDate: "Mar 25, 2024"
+pubDate: "Apr 2, 2024"
 heroImage: "/blog-images/tech/2024/freelancing.jpg"
 category: "Freelancing"
 tags: ["freelancing", "smbs", "web"]
