@@ -23,6 +23,7 @@ module.exports = {
           lighten: "#4338ca",
           darken: "#6366f1",
         },
+        dark: "#0f172a",
       },
       textColor: {
         primary: {
@@ -35,7 +36,11 @@ module.exports = {
           light: "#6b7280",
           dark: "#d1d5db",
         },
-        highlight: "#4f46e5",
+        highlight: {
+          DEFAULT: "#4f46e5",
+          lighten: "#4338ca",
+          darken: "#818cf8",
+        },
         inverted: "#f9f9f9",
       },
       borderColor: {
