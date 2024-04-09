@@ -1,11 +1,13 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Other from "../../components/services/Other.astro";
+import FAQ from "../../components/services/FAQ.tsx";
 ---
 
 <BaseLayout
   title="Services"
   description="I can help you with a variety of services."
 >
-  <h1>Services</h1>
-  <p>I can help you with a variety of services.</p>
+  <Other />
+  <FAQ client:load={true} />
 </BaseLayout>
