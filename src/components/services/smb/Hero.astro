@@ -1,60 +1,52 @@
 ---
+import { Image } from "astro:assets";
+import stacks from "../../../assets/services/smb/stacks.png";
 ---
 
-<div class="bg-primary">
-  <div class="relative">
-    <div class="mx-auto max-w-7xl">
-      <div class="relative z-10 pt-14 lg:w-full lg:max-w-2xl">
-        <svg
-          class="absolute inset-y-0 right-8 hidden h-full w-80 translate-x-1/2 transform fill-[#f9f9f9] dark:fill-[#111827] lg:block"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <polygon points="0,0 90,0 50,100 0,100"></polygon>
-        </svg>
-
-        <div class="relative px-6 py-32 sm:py-40 lg:px-8 lg:py-56 lg:pr-0">
-          <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-            <div class="hidden sm:mb-10 sm:flex">
-              <div
-                class="relative rounded-full px-3 py-1 text-sm leading-6 text-secondary ring-1 ring-gray-900/10 hover:ring-gray-900/20"
-              >
-                This is one of many different services I offer. <a
-                  href="/services"
-                  class="whitespace-nowrap font-semibold text-highlight"
-                  ><span class="absolute inset-0" aria-hidden="true"></span>See
-                  more <span aria-hidden="true">&rarr;</span></a
-                >
-              </div>
-            </div>
-            <h1
-              class="text-4xl font-bold tracking-tight text-primary sm:text-6xl"
+<div class="relative bg-primary">
+  <div class="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
+    <div
+      class="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-56 lg:pt-48 xl:col-span-6"
+    >
+      <div class="mx-auto max-w-2xl lg:mx-0">
+        <div class="hidden sm:mt-32 sm:flex lg:mt-16">
+          <div
+            class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:ring-gray-200/10 dark:hover:ring-gray-200/20"
+          >
+            This is one of many different services I offer. <a
+              href="/services"
+              class="whitespace-nowrap font-semibold text-highlight"
+              ><span class="absolute inset-0" aria-hidden="true"></span>See more <span
+                aria-hidden="true">&rarr;</span
+              ></a
             >
-              Let me be the software engineer for your small business
-            </h1>
-            <p class="mt-6 text-lg leading-8 text-secondary">
-              I can provide any of the software services or troubleshooting that
-              your business might need. Everything from web development to
-              software automation, I can help you with it.
-            </p>
-            <div class="mt-10 flex items-center gap-x-6">
-              <a href="/contact" class="btn btn-primary">Contact me</a>
-              <a
-                href="/about"
-                class="text-sm font-semibold leading-6 text-primary"
-                >More about me <span aria-hidden="true">→</span></a
-              >
-            </div>
           </div>
+        </div>
+        <h1
+          class="mt-24 text-4xl font-bold tracking-tight text-primary sm:mt-10 sm:text-6xl"
+        >
+          Let me be the software engineer for your small business
+        </h1>
+        <p class="mt-6 text-lg leading-8 text-secondary">
+          I can provide any of the software services or troubleshooting that
+          your business might need. Everything from web development to software
+          automation, I can help you with it.
+        </p>
+        <div class="mt-10 flex items-center gap-x-6">
+          <a href="/contact" class="btn btn-primary">Contact me</a>
+          <a href="/about" class="text-sm font-semibold leading-6 text-primary"
+            >More about me <span aria-hidden="true">→</span></a
+          >
         </div>
       </div>
     </div>
-    <div class="bg-primary lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-      <img
-        class="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full"
-        src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80"
-        alt=""
+    <div
+      class="relative lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0"
+    >
+      <Image
+        class="aspect-[3/2] w-full bg-gray-50 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"
+        src={stacks}
+        alt="This was taken in Thompson Library at The Ohio State University"
       />
     </div>
   </div>
