@@ -1,4 +1,6 @@
 ---
+import Hero from "../../components/services/smb/Hero.astro";
+import Features from "../../components/services/smb/Features.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
@@ -6,10 +8,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   title="Small Businesses"
   description="Small businesses are the backbone of our economy. We need to support them."
 >
-  <section class="prose prose-lg">
-    <h1>Small Businesses</h1>
-    <p>
-      Small businesses are the backbone of our economy. We need to support them.
-    </p>
-  </section>
+  <Hero />
+  <Features />
 </BaseLayout>

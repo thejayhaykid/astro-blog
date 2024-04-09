@@ -111,6 +111,13 @@ module.exports = {
       scrollbarWidth: {
         thin: "thin",
       },
+      fillColor: {
+        primary: {
+          DEFAULT: "#f9f9f9",
+          light: "#f9f9f9",
+          dark: "#111827",
+        },
+      },
     },
     fontFamily: {
       sans: ["Inter var", ...defaultTheme.fontFamily.sans],
