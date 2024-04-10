@@ -7,9 +7,6 @@ const testimonials = [
     person: {
       name: "Tomasz Kożuch",
       handle: "tomek",
-      imageUrl: `data:image/svg+xml;utf8,${encodeURIComponent(
-        minidenticon("Tomasz Kożuch")
-      )}`,
     },
   },
 ];
@@ -41,7 +38,9 @@ const testimonials = [
                 <figcaption class="mt-6 flex items-center gap-x-4">
                   <img
                     class="h-10 w-10 rounded-full bg-gray-50"
-                    src={testimonial.person.imageUrl}
+                    src={`data:image/svg+xml;utf8,${encodeURIComponent(
+                      minidenticon(testimonial.person.handle)
+                    )}`}
                     alt={testimonial.person.name}
                   />
                   <div>
