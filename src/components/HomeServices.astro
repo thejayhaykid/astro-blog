@@ -27,16 +27,17 @@ const services: Service[] = [
     primary: true,
   },
   {
-    title: "Writing",
-    description: "A technical writer who can make the complex accessible.",
+    title: "And more",
+    description:
+      "Given my years of experience, there are a lot of other things I can help with",
     features: [
-      "Subject Matter Expertise",
-      "Nearly a decade of software experience",
-      "Clear and concise writing",
-      "Proofreading and editing",
-      "Search Engine Optimization",
+      "Technical Writing",
+      "Blog Posts",
+      "Single-Spa Consulting",
+      "Web Development Consulting",
+      "Mentoring",
     ],
-    url: "/services/writing",
+    url: "/services",
     primary: false,
   },
 ];
@@ -64,8 +65,8 @@ const services: Service[] = [
         services.map((service) => (
           <div
             class={`
-      ${service.primary ? "ring-2 ring-highlight" : "ring-1 ring-primary"}
-      rounded-3xl p-8 max-w-sm
+      ${service.primary ? "ring-2" : "ring-1"}
+      rounded-3xl p-8 max-w-sm ring-highlight  
     `}
           >
             <h3

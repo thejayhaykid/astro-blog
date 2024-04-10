@@ -96,7 +96,7 @@ body {
   }
 
   .btn-outline {
-    @apply border border-highlight text-highlight hover:bg-highlight-lighten hover:text-white font-semibold py-2 px-4 rounded-md dark:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors duration-75;
+    @apply border border-highlight text-highlight hover:bg-highlight-lighten hover:text-white font-semibold py-2 px-4 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors duration-75;
   }
 
   .btn-white {
