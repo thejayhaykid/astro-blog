@@ -18,9 +18,7 @@ const { title, pubDate, updatedDate, heroImage, tags, category, description } =
 const relatedPosts = await getRelatedPosts(title, category, tags);
 ---
 
-<main
-  class="dark:bg-gray-900 dark:text-gray-50 flex flex-col items-center max-w-[100vw]"
->
+<main class="bg-primary text-primary flex flex-col items-center max-w-[100vw]">
   {
     heroImage && (
       <img
@@ -41,16 +39,16 @@ const relatedPosts = await getRelatedPosts(title, category, tags);
     </h1>
     <div class="flex items-center gap-x-6 max-w-[100vw]">
       <Image class="h-28 w-28 rounded-full object-cover" src={me} alt="" />
-      <div>
+      <div class="flex flex-col items-start">
         <h3
-          class="text-base font-semibold leading-7 tracking-tight text-gray-900"
+          class="text-base font-semibold leading-7 tracking-tight text-primary"
         >
           Jake Hayes
         </h3>
         <!-- <p class="text-sm font-semibold leading-6 text-highlight mt-2">
           {JOB_TITLE}
         </p> -->
-        <div class="mt-6">
+        <div class="mt-2">
           <FormattedDate date={pubDate} />
         </div>
         {
