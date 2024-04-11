@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Other from "../../components/services/Other.astro";
 import Testimonial from "../../components/services/Testimonial.astro";
 import FAQ from "../../components/services/FAQ.tsx";
 import CTA from "../../components/services/CTA.astro";
@@ -13,7 +12,6 @@ import CardHeader from "../../components/services/CardHeader.astro";
 >
   <CardHeader />
   <Testimonial />
-  <Other />
   <FAQ client:load={true} />
   <CTA />
 </BaseLayout>

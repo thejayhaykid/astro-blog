@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import PillButton from "../../PillButton.astro";
 import stacks from "../../../assets/services/smb/stacks.png";
 ---
 
@@ -10,17 +11,7 @@ import stacks from "../../../assets/services/smb/stacks.png";
     >
       <div class="mx-auto max-w-2xl lg:mx-0">
         <div class="hidden sm:mt-32 sm:flex lg:mt-16">
-          <div
-            class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:ring-gray-200/10 dark:hover:ring-gray-200/20"
-          >
-            This is one of many different services I offer. <a
-              href="/services"
-              class="whitespace-nowrap font-semibold text-highlight"
-              ><span class="absolute inset-0" aria-hidden="true"></span>See more <span
-                aria-hidden="true">&rarr;</span
-              ></a
-            >
-          </div>
+          <PillButton />
         </div>
         <h1
           class="mt-24 text-4xl font-bold tracking-tight text-primary sm:mt-10 sm:text-6xl"

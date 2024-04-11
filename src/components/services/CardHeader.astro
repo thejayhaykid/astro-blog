@@ -1,10 +1,12 @@
 ---
+import { Image } from "astro:assets";
+import mountains from "../../assets/services/mountains.png";
 ---
 
 <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
-  <img
-    src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
-    alt=""
+  <Image
+    src={mountains}
+    alt="background image"
     class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
   />
   <div
@@ -28,11 +30,12 @@
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-        Support center
+        Freelancing Services
       </h2>
-      <p class="mt-6 text-lg leading-8 text-gray-300">
-        Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
-        cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+      <p class="mt-6 text-lg leading-8 text-gray-200">
+        Whether it's providing any imaginable software services to small
+        businesses and golf courses or helping other developers in a litany of
+        ways, I am passionate about executing and delivering great software.
       </p>
     </div>
     <div
@@ -42,21 +45,28 @@
         class="flex gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-inset ring-white/10"
       >
         <svg
-          class="h-7 w-5 flex-none text-indigo-400"
-          viewBox="0 0 20 20"
+          class="h-8 w-8 flex-none text-highlight"
+          viewBox="0 0 30 30"
           fill="currentColor"
           aria-hidden="true"
         >
-          <path
-            fill-rule="evenodd"
-            d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z"
-            clip-rule="evenodd"></path>
+          <g>
+            <rect height="25.0098" opacity="0" width="29.707" x="0" y="0"
+            ></rect>
+            <path
+              d="M7.15286 21.4355L0.78125 21.4355C0.351562 21.4355 0 21.0742 0 20.6445C0 20.2148 0.351562 19.8633 0.78125 19.8633L7.63909 19.8633C7.39929 20.4062 7.23484 20.9367 7.15286 21.4355ZM13.0484 21.4355L8.64527 21.4355C8.7292 20.9546 8.91675 20.42 9.20324 19.8633L13.8599 19.8633C13.6224 20.4499 13.3514 20.9803 13.0484 21.4355ZM29.3457 20.6445C29.3457 21.0742 28.9844 21.4355 28.5547 21.4355L14.7552 21.4355C15.0179 20.9563 15.2494 20.4289 15.4507 19.8633L28.5547 19.8633C28.9844 19.8633 29.3457 20.2148 29.3457 20.6445ZM1.39648 13.4082L2.62207 14.6266L3.84766 13.4082C4.10156 13.1543 4.48242 13.1445 4.73633 13.4082C5 13.6621 5 14.043 4.73633 14.2969L3.51515 15.5145L4.73633 16.7285C5 16.9824 5 17.373 4.73633 17.627C4.48242 17.8809 4.10156 17.8809 3.84766 17.627L2.62207 16.405L1.39648 17.627C1.14258 17.8711 0.761719 17.8809 0.507812 17.627C0.244141 17.373 0.244141 16.9922 0.507812 16.7285L1.72899 15.5145L0.507812 14.2969C0.244141 14.0527 0.244141 13.6621 0.507812 13.4082C0.761719 13.1445 1.14258 13.1445 1.39648 13.4082Z"
+            ></path>
+            <path
+              d="M9.78516 25.0098C13.8281 25.0098 16.4746 19.9121 16.4746 13.4375C16.4746 7.93945 13.9844 3.50586 10.0781 3.50586C7.56836 3.50586 5.625 5.64453 5.625 8.36914C5.625 12.4023 8.94531 15.6836 12.4023 17.3145C12.5391 17.373 12.6562 17.4023 12.7734 17.4023C13.1641 17.4023 13.457 17.0898 13.457 16.748C13.457 16.5137 13.3301 16.2793 13.0469 16.1426C10.8105 15.0586 7.11914 12.3047 7.11914 8.36914C7.11914 6.46484 8.4082 4.99023 10.0781 4.99023C13.0762 4.99023 14.9902 8.80859 14.9902 13.4375C14.9902 18.9648 12.832 23.5254 9.96094 23.5254C9.02344 23.5254 8.58398 22.9102 8.58398 22.0312C8.58398 19.3066 12.7148 13.9941 18.3887 13.9941C18.7305 13.9941 18.9258 14.1406 18.9258 14.3945C18.9258 15.2441 18.4668 15.9082 18.4668 16.7578C18.4668 17.5 19.0039 17.9492 19.7266 17.9492C21.709 17.9492 24.0918 14.5605 24.8926 14.5605C25.6152 14.5605 24.7168 17.6074 27.168 17.6074C27.5781 17.6074 28.0957 17.5 28.4961 17.2363C28.7305 17.0801 28.8965 16.8457 28.8965 16.543C28.8965 16.1719 28.6523 15.8691 28.2715 15.8691C27.9297 15.8691 27.6465 16.1523 27.3145 16.1523C26.2598 16.1523 27.2656 12.9102 25.3223 12.9102C23.6133 12.9102 20.9668 16.2109 20.2832 16.2109C20.2051 16.2109 20.1367 16.1621 20.1367 16.0449C20.1367 15.6934 20.5664 14.8926 20.5664 14.1113C20.5664 13.1348 19.7559 12.5098 18.4961 12.5098C11.9727 12.5098 7.06055 18.6328 7.06055 22.3145C7.06055 23.8867 7.94922 25.0098 9.78516 25.0098Z"
+            ></path>
+          </g>
         </svg>
         <div class="text-base leading-7">
-          <h3 class="font-semibold text-white">Sales</h3>
+          <h3 class="font-semibold text-white">Personal Touch</h3>
           <p class="mt-2 text-gray-300">
-            Consectetur vel non. Rerum ut consequatur nobis unde. Enim est quo
-            corrupti consequatur.
+            I'm not a faceless company. I will meet with you in whatever way
+            that you need to make sure we are aligned on the best way forward
+            for you or your company.
           </p>
         </div>
       </div>
@@ -64,21 +74,24 @@
         class="flex gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-inset ring-white/10"
       >
         <svg
-          class="h-7 w-5 flex-none text-indigo-400"
-          viewBox="0 0 20 20"
+          viewBox="0 0 30 30"
+          class="h-8 w-8 flex-none text-highlight"
           fill="currentColor"
           aria-hidden="true"
         >
-          <path
-            fill-rule="evenodd"
-            d="M7.171 4.146l1.947 2.466a3.514 3.514 0 011.764 0l1.947-2.466a6.52 6.52 0 00-5.658 0zm8.683 3.025l-2.466 1.947c.15.578.15 1.186 0 1.764l2.466 1.947a6.52 6.52 0 000-5.658zm-3.025 8.683l-1.947-2.466c-.578.15-1.186.15-1.764 0l-1.947 2.466a6.52 6.52 0 005.658 0zM4.146 12.83l2.466-1.947a3.514 3.514 0 010-1.764L4.146 7.171a6.52 6.52 0 000 5.658zM5.63 3.297a8.01 8.01 0 018.738 0 8.031 8.031 0 012.334 2.334 8.01 8.01 0 010 8.738 8.033 8.033 0 01-2.334 2.334 8.01 8.01 0 01-8.738 0 8.032 8.032 0 01-2.334-2.334 8.01 8.01 0 010-8.738A8.03 8.03 0 015.63 3.297zm5.198 4.882a2.008 2.008 0 00-2.243.407 1.994 1.994 0 00-.407 2.243 1.993 1.993 0 00.992.992 2.008 2.008 0 002.243-.407c.176-.175.31-.374.407-.585a2.008 2.008 0 00-.407-2.243 1.993 1.993 0 00-.585-.407z"
-            clip-rule="evenodd"></path>
+          <g>
+            <rect height="26.3379" opacity="0" width="14.1793" x="0" y="0"
+            ></rect>
+            <path
+              d="M10.8494 6.89453C12.0213 6.89453 12.9685 5.9375 12.9685 4.74609C12.9685 3.58398 12.0213 2.62695 10.8494 2.62695C9.65799 2.62695 8.70096 3.58398 8.70096 4.74609C8.70096 5.9375 9.65799 6.89453 10.8494 6.89453ZM5.92752 26.2305C6.46463 26.2305 6.91385 25.791 6.91385 25.2441L6.91385 20.3711L9.19901 17.002C9.2869 16.8652 9.48221 16.9043 9.50174 17.0801L9.8533 20.0879C9.87283 20.2539 9.90213 20.3418 9.98026 20.5273L11.9041 25.5957C12.1385 26.2109 12.7049 26.3379 13.1638 26.1719C13.6228 25.9961 13.9744 25.5273 13.74 24.9023L11.8455 19.8633L11.8455 10.5664C11.8455 9.52148 11.406 8.4375 10.4002 8.02734L9.78494 7.77344C8.65213 7.30469 7.58768 7.44141 6.63065 8.125L4.31619 9.79492L1.7283 8.70117L6.86502 1.58203L8.57401 1.58203C9.01346 1.58203 9.37479 1.2207 9.37479 0.791016C9.37479 0.341797 9.01346 0 8.57401 0L6.95291 0C6.77713 0 6.60135 0.078125 6.49393 0.224609L0.204865 8.93555C-0.136932 9.4043-0.0588072 10.0879 0.497833 10.3223L4.05252 11.8457C4.20877 11.9043 4.31619 11.9141 4.5408 11.9141L6.89432 11.9141C7.26541 11.9141 7.39236 12.1582 7.39236 12.4316L7.39236 15.1367L5.03885 19.5996C4.95096 19.7656 4.93143 19.8926 4.93143 20.0781L4.93143 25.2441C4.93143 25.791 5.37088 26.2305 5.92752 26.2305Z"
+              fill-opacity="0.85"></path>
+          </g>
         </svg>
         <div class="text-base leading-7">
-          <h3 class="font-semibold text-white">Technical Support</h3>
+          <h3 class="font-semibold text-white">Fore the Love</h3>
           <p class="mt-2 text-gray-300">
-            Quod possimus sit modi rerum exercitationem quaerat atque tenetur
-            ullam.
+            My love for golf enables me to not only be passionate about your
+            web-presence, but also for your success as a golf organization.
           </p>
         </div>
       </div>
@@ -86,24 +99,28 @@
         class="flex gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-inset ring-white/10"
       >
         <svg
-          class="h-7 w-5 flex-none text-indigo-400"
-          viewBox="0 0 20 20"
+          class="h-8 w-8 flex-none text-highlight"
+          viewBox="0 0 30 30"
           fill="currentColor"
           aria-hidden="true"
         >
-          <path
-            fill-rule="evenodd"
-            d="M2 3.5A1.5 1.5 0 013.5 2h9A1.5 1.5 0 0114 3.5v11.75A2.75 2.75 0 0016.75 18h-12A2.75 2.75 0 012 15.25V3.5zm3.75 7a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zm0 3a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM5 5.75A.75.75 0 015.75 5h4.5a.75.75 0 01.75.75v2.5a.75.75 0 01-.75.75h-4.5A.75.75 0 015 8.25v-2.5z"
-            clip-rule="evenodd"></path>
-          <path
-            d="M16.5 6.5h-1v8.75a1.25 1.25 0 102.5 0V8a1.5 1.5 0 00-1.5-1.5z"
-          ></path>
+          <g>
+            <rect height="22.4512" opacity="0" width="26.6113" x="0" y="0"
+            ></rect>
+            <path
+              d="M20.4492 4.35547L20.4492 4.52148L8.86719 4.52148C6.08398 4.52148 4.47266 6.12305 4.47266 8.87695L4.47266 16.5918L4.04297 16.5918C2.00195 16.5918 0.976562 15.5859 0.976562 13.5645L0.976562 4.35547C0.976562 2.34375 2.00195 1.32812 4.04297 1.32812L17.3828 1.32812C19.4238 1.32812 20.4492 2.34375 20.4492 4.35547Z"
+            ></path>
+            <path
+              d="M25.2734 8.87695L25.2734 18.0859C25.2734 20.0977 24.248 21.1133 22.207 21.1133L8.86719 21.1133C6.82617 21.1133 5.80078 20.1074 5.80078 18.0859L5.80078 8.87695C5.80078 6.86523 6.82617 5.84961 8.86719 5.84961L22.207 5.84961C24.248 5.84961 25.2734 6.86523 25.2734 8.87695ZM13.3594 12.6953C13.0469 12.6953 12.8027 12.9395 12.8027 13.2422C12.8027 13.5645 13.0469 13.8281 13.3594 13.8281L16.6113 13.8281C16.9336 13.8281 17.1777 13.5645 17.1777 13.2422C17.1777 12.9395 16.9336 12.6953 16.6113 12.6953ZM9.18945 9.82422L11.2305 11.0645L9.18945 12.2949C8.50586 12.7148 9.0918 13.7598 9.83398 13.2812L12.3047 11.7383C12.793 11.4258 12.7637 10.6934 12.3047 10.3906L9.83398 8.84766C9.0918 8.37891 8.49609 9.41406 9.18945 9.82422Z"
+            ></path>
+          </g>
         </svg>
         <div class="text-base leading-7">
-          <h3 class="font-semibold text-white">Media Inquiries</h3>
+          <h3 class="font-semibold text-white">Depth of Experience</h3>
           <p class="mt-2 text-gray-300">
-            Ratione et porro eligendi est sed ratione rerum itaque. Placeat
-            accusantium impedit eum odit.
+            I have lead established companies in adding new technologies from
+            the ground up. My wide depth of knowledge allows me the competency
+            to provide the best options available.
           </p>
         </div>
       </div>

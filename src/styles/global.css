@@ -106,4 +106,8 @@ body {
   .btn-white {
     @apply bg-white font-semibold py-2 px-4 rounded-md text-sm text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
   }
+
+  .pill-btn {
+    @apply relative rounded-full px-3 py-1 text-sm leading-6 text-secondary ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:ring-gray-50/10 dark:hover:ring-gray-50/20;
+  }
 }

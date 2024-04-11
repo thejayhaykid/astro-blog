@@ -31,6 +31,13 @@ module.exports = {
           darken: "#3730a3",
         },
       },
+      fillColor: {
+        highlight: {
+          DEFAULT: "#4f46e5",
+          lighten: "#818cf8",
+          darken: "#3730a3",
+        },
+      },
     },
   },
   fontFamily: {
