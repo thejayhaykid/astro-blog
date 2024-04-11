@@ -1,7 +1,8 @@
 ---
 import minidenticon from "../../utils/identicon";
+import type { Testimonial } from "../../types/Testimonial.type";
 
-const testimonials = [
+const testimonials: Testimonial[] = [
   {
     body: "Jake helped me a lot with expertise on the work needed for a website. It was a pleasure to work with him",
     person: {
@@ -38,9 +39,12 @@ const testimonials = [
                 <figcaption class="mt-6 flex items-center gap-x-4">
                   <img
                     class="h-10 w-10 rounded-full bg-gray-50"
-                    src={`data:image/svg+xml;utf8,${encodeURIComponent(
-                      minidenticon(testimonial.person.handle)
-                    )}`}
+                    src={
+                      testimonial.person.imageUrl ||
+                      `data:image/svg+xml;utf8,${encodeURIComponent(
+                        minidenticon(testimonial.person.handle)
+                      )}`
+                    }
                     alt={testimonial.person.name}
                   />
                   <div>
