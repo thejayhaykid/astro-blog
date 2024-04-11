@@ -34,7 +34,7 @@ Head over to my [services page](/services) to learn more about what I can do for
 
 I'm excited to embark on this new adventure and keep growing professionally while maintaining a healthy balance. Here's to success!
 
-Best,
+Best,<br />
 Jake
 
-> _Don't forget to checkout [services](/services) or [contact me](/contact)._
+_Don't forget to checkout [services](/services) or [contact me](/contact)._
