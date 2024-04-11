@@ -7,6 +7,7 @@ category: "Freelancing"
 tags: ["freelancing", "smbs", "web"]
 draft: false
 ---
+
 Hey everyone,
 
 I'm excited to announce that I'm dipping my toes into the freelance world as a full-stack developer! While I'll be keeping my day job, I'm eager to leverage my evenings and weekends to pursue this new passion project.
@@ -34,5 +35,6 @@ Head over to my [services page](/services) to learn more about what I can do for
 I'm excited to embark on this new adventure and keep growing professionally while maintaining a healthy balance. Here's to success!
 
 Best,
-
 Jake
+
+> _Don't forget to checkout [services](/services) or [contact me](/contact)._
