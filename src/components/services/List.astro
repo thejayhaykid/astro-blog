@@ -1,12 +1,31 @@
 ---
+import Icon from "../Icon.tsx";
 const services = [
   {
-    title: "Leslie Alexander",
-    subhead: "Co-Founder / CEO",
-    imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    title: "Small Businesses Websites",
+    subhead: "Fast, SEO Optimized, with a modern design",
+    iconName: "smb",
   },
-  // More people...
+  {
+    title: "Golf Courses",
+    subhead: "Help with anything on the web your course needs",
+    iconName: "golf",
+  },
+  {
+    title: "Mentoring",
+    subhead: "Trying to share my gained knowledge with others",
+    iconName: "mentoring",
+  },
+  {
+    title: "Consulting",
+    subhead: "When you need help with a specific project",
+    iconName: "consulting",
+  },
+  {
+    title: "Writing",
+    subhead: "Technical writing, documentation, blog posts and more",
+    iconName: "writing",
+  },
 ];
 ---
 
@@ -19,8 +38,9 @@ const services = [
         What can I do?
       </h2>
       <p class="mt-6 text-lg leading-8 text-secondary">
-        Libero fames augue nisl porttitor nisi, quis. Id ac elit odio vitae
-        elementum enim vitae ullamcorper suspendisse.
+        Given years of experience, feel free to ask me about something that
+        isn't on this list and I can probably still help you. But my areas of
+        expertise are
       </p>
     </div>
     <ul
@@ -31,11 +51,7 @@ const services = [
         services.map((service) => (
           <li>
             <div class="flex items-center gap-x-6">
-              <img
-                class="h-16 w-16 rounded-full"
-                src={service.imageUrl}
-                alt=""
-              />
+              <Icon name={service.iconName} />
               <div>
                 <h3 class="text-base font-semibold leading-7 tracking-tight text-primary">
                   {service.title}
