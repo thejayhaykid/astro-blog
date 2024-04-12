@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Testimonial from "../../components/services/Testimonial.astro";
 import FAQ from "../../components/services/FAQ.tsx";
 import CTA from "../../components/services/CTA.astro";
+import List from "../../components/services/List.astro";
 import CardHeader from "../../components/services/CardHeader.astro";
 ---
 
@@ -11,6 +12,7 @@ import CardHeader from "../../components/services/CardHeader.astro";
   description="I can help you with a variety of services."
 >
   <CardHeader />
+  <List />
   <Testimonial />
   <FAQ client:load={true} />
   <CTA />
