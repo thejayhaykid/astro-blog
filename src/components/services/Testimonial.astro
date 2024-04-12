@@ -10,6 +10,12 @@ const testimonials: Testimonial[] = [
       handle: "tomek",
     },
   },
+  {
+    body: "As a new addition to the team, Jake has been willing to take time to look over things I've done to make sure they fit in with how we do things here at TCetra. He's almost on a daily basis gone the extra mile in helping me getting this and that to the finish line. It's made my introduction to the company a lot easier knowing there's co-workers that are willing to give their own time to help the larger team.",
+    person: {
+      name: "Jeff Wolf",
+    },
+  },
 ];
 ---
 
@@ -42,7 +48,9 @@ const testimonials: Testimonial[] = [
                     src={
                       testimonial.person.imageUrl ||
                       `data:image/svg+xml;utf8,${encodeURIComponent(
-                        minidenticon(testimonial.person.handle)
+                        minidenticon(
+                          testimonial.person.handle || testimonial.person.name
+                        )
                       )}`
                     }
                     alt={testimonial.person.name}
@@ -51,7 +59,9 @@ const testimonials: Testimonial[] = [
                     <div class="font-semibold text-primary">
                       {testimonial.person.name}
                     </div>
-                    <div class="text-secondary">{`@${testimonial.person.handle}`}</div>
+                    {testimonial.person.handle && (
+                      <div class="text-secondary">{`@${testimonial.person.handle}`}</div>
+                    )}
                   </div>
                 </figcaption>
               </figure>

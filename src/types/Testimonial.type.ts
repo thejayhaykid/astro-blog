@@ -1,6 +1,6 @@
 type Person = {
   name: string;
-  handle: string;
+  handle?: string;
   imageUrl?: string;
 };
 
