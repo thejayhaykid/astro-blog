@@ -6,7 +6,11 @@ import Footer from "../components/Footer.astro";
 const { title, description } = Astro.props;
 ---
 
-<BaseHead title={`${title} | Jake Hayes`} description={description} />
-<Header />
-<slot />
-<Footer />
+<head>
+  <BaseHead title={`${title} | Jake Hayes`} description={description} />
+</head>
+<body>
+  <Header />
+  <slot />
+  <Footer />
+</body>
