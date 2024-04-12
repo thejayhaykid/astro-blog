@@ -12,7 +12,7 @@ export interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/_astro/me.hash.png" } = Astro.props;
+const { title, description, image = "/me.png" } = Astro.props;
 ---
 
 <!-- Global Metadata -->

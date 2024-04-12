@@ -1,0 +1,74 @@
+---
+import minidenticon from "../../utils/identicon";
+import type { Testimonial } from "../../types/Testimonial.type";
+
+const testimonials: Testimonial[] = [
+  {
+    body: "Jake helped me a lot with expertise on the work needed for a website. It was a pleasure to work with him",
+    person: {
+      name: "Tomasz Kożuch",
+      handle: "tomek",
+    },
+  },
+  {
+    body: "As a new addition to the team, Jake has been willing to take time to look over things I've done to make sure they fit in with how we do things here...He's almost on a daily basis gone the extra mile in helping me getting this and that to the finish line. It's made my introduction to the company a lot easier knowing there's co-workers that are willing to give their own time to help the larger team.",
+    person: {
+      name: "Jeff Wolf",
+    },
+  },
+];
+---
+
+<div class="bg-primary py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-xl text-center">
+      <h2 class="text-lg font-semibold leading-8 tracking-tight text-highlight">
+        Testimonials
+      </h2>
+      <p
+        class="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl"
+      >
+        What have those who have worked with me said?
+      </p>
+    </div>
+    <div
+      class="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none"
+    >
+      <div class="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
+        {
+          testimonials.map((testimonial) => (
+            <div class="pt-8 sm:inline-block sm:w-full sm:px-4">
+              <figure class="rounded-2xl bg-secondary p-8 text-sm leading-6">
+                <blockquote class="text-primary">
+                  <p>{`“${testimonial.body}”`}</p>
+                </blockquote>
+                <figcaption class="mt-6 flex items-center gap-x-4">
+                  <img
+                    class="h-10 w-10 rounded-full bg-gray-50"
+                    src={
+                      testimonial.person.imageUrl ||
+                      `data:image/svg+xml;utf8,${encodeURIComponent(
+                        minidenticon(
+                          testimonial.person.handle || testimonial.person.name
+                        )
+                      )}`
+                    }
+                    alt={testimonial.person.name}
+                  />
+                  <div>
+                    <div class="font-semibold text-primary">
+                      {testimonial.person.name}
+                    </div>
+                    {testimonial.person.handle && (
+                      <div class="text-secondary">{`@${testimonial.person.handle}`}</div>
+                    )}
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>

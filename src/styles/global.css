@@ -13,7 +13,6 @@
 }
 
 body {
-  font-family: Verdana, sans-serif;
   margin: auto;
   /* padding: 20px;
   max-width: 65ch; */
@@ -24,18 +23,8 @@ body {
   line-height: 1.5;
   color: #444;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong,
-b {
-  color: #222;
-}
 a {
-  color: #3273dc;
+  color: #4f46e5;
 }
 nav a {
   margin-right: 10px;
@@ -68,8 +57,57 @@ pre > code {
   all: unset;
 }
 blockquote {
-  color: #222;
   padding: 2px 2px 2px 20px;
   margin: 0px;
   font-style: italic;
+}
+
+body {
+  @apply bg-primary text-primary;
+}
+
+@layer components {
+  .bg-primary {
+    @apply bg-[#f9f9f9] dark:bg-gray-900;
+  }
+
+  .bg-secondary {
+    @apply bg-gray-200 dark:bg-gray-600;
+  }
+
+  .text-primary {
+    @apply text-gray-900 dark:text-white;
+  }
+
+  .text-secondary {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+
+  .border-primary {
+    @apply border-gray-900 dark:border-gray-200;
+  }
+
+  .outline-primary {
+    @apply outline-gray-900 dark:outline-gray-200;
+  }
+
+  .btn {
+    @apply font-semibold py-2 px-4 rounded-md;
+  }
+
+  .btn-primary {
+    @apply bg-highlight hover:bg-highlight-lighten text-white font-semibold py-2 px-4 rounded-md active:bg-highlight-darken transition-colors duration-75;
+  }
+
+  .btn-outline {
+    @apply border border-highlight text-highlight hover:bg-highlight hover:text-white font-semibold py-2 px-4 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors duration-75;
+  }
+
+  .btn-white {
+    @apply bg-white font-semibold py-2 px-4 rounded-md text-sm text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+  }
+
+  .pill-btn {
+    @apply relative rounded-full px-3 py-1 text-sm leading-6 text-secondary ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:ring-gray-50/10 dark:hover:ring-gray-50/20;
+  }
 }

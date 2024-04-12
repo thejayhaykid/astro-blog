@@ -16,6 +16,7 @@ import progressgif from "../assets/link-images/progressgif.png";
 import redbubble from "../assets/link-images/redbubble.png";
 import gumroad from "../assets/link-images/gumroad.png";
 import buymeacoffee from "../assets/link-images/buy-me-a-coffee.png";
+import paypal from "../assets/logos/paypal.png";
 
 // General website, twitter (x?), stashtag.app, letterboxd, redbubble, gumroad, amazon (once I have things to sell on there)
 const generalLinks: Link[] = [
@@ -25,6 +26,12 @@ const generalLinks: Link[] = [
     imageUrl: JH.src,
     linkUrl: "/",
     sideText2: "Astro + Tailwind",
+  },
+  {
+    primaryHeader: "Freelance Services",
+    secondaryHeader: "What I can do for you",
+    imageUrl: JH.src,
+    linkUrl: "/services",
   },
   {
     primaryHeader: "Letterboxd",
@@ -85,6 +92,12 @@ const sellingLinks: Link[] = [
       "Nothing to buy, but if you like what I do, you can support me here",
     imageUrl: buymeacoffee.src,
     linkUrl: "https://www.buymeacoffee.com/jakehayes",
+  },
+  {
+    primaryHeader: "PayPal",
+    secondaryHeader: "A second place to support me",
+    imageUrl: paypal.src,
+    linkUrl: "paypal.me/thejayhaykid",
   },
 ];
 ---

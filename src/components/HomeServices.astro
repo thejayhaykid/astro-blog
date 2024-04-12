@@ -1,0 +1,120 @@
+---
+import type { Service } from "../types/Services.types";
+const services: Service[] = [
+  {
+    title: "Small Business",
+    description: "Help you update your online presence.",
+    features: [
+      "Search Engine Optimization",
+      "Fast Static Sites",
+      "A developer who can talk to you in plain English",
+      "Help with anything web-related",
+    ],
+    url: "/services/smb",
+    primary: false,
+  },
+  {
+    title: "Golf",
+    description: "The essentials to provide your best work for clients.",
+    features: [
+      "Search Engine Optimization",
+      "Fast Static Sites",
+      "A passion for golf",
+      "Well designed websites for mobile and desktop",
+      "I can make your web related ideas a reality",
+    ],
+    url: "/services/golf",
+    primary: true,
+  },
+  {
+    title: "And more",
+    description:
+      "Given my years of experience, there are a lot of other things I can help with",
+    features: [
+      "Technical Writing",
+      "Blog Posts",
+      "Single-Spa Consulting",
+      "Web Development Consulting",
+      "Mentoring",
+    ],
+    url: "/services",
+    primary: false,
+  },
+];
+---
+
+<div class="bg-primary text-primary py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-4xl text-center">
+      <h2 class="text-base font-semibold leading-7 text-highlight">Services</h2>
+      <p
+        class="mt-2 text-4xl font-bold tracking-tight text-primary sm:text-5xl"
+      >
+        What do I do for you?
+      </p>
+    </div>
+    <p
+      class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-secondary"
+    >
+      Even if you don't find what you're looking for, I'm sure I can help you
+    </p>
+    <div
+      class="isolate mx-auto mt-10 flex flex-wrap max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4"
+    >
+      {
+        services.map((service) => (
+          <div
+            class={`
+      ${service.primary ? "ring-2" : "ring-1"}
+      rounded-3xl p-8 max-w-sm ring-highlight  
+    `}
+          >
+            <h3
+              id="tier-hobby"
+              class={`text-lg font-semibold leading-8 ${
+                service.primary ? "text-highlight" : "text-primary"
+              }`}
+            >
+              {service.title}
+            </h3>
+            <p class="mt-4 text-sm h-20 leading-6 text-secondary">
+              {service.description}
+            </p>
+            <a
+              href={service.url}
+              aria-describedby="tier-hobby"
+              class={`${service.primary ? "btn-primary" : "btn-outline"}
+                  mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary
+                `}
+            >
+              See more
+            </a>
+            <ul
+              role="list"
+              class="mt-8 space-y-3 text-sm leading-6 text-gray-600"
+            >
+              {service.features.map((feature) => (
+                <li class="flex gap-x-3">
+                  <svg
+                    class="h-6 w-5 flex-none text-highlight dark:text-indigo-200"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+<hr />

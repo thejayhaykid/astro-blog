@@ -1,0 +1,69 @@
+---
+import Icon from "../Icon.tsx";
+const services = [
+  {
+    title: "Small Businesses Websites",
+    subhead: "Fast, SEO Optimized, with a modern design",
+    iconName: "smb",
+  },
+  {
+    title: "Golf Courses",
+    subhead: "Help with anything on the web your course needs",
+    iconName: "golf",
+  },
+  {
+    title: "Mentoring",
+    subhead: "Trying to share my gained knowledge with others",
+    iconName: "mentoring",
+  },
+  {
+    title: "Consulting",
+    subhead: "When you need help with a specific project",
+    iconName: "consulting",
+  },
+  {
+    title: "Writing",
+    subhead: "Technical writing, documentation, blog posts and more",
+    iconName: "writing",
+  },
+];
+---
+
+<div class="bg-primary py-24 sm:py-32">
+  <div
+    class="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3"
+  >
+    <div class="max-w-2xl">
+      <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+        What can I do?
+      </h2>
+      <p class="mt-6 text-lg leading-8 text-secondary">
+        Given years of experience, feel free to ask me about something that
+        isn't on this list and I can probably still help you. But my areas of
+        expertise are
+      </p>
+    </div>
+    <ul
+      role="list"
+      class="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2"
+    >
+      {
+        services.map((service) => (
+          <li>
+            <div class="flex items-center gap-x-6">
+              <Icon name={service.iconName} />
+              <div>
+                <h3 class="text-base font-semibold leading-7 tracking-tight text-primary">
+                  {service.title}
+                </h3>
+                <p class="text-sm font-semibold leading-6 text-highlight">
+                  {service.subhead}
+                </p>
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
