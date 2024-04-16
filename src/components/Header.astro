@@ -6,11 +6,7 @@ import JH from "../assets/JH.png";
 const menuLinks = [
   { href: "/", text: "Home" },
   { href: "/blog", text: "Blog" },
-  { href: "/about", text: "About" },
   { href: "/services", text: "Services" },
-  { href: "/resume", text: "Resume" },
-  { href: "/contact", text: "Contact" },
-  { href: "/links", text: "Links" },
 ];
 ---
 
@@ -29,6 +25,9 @@ const menuLinks = [
             <HeaderLink href={link.href}>{link.text}</HeaderLink>
           ))
         }
+        <li class="mt-4">
+          <a href="/contact" class="btn btn-primary">Contact me</a>
+        </li>
       </ul>
     </nav>
 
@@ -77,6 +76,9 @@ const menuLinks = [
           </li>
         ))
       }
+      <li class="w-full">
+        <a href="/contact" class="btn btn-primary">Contact me</a>
+      </li>
     </ul>
   </nav>
 </div>
