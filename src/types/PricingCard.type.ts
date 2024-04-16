@@ -3,5 +3,6 @@ export type PricingCard = {
   subtitle: string;
   price: number;
   monthly: boolean;
+  starting: boolean;
   features: string[];
 };
