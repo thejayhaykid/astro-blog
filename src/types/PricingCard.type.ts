@@ -3,6 +3,7 @@ export type PricingCard = {
   subtitle: string;
   price: number;
   monthly: boolean;
+  hourly?: boolean;
   starting: boolean;
   features: string[];
 };

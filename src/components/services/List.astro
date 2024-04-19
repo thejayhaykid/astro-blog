@@ -5,26 +5,31 @@ const services = [
     title: "Small Businesses Websites",
     subhead: "Fast, SEO Optimized, with a modern design",
     iconName: "smb",
+    href: "/services/smb",
   },
   {
     title: "Golf Courses",
     subhead: "Help with anything on the web your course needs",
     iconName: "golf",
+    href: "/services/golf",
   },
   {
     title: "Mentoring",
     subhead: "Trying to share my gained knowledge with others",
     iconName: "mentoring",
+    href: "/services/mentoring",
   },
   {
     title: "Consulting",
     subhead: "When you need help with a specific project",
     iconName: "consulting",
+    href: "/services/consulting",
   },
   {
     title: "Writing",
     subhead: "Technical writing, documentation, blog posts and more",
     iconName: "writing",
+    href: "/services/writing",
   },
 ];
 ---
@@ -49,8 +54,8 @@ const services = [
     >
       {
         services.map((service) => (
-          <li>
-            <div class="flex items-center gap-x-6">
+          <li class="hover:border-secondary border border-transparent dark:hover:shadow-gray-700 hover:shadow-xl transition-all hover:cursor-pointer p-4 rounded-xl">
+            <a href={service.href} class="flex items-center gap-x-6">
               <Icon name={service.iconName} />
               <div>
                 <h3 class="text-base font-semibold leading-7 tracking-tight text-primary">
@@ -60,7 +65,7 @@ const services = [
                   {service.subhead}
                 </p>
               </div>
-            </div>
+            </a>
           </li>
         ))
       }

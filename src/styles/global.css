@@ -83,8 +83,16 @@ body {
     @apply text-gray-700 dark:text-gray-300;
   }
 
+  .text-invert {
+    @apply text-[#f9f9f9] dark:text-gray-900;
+  }
+
   .border-primary {
     @apply border-gray-900 dark:border-gray-200;
+  }
+
+  .border-secondary {
+    @apply border-gray-900/10 dark:border-gray-200/10;
   }
 
   .outline-primary {
