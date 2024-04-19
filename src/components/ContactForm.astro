@@ -1,5 +1,4 @@
 ---
-// export const prerender = true;
 ---
 
 <div class="relative isolate bg-primary">
@@ -136,3 +135,20 @@
     </form>
   </div>
 </div>
+
+<script>
+  const subjectInput: HTMLInputElement | null = document.getElementById(
+    "subject"
+  ) as HTMLInputElement;
+  let params = new URLSearchParams(document.location.search);
+  const subjectParam = params.get("subject");
+  if (subjectInput && subjectParam) {
+    subjectInput.value = subjectParam;
+  }
+
+  const messageInput: HTMLInputElement | null = document.getElementById(
+    "message"
+  ) as HTMLInputElement;
+  const messageParam = params.get("message");
+  if (messageInput && messageParam) messageInput.value = messageParam;
+</script>

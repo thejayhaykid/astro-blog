@@ -1,0 +1,98 @@
+---
+import PricingCard from "../PricingCard.astro";
+import type { PricingCard as PriceType } from "../../../types/PricingCard.type";
+
+const products: PriceType[] = [
+  {
+    title: "1 hour meeting",
+    subtitle:
+      "Want to check your estimate, rubber duck, or get pointed into a direction?",
+    price: 200,
+    monthly: false,
+    starting: true,
+    features: [
+      "A full hour of my time",
+      "I will prep for the meeting if you provide information",
+      "I am a full stack engineer with a wide swath of experience",
+      "React Specialist",
+      "Single-Spa Core Team member",
+    ],
+  },
+  {
+    title: "Multi-meeting pack",
+    subtitle: "Lock in a set number of meetings spaced out",
+    price: 200,
+    monthly: false,
+    starting: true,
+    features: [
+      "Space out the meetings to get time to implement what we discuss",
+      "Time to try out what we talk about and come up with new questions",
+      "Discounts per meeting for a higher total of meetings",
+      "1 hour meetings per set interval or decide specific dates",
+    ],
+  },
+  {
+    title: "Project Work",
+    subtitle: "Hands on work using my years of experience",
+    price: 100,
+    monthly: false,
+    hourly: true,
+    starting: true,
+    features: [
+      "Use my years of experience to your advantage",
+      "Hourly pricing or by the project",
+      "A free estimate beforehand if you are looking to pay by project",
+      "A full-stack engineer or architect that is available to you",
+    ],
+  },
+  {
+    title: "Project Review",
+    subtitle: "Finished something but need help with lessons learned",
+    price: 50,
+    monthly: false,
+    starting: true,
+    features: [
+      "I can guide a postmortem",
+      "Want to talk out pain points and come up with future alternatives",
+      "Ask me technical questions",
+      "I'll write up a summary document afterwards",
+    ],
+  },
+];
+---
+
+<div class="bg-primary py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-4xl text-center">
+      <h2 class="text-base font-semibold leading-7 text-highligh">Pricing</h2>
+      <p
+        class="mt-2 text-4xl font-bold tracking-tight text-primary sm:text-5xl"
+      >
+        How can I help?
+      </p>
+    </div>
+    <p
+      class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-secondary"
+    >
+      There are lots of ways that I can help you out! But if you don't know
+      where to start, here are some common things I've helped others out with.
+    </p>
+    <div
+      class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4"
+    >
+      {
+        products.map((product) => (
+          <PricingCard
+            title={product.title}
+            subtitle={product.subtitle}
+            price={product.price}
+            monthly={product.monthly}
+            hourly={product.hourly || false}
+            starting={product.starting}
+            features={product.features}
+          />
+        ))
+      }
+    </div>
+  </div>
+</div>

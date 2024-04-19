@@ -1,0 +1,93 @@
+---
+import PricingCard from "../PricingCard.astro";
+import type { PricingCard as PriceType } from "../../../types/PricingCard.type";
+
+const products: PriceType[] = [
+  {
+    title: "Web Audit",
+    subtitle:
+      "Checking your current site's responsiveness, accessibility, and other optimizations",
+    price: 200,
+    monthly: false,
+    starting: false,
+    features: [
+      "Written report of the current state of your site",
+      "Returned in a timely manner",
+      "A professional eye that knows what to look for and what to point out",
+      "Make sure anyone can find your business!",
+    ],
+  },
+  {
+    title: "Host and Manage (Shared Server)",
+    subtitle: "I can host and manage your site on a shared server",
+    price: 100,
+    monthly: true,
+    starting: false,
+    features: [
+      "I will handle all hosting of your site completely",
+      "Handle any and all updates and security patches",
+      "Save you the headache of figuring out how to host or deploy updates",
+    ],
+  },
+  {
+    title: "Host and Manage (Private Server)",
+    subtitle: "Host and manage your site on a dedicated server",
+    price: 200,
+    monthly: true,
+    starting: false,
+    features: [
+      "All the same features of the shared hosting option",
+      "A private, dedicated server just for your site",
+      "Your site won't get bogged down by other applications running on the same server",
+    ],
+  },
+  {
+    title: "Implement Tee Time Software",
+    subtitle: "Want to embed it into your site? Or even just add it?",
+    price: 1000,
+    monthly: false,
+    starting: true,
+    features: [
+      "No more paper sheets to track",
+      "Free up phone lines with customers booking their own tee time",
+      "Increase visibility into tee time and players at your course",
+    ],
+  },
+];
+---
+
+<div class="bg-primary py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-4xl text-center">
+      <h2 class="text-base font-semibold leading-7 text-highligh">Pricing</h2>
+      <p
+        class="mt-2 text-4xl font-bold tracking-tight text-primary sm:text-5xl"
+      >
+        How can I help?
+      </p>
+    </div>
+    <p
+      class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-secondary"
+    >
+      There are lots of ways that I can help you out! But if you don't know
+      where to start, here are some common things I've helped others out with.
+    </p>
+    <div
+      class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4"
+    >
+      {
+        products.map((product) => (
+          <PricingCard
+            title={product.title}
+            subtitle={product.subtitle}
+            price={product.price}
+            monthly={product.monthly}
+            hourly={product.hourly || false}
+            starting={product.starting}
+            features={product.features}
+          />
+        ))
+      }
+    </div>
+  </div>
+</div>
