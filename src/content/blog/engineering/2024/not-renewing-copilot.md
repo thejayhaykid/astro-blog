@@ -8,6 +8,8 @@ tags: ["AI", "copilot", "engineering-life"]
 draft: false
 ---
 
+_I honestly tried to ironically have Microsoft Copilot make the hero image for this post. But they were all terrible so I gave up. Credit [Gerard Siderius on Unsplash](https://unsplash.com/@siderius_creativ)_
+
 I paid for an entire year of personal access to GitHub Copilot. About a month before my subscription ended, I asked myself if I was getting the value from it that I was hoping for. The answer, obviously, was no. So I wanted to explain some of my reasons, some of my hope, and why I am just using free LLM's and old-fashioned Googling again.
 
 ## It's good at the basics, mostly
