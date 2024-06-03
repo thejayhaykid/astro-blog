@@ -2,7 +2,7 @@
 title: "I am not renewing my GitHub Copilot Subscription"
 pubDate: "Jun 3, 2024"
 description: "I hope I can again, one day"
-heroImage: "/blog-images/tech/2024/Copilot.png"
+heroImage: "/blog-images/tech/2024/copilot.jpg"
 category: "Engineering Life"
 tags: ["AI", "copilot", "engineering-life"]
 draft: false
