@@ -17,6 +17,7 @@ import redbubble from "../assets/link-images/redbubble.png";
 import gumroad from "../assets/link-images/gumroad.png";
 import buymeacoffee from "../assets/link-images/buy-me-a-coffee.png";
 import paypal from "../assets/logos/paypal.png";
+import stickermule from "../assets/link-images/sticker-mule.png";
 
 // General website, twitter (x?), stashtag.app, letterboxd, redbubble, gumroad, amazon (once I have things to sell on there)
 const generalLinks: Link[] = [
@@ -100,6 +101,16 @@ const sellingLinks: Link[] = [
     linkUrl: "paypal.me/thejayhaykid",
   },
 ];
+
+const affiliateLinks: Link[] = [
+  {
+    primaryHeader: "Sticker Mule",
+    secondaryHeader: "Anytime I want high quality stickers printed",
+    imageUrl: stickermule.src,
+    linkUrl:
+      "https://www.stickermule.com/unlock?ref_id=4633851701&utm_medium=link&utm_source=invite",
+  },
+];
 ---
 
 <html lang="en">
@@ -144,6 +155,20 @@ const sellingLinks: Link[] = [
           <em>Or not, but here are some options</em>
         </h6>
         <LinkGroup links={sellingLinks} />
+      </div>
+      <div class="my-8">
+        <h2
+          class="text-2xl font-bold pb-2 text-gray-950 dark:text-gray-50 pl-2 md:pl-0"
+        >
+          Affiliate Links
+        </h2>
+        <h6 class="text-sm text-gray-500 dark:text-gray-400 pb-2 pl-2 md:pl-0">
+          <em
+            >A random smattering of brands that I really like and have affiliate
+            programs</em
+          >
+        </h6>
+        <LinkGroup links={affiliateLinks} />
       </div>
     </div>
     <Footer />
