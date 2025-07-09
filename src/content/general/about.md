@@ -3,20 +3,12 @@ pubDate: "May 27 2023"
 updatedDate: "Jun 20 2023"
 ---
 
-# About Me
+## About Me
 
-Hello there! I’m Jake Hayes, a lead software engineer with 7 years of experience in the industry. From an early age, I’ve had a natural affinity for computers and technology, which fueled my passion for problem-solving.
+I'm a Staff Software Engineer with a decade of experience designing and building scalable, user-facing systems. I’ve led high-impact projects across growth-stage startups and mature platforms, shipping features end-to-end and guiding teams through architecture decisions, refactors, and roadmap pivots.
 
-As a full stack developer, my expertise lies in React and frontend development. I’ve had the opportunity to lead total app rewrites, transforming outdated systems into modern React frontends, combined with various backend technologies. Additionally, I’ve gained valuable experience through my consulting work.
+Lately, I’ve been channeling that experience into building my own apps — starting with a Gym Clock app for Apple TV — and advising early-stage founders on how to turn scrappy code into stable, scalable products.
 
-At my previous company, I was honored with the title of “frontend champion” within my team. This recognition acknowledged my deep knowledge and expertise in frontend development.
+I’m especially drawn to the messy middle of product development: where engineering decisions directly shape the customer experience, and speed has to be balanced with sustainability. If you’re a founder wrestling with technical debt, platform choices, or how to scale your system (or team), I’d love to help.
 
-What truly motivates me is the never-ending learning journey. I embrace the concept of being a “T-shaped” developer, continuously expanding my skills across different areas of software engineering.
-
-Beyond my professional life, I find immense joy in my family. I’ve been happily married for over 8 years and have two wonderful little girls who inspire me every day.
-
-Software development isn’t just my job; it’s my professional hobby. However, when I’m not immersed in code, you’ll likely find me on the golf course, indulging in my love for the sport.
-
-Interestingly, I initially pursued a major in Geographic Information Science, which granted me a unique perspective. I also studied design, granting me insights into the collaborative processes with UX designers.
-
-I’m excited to connect, collaborate, and contribute to the ever-evolving world of software development. Let’s build innovative solutions together!
+Outside of work, you’ll usually find me exploring new app ideas, tuning home gym timers, or diving into systems that make technical teams more effective.
