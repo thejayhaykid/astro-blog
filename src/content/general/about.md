@@ -11,4 +11,4 @@ Lately, I’ve been channeling that experience into building my own apps — sta
 
 I’m especially drawn to the messy middle of product development: where engineering decisions directly shape the customer experience, and speed has to be balanced with sustainability. If you’re a founder wrestling with technical debt, platform choices, or how to scale your system (or team), I’d love to help.
 
-Outside of work, you’ll usually find me exploring new app ideas, tuning home gym timers, or diving into systems that make technical teams more effective.
+Outside of work, you’ll usually find me with my family, watching sports, reading, or trying to catch-up on a multi-year long backlog of videogames.
