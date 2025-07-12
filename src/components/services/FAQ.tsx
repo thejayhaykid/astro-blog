@@ -8,24 +8,14 @@ const faqs = [
       "Absolutely! Any questions you have that are software related, I can get answers for. Just ask!",
   },
   {
-    question: "What is your hourly rate?",
-    answer:
-      "I typically work on a project or task basis. I care more about the value I can provide than the time it takes me to do so. If you need a quote, let me know and we can work something out. But I'd love to work within your budget.",
-  },
-  {
     question: "What is your experience?",
     answer:
-      "I am a senior level software engineer with nearly 10 years of experience. I am still new to the business side of freelancing, but I am confident in my ability to deliver quality work. Whatever you need, I can make work.",
-  },
-  {
-    question: "What is your availability?",
-    answer:
-      "I am available to work on your project full-time. I am flexible with my schedule and can work around your needs. I am here to make your life easier.",
+      "I am a staff software engineer with a decade of experience. I have also worked with multiple early stage, or even stealth mode startups either writing code or consulting on a higher level. Whatever you need, I can make work.",
   },
   {
     question: "What is your preferred tech stack?",
     answer:
-      "I am a Subject Matter Expert in React, TypeScript, and overall front-end development. I am comfortable with any tech stack, but mostly I am focused on making sure the final product is exactly what you need. I am here to make your life easier.",
+      "I am a Subject Matter Expert in React, TypeScript, and overall front-end development. But I have a wide and varied range of experience in other technologies. Such as JavaScript, Node.js, Nest.js, C#, Python, Java, Swift with SwiftUI, COBOL, and many more.",
   },
 ];
 

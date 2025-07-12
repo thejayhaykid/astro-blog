@@ -5,9 +5,19 @@ updatedDate: "May 27 2023"
 
 # RESUME
 
+## Staff Software Engineer
+
+### Alkami Technology, Inc., Columbus, OH / December 2024 - Present
+
+- Member of the Loans team at MANTL when Alkami acquired MANTL in 2025
+- Helped finish the loan application product and launch it with our first few customers
+- The loans product was able to produce of $1 million in loans within the first two months of launch
+- Worked in a TypeScript Monorepo with React, Next.js, Nest.js, GraphQL, and Turborepo
+- Created the collateral entry and verification flow, allowing for auto loans at launch as well as other types of loans in the future
+
 ## Lead Software Engineer
 
-### T-CETRA, Dublin, OH / March 2023 - Present
+### T-CETRA, Dublin, OH / March 2023 - December 2024
 
 - Lead software engineer responsible for modernizing the front-end of all business applications at the company, introducing React
 - Responsible for setting company standards of code quality and code organization
