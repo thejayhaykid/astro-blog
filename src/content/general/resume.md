@@ -10,8 +10,8 @@ updatedDate: "May 27 2023"
 ### Alkami Technology, Inc., Columbus, OH / December 2024 - Present
 
 - Member of the Loans team at MANTL when Alkami acquired MANTL in 2025
-- Helped finish the loan application product and launch it with our first few customers
-- The loans product was able to produce of $1 million in loans within the first two months of launch
+- Helped finished the loan application product and launch it with our first few customers
+- The loans product produced $1 million in loans within the first two months of launch
 - Worked in a TypeScript Monorepo with React, Next.js, Nest.js, GraphQL, and Turborepo
 - Created the collateral entry and verification flow, allowing for auto loans at launch as well as other types of loans in the future
 
@@ -83,6 +83,13 @@ updatedDate: "May 27 2023"
 ---
 
 # SIDE PROJECTS
+
+## Jake Hayes Works LLC
+
+- Building and launching independent software products
+- Providing technical consulting to early-stage founders, helping them scope MVPs, stabilize systems, and make scalable architecture decisions
+- Advising small product teams on engineering best practices, team workflows, and technical strategy
+- Developing branded technical content and blog posts to share lessons from indie app development and consulting work
 
 ## [Single-SPA Maintainer](https://single-spa.js.org)
 
