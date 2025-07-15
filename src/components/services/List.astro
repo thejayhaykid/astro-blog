@@ -2,34 +2,24 @@
 import Icon from "../Icon.tsx";
 const services = [
   {
-    title: "Small Businesses Websites",
-    subhead: "Fast, SEO Optimized, with a modern design",
-    iconName: "smb",
-    href: "/services/smb",
+    title: "MVP Planning & Technical Architecture",
+    subhead: "Get your early-stage app scoped right the first time",
+    iconName: "architecture",
   },
   {
-    title: "Golf Courses",
-    subhead: "Help with anything on the web your course needs",
-    iconName: "golf",
-    href: "/services/golf",
-  },
-  {
-    title: "Mentoring",
-    subhead: "Trying to share my gained knowledge with others",
+    title: "Engineering Mentorship & Pairing",
+    subhead: "1:1 support for junior/mid-level devs",
     iconName: "mentoring",
-    href: "/services/mentoring",
   },
   {
-    title: "Consulting",
-    subhead: "When you need help with a specific project",
+    title: "Project-Based Consulting",
+    subhead: "Short-term or ongoing guidance for small teams",
     iconName: "consulting",
-    href: "/services/consulting",
   },
   {
-    title: "Writing",
-    subhead: "Technical writing, documentation, blog posts and more",
+    title: "Technical Writing & Documentation",
+    subhead: "Blog posts, product docs, internal guides",
     iconName: "writing",
-    href: "/services/writing",
   },
 ];
 ---
@@ -40,12 +30,11 @@ const services = [
   >
     <div class="max-w-2xl">
       <h2 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-        What can I do?
+        How can I help?
       </h2>
       <p class="mt-6 text-lg leading-8 text-secondary">
-        Given years of experience, feel free to ask me about something that
-        isn't on this list and I can probably still help you. But my areas of
-        expertise are
+        I'm currently building my own applications and offering my expertise and
+        experience to others.
       </p>
     </div>
     <ul
@@ -55,17 +44,15 @@ const services = [
       {
         services.map((service) => (
           <li class="hover:border-secondary border border-transparent dark:hover:shadow-gray-700 hover:shadow-xl transition-all hover:cursor-pointer p-4 rounded-xl">
-            <a href={service.href} class="flex items-center gap-x-6">
-              <Icon name={service.iconName} />
-              <div>
-                <h3 class="text-base font-semibold leading-7 tracking-tight text-primary">
-                  {service.title}
-                </h3>
-                <p class="text-sm font-semibold leading-6 text-highlight">
-                  {service.subhead}
-                </p>
-              </div>
-            </a>
+            <Icon name={service.iconName} />
+            <div>
+              <h3 class="text-base font-semibold leading-7 tracking-tight text-primary">
+                {service.title}
+              </h3>
+              <p class="text-sm font-semibold leading-6 text-highlight">
+                {service.subhead}
+              </p>
+            </div>
           </li>
         ))
       }

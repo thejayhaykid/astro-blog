@@ -102,15 +102,7 @@ const sellingLinks: Link[] = [
   },
 ];
 
-const affiliateLinks: Link[] = [
-  {
-    primaryHeader: "Sticker Mule",
-    secondaryHeader: "Anytime I want high quality stickers printed",
-    imageUrl: stickermule.src,
-    linkUrl:
-      "https://www.stickermule.com/unlock?ref_id=4633851701&utm_medium=link&utm_source=invite",
-  },
-];
+const affiliateLinks: Link[] = [];
 ---
 
 <html lang="en">
@@ -122,7 +114,7 @@ const affiliateLinks: Link[] = [
     <div
       class="flex flex-col w-screen overflow-y-auto items-center min-h-[var(--screen-height)] dark:bg-gray-900 dark:text-gray-200 pt-8"
     >
-      <div class="my-8">
+      {generalLinks.length > 0 && <div class="my-8">
         <h2
           class="text-2xl font-bold pb-2 text-gray-950 dark:text-gray-50 pl-2 md:pl-0"
         >
@@ -133,8 +125,8 @@ const affiliateLinks: Link[] = [
         </h6>
         <LinkGroup links={generalLinks} />
         <!-- <GeneralLinks /> -->
-      </div>
-      <div class="my-8">
+      </div>}
+      {portfolioLinks.length > 0 && <div class="my-8">
         <h2
           class="text-2xl font-bold pb-2 text-gray-950 dark:text-gray-50 pl-2 md:pl-0"
         >
@@ -144,8 +136,8 @@ const affiliateLinks: Link[] = [
           <em>Hopefully this list continues growing</em>
         </h6>
         <LinkGroup links={portfolioLinks} />
-      </div>
-      <div class="my-8">
+      </div>}
+      {sellingLinks.length > 0 && <div class="my-8">
         <h2
           class="text-2xl font-bold pb-2 text-gray-950 dark:text-gray-50 pl-2 md:pl-0"
         >
@@ -155,8 +147,8 @@ const affiliateLinks: Link[] = [
           <em>Or not, but here are some options</em>
         </h6>
         <LinkGroup links={sellingLinks} />
-      </div>
-      <div class="my-8">
+      </div>}
+      {affiliateLinks.length > 0 &&<div class="my-8">
         <h2
           class="text-2xl font-bold pb-2 text-gray-950 dark:text-gray-50 pl-2 md:pl-0"
         >
@@ -169,7 +161,7 @@ const affiliateLinks: Link[] = [
           >
         </h6>
         <LinkGroup links={affiliateLinks} />
-      </div>
+      </div>}
     </div>
     <Footer />
   </body>
