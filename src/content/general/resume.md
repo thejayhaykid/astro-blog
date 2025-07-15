@@ -86,7 +86,7 @@ updatedDate: "May 27 2023"
 
 ## Jake Hayes Works LLC
 
-- Building and launching independent software products
+- Building and launching independent software products and applications
 - Providing technical consulting to early-stage founders, helping them scope MVPs, stabilize systems, and make scalable architecture decisions
 - Advising small product teams on engineering best practices, team workflows, and technical strategy
 - Developing branded technical content and blog posts to share lessons from indie app development and consulting work
