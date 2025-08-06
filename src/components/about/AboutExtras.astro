@@ -1,0 +1,90 @@
+---
+import Icon, { IconName } from "../Icon";
+
+interface Action {
+  title: string;
+  href: string;
+  icon: IconName;
+  description: string;
+}
+
+const actions: Action[] = [
+  {
+    title: "Blog",
+    href: "/blog",
+    icon: IconName.WRITING,
+    description:
+      "Check out my latest posts and articles about web development, programming, and technology.",
+  },
+  {
+    title: "Services",
+    href: "/services",
+    icon: IconName.SERVICES,
+    description:
+      "Looking for a freelance developer? Learn more about how I can help with your next project.",
+  },
+  {
+    title: "Resume",
+    href: "/resume",
+    icon: IconName.ACADEMIC_CAP,
+    description:
+      "View my professional experience, skills, and qualifications in a more traditional format.",
+  },
+  {
+    title: "Contact",
+    href: "/contact",
+    icon: IconName.USERS,
+    description:
+      "Have a question or want to work together? Get in touch with me through my contact form.",
+  },
+];
+
+function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(" ");
+}
+---
+
+<div
+  class="divide-y-2 divide-secondary overflow-hidden rounded-lg bg-secondary shadow-sm sm:grid sm:grid-cols-2 sm:gap-px sm:divide-y-0 border-t-2 border-b-2"
+>
+  {
+    actions.map((action, actionIdx) => (
+      <div
+        class={classNames(
+          actionIdx === 0
+            ? "rounded-tl-lg rounded-tr-lg sm:rounded-tr-none"
+            : "",
+          actionIdx === 1 ? "sm:rounded-tr-lg" : "",
+          actionIdx === actions.length - 2 ? "sm:rounded-bl-lg" : "",
+          actionIdx === actions.length - 1
+            ? "rounded-br-lg rounded-bl-lg sm:rounded-bl-none"
+            : "",
+          "group relative bg-primary p-6 focus-within:ring-2 focus-within:ring-highlight focus-within:ring-inset"
+        )}
+      >
+        <div>
+          <span class="inline-flex rounded-lg p-3">
+            <Icon name={action.icon} />
+          </span>
+        </div>
+        <div class="mt-8">
+          <h3 class="text-base font-semibold text-primary">
+            <a href={action.href} class="focus:outline-hidden">
+              <span class="absolute inset-0" aria-hidden="true" />
+              {action.title}
+            </a>
+          </h3>
+          <p class="mt-2 text-sm text-secondary">{action.description}</p>
+        </div>
+        <span
+          aria-hidden="true"
+          class="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" class="size-6">
+            <path d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z" />
+          </svg>
+        </span>
+      </div>
+    ))
+  }
+</div>

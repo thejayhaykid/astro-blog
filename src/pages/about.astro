@@ -5,12 +5,13 @@ import { Content } from "../content/general/about.md";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import BaseHead from "../components/BaseHead.astro";
-import AboutExtras from "../components/AboutExtras.astro";
+import AboutExtras from "../components/about/AboutExtras.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 const title = `${SITE_TITLE} | About`;
 
 import golf from "../assets/golf.png";
+// import AboutFunFacts from "../components/about/AboutFunFacts.astro";
 ---
 
 <head>
@@ -18,10 +19,10 @@ import golf from "../assets/golf.png";
 </head>
 <Header />
 <div
-  class="min-h-[var(--screen-height)] dark:bg-gray-900 dark:text-gray-50 pt-6 flex flex-row justify-center"
+  class="min-h-[var(--screen-height)] bg-primary text-primary pt-6 flex flex-row justify-center"
 >
   <div
-    class="relative isolate overflow-hidden bg-primary px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0"
+    class="relative isolate overflow-hidden bg-primary px-6 py-8 sm:py-12 lg:overflow-visible lg:px-0"
   >
     <div
       class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10"
@@ -62,5 +63,6 @@ import golf from "../assets/golf.png";
     </div>
   </div>
 </div>
+<!-- <AboutFunFacts /> -->
 <AboutExtras />
 <Footer />
