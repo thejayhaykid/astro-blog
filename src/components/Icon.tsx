@@ -9,7 +9,7 @@ export enum IconName {
   WRITING = "writing",
   ACADEMIC_CAP = "academic-cap",
   SERVICES = "services",
-  USERS = "users"
+  USERS = "users",
 }
 
 interface IconProps {
