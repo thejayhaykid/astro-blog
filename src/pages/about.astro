@@ -2,9 +2,7 @@
 // import Layout from "../layouts/BlogPost.astro";
 import { Image } from "astro:assets";
 import { Content } from "../content/general/about.md";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import BaseHead from "../components/BaseHead.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import AboutExtras from "../components/about/AboutExtras.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
@@ -14,56 +12,57 @@ import golf from "../assets/golf.png";
 // import AboutFunFacts from "../components/about/AboutFunFacts.astro";
 ---
 
-<head>
-  <BaseHead title={title} description={SITE_DESCRIPTION} />
-</head>
-<Header />
-<div
-  class="min-h-[var(--screen-height)] bg-primary text-primary pt-6 flex flex-row justify-center"
+<BaseLayout
+  title={title}
+  description={SITE_DESCRIPTION}
+  prefetchImages={[golf]}
 >
   <div
-    class="relative isolate overflow-hidden bg-primary px-6 py-8 sm:py-12 lg:overflow-visible lg:px-0"
+    class="min-h-[var(--screen-height)] bg-primary text-primary pt-6 flex flex-row justify-center"
   >
     <div
-      class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10"
+      class="relative isolate overflow-hidden bg-primary px-6 py-8 sm:py-12 lg:overflow-visible lg:px-0"
     >
       <div
-        class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
+        class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10"
       >
-        <div class="lg:pr-4">
-          <div class="lg:max-w-lg">
-            <article
-              class="prose text-left prose-lg max-w-4xl p-4 dark:prose-invert dark:prose-h1:text-gray-50 dark:prose-h2:text-gray-50 dark:prose-h3:text-gray-50 dark:bg-gray-900 dark:text-gray-50"
-            >
-              <Content />
-            </article>
+        <div
+          class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
+        >
+          <div class="lg:pr-4">
+            <div class="lg:max-w-lg">
+              <article
+                class="prose text-left prose-lg max-w-4xl p-4 dark:prose-invert dark:prose-h1:text-gray-50 dark:prose-h2:text-gray-50 dark:prose-h3:text-gray-50 dark:bg-gray-900 dark:text-gray-50"
+              >
+                <Content />
+              </article>
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        class="-ml-12 -mt-12 p-0 md:p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden"
-      >
-        <Image
-          class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
-          src={golf}
-          alt="me"
-          transition:animate="fade"
-          loading="eager"
-        />
-      </div>
-      <div
-        class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
-      >
-        <div class="lg:pr-4">
-          <div
-            class="max-w-xl text-base leading-7 text-gray-700 dark:text-gray-100 lg:max-w-lg"
-          >
+        <div
+          class="-ml-12 -mt-12 p-0 md:p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden"
+        >
+          <Image
+            class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
+            src={golf}
+            alt="me"
+            transition:animate="fade"
+            loading="eager"
+          />
+        </div>
+        <div
+          class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
+        >
+          <div class="lg:pr-4">
+            <div
+              class="max-w-xl text-base leading-7 text-gray-700 dark:text-gray-100 lg:max-w-lg"
+            >
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 <!-- <AboutFunFacts /> -->
-<AboutExtras />
-<Footer />
+  <AboutExtras />
+</BaseLayout>
