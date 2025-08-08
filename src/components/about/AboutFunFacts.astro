@@ -1,0 +1,65 @@
+---
+import LargeGrid from "../LargeGrid.astro";
+
+const funnestFact = {
+  body: "I got married in college at the age of 21 and have already made it past my 10th anniversarry",
+};
+
+const funFacts = [
+  [
+    [
+      {
+        body: "I played college football",
+      },
+      {
+        body: "I worked at Apple",
+      },
+      {
+        body: "I’m ambidextrous",
+      },
+    ],
+    [
+      {
+        body: "I love Star Wars",
+      },
+      {
+        body: "I minored in design",
+      },
+      {
+        body: "I’m a girl dad",
+      },
+    ],
+  ],
+  [
+    [
+      {
+        body: "I love golf",
+      },
+      {
+        body: "I’m tall",
+      },
+      {
+        body: "I have 6 tattoos",
+      },
+    ],
+    [
+      {
+        body: "I’m a Formula 1 fan",
+      },
+      {
+        body: "My first software job was on a mainframe",
+      },
+      {
+        body: "I love card games",
+      },
+    ],
+  ],
+];
+---
+
+<LargeGrid
+  title="Fun Facts"
+  subtitle="Some interesting facts about me"
+  featuredTestimonial={funnestFact}
+  testimonials={funFacts}
+/>
