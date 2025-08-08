@@ -1,4 +1,5 @@
 import type { IconName } from "../components/Icon";
+import { ModelsEnum } from "./Model.types";
 
 export interface Card {
   title: string;
@@ -21,4 +22,5 @@ export interface GridTestimonial {
   imageUrl?: string;
   icon?: IconName;
   author?: Author;
+  model?: ModelsEnum;
 }

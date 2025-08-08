@@ -2,6 +2,8 @@
 import type { GridTestimonial } from "../types/About.types";
 import minidenticon from "../utils/identicon";
 import Icon from "./Icon";
+import Football from "./models/Football";
+import RenderModel from "./models/Renderer";
 
 interface Props {
   title: string;
@@ -110,6 +112,11 @@ const { title, subtitle, featuredTestimonial, testimonials } = Astro.props;
               >
                 {column.map((testimonial) => (
                   <figure class="rounded-2xl bg-primary p-6 shadow-lg ring-1 ring-gray-900/5">
+                    {testimonial.model ? (
+                      <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-secondary">
+                        <Football client:load />
+                      </div>
+                    ) : null}
                     {testimonial.icon && (
                       <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-secondary">
                         <Icon name={testimonial.icon} />
