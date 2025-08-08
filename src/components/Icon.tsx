@@ -1,3 +1,5 @@
+import * as React from "react";
+
 export enum IconName {
   ARCHITECTURE = "architecture",
   SMB = "smb",
