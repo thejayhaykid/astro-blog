@@ -3,6 +3,7 @@ import EmailShareButton from "./shareButtons/Email.astro";
 import HackerNewsShareButton from "./shareButtons/HackerNews.astro";
 import RedditShareButton from "./shareButtons/Reddit.astro";
 import TwitterShareButton from "./shareButtons/Twitter.astro";
+import LinkedIn from "./shareButtons/LinkedIn.astro";
 import { SITE_TITLE } from "../consts";
 
 const { title, description, url = Astro.request.url } = Astro.props;
@@ -25,4 +26,5 @@ const { title, description, url = Astro.request.url } = Astro.props;
   />
   <RedditShareButton url={url} title={title} description={description} />
   <TwitterShareButton url={url} description={title} via="thejayhaykid" />
+  <LinkedIn url={url} />
 </div>
