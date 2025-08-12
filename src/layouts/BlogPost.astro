@@ -5,7 +5,6 @@ import type { CollectionEntry } from "astro:content";
 import Disqus from "../components/Disqus.tsx";
 import RelatedPosts from "../components/RelatedPosts.astro";
 import FormattedDate from "../components/FormattedDate.astro";
-// import { JOB_TITLE } from "../consts";
 import { getRelatedPosts } from "../utils/postHelper";
 import ShareButtons from "../components/ShareButtons.astro";
 
@@ -76,7 +75,7 @@ const relatedPosts = await getRelatedPosts(title, category, tags);
         <h6 class="mt-6">
           <a
             class="text-sm font-semibold leading-6 text-highlight no-underline hover:underline"
-            href={`/tag/${String(category)}/`}
+            href={`/blog/tag/${String(category)}/`}
           >
             {category}
           </a>
@@ -90,7 +89,7 @@ const relatedPosts = await getRelatedPosts(title, category, tags);
             <li>
               <a
                 class="text-sm font-thin text-highlight no-underline hover:underline"
-                href={`/tag/${String(tag)}/`}
+                href={`/blog/tag/${String(tag)}/`}
               >
                 #{tag}
               </a>
