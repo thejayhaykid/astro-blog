@@ -1,68 +1,49 @@
 ---
-// import { ViewTransitions } from "astro:transitions";
-import BaseHead from "../../components/BaseHead.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
-// import FormattedDate from "../../components/FormattedDate.astro";
-// import me from "../../assets/me.png";
+// import { squish } from "../../utils//textUtils";
+// import BlogFilters from "../../components/BlogFilters";
 import BlogPreview from "../../components/BlogPreview.astro";
 
-import { ViewTransitions } from "astro:transitions";
 const posts = (await getCollection("blog"))
   .filter((post) => process.env.NODE_ENV === "development" || !post.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
+// Add the default filter "All"
+// const filters = [
+//   {
+//     id: "all",
+//     name: "All",
+//   },
+//   ...posts
+//     .filter((post) => !!post.data.category)
+//     .map((post) => ({
+//       id: squish(post.data.category),
+//       name: post.data.category,
+//     })),
+// ];
 const title = `${SITE_TITLE} | Blog`;
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <BaseHead title={title} description={SITE_DESCRIPTION} />
-    <style>
-      ul {
-        list-style-type: none;
-        padding: unset;
-      }
-      ul li {
-        display: flex;
-      }
-      ul li :global(time) {
-        flex: 0 0 130px;
-        font-style: italic;
-        color: #595959;
-      }
-      ul li a:visited {
-        color: #8e32dc;
-      }
-    </style>
-    <ViewTransitions />
-  </head>
-  <body class="bg-primary">
-    <Header />
-    <div class="min-w-full min-h-full bg-primary pb-24">
-      <main
-        class="flex flex-col gap-4 align-middle items-center justify-center w-screen max-w-[95vw] bg-primary text-primary min-h-[var(--screen-height)]"
-      >
-        <div class="bg-primary py-4 sm:py-4">
-          <div class="w-full lg:px-8">
-            <h2
-              class="text-3xl font-bold tracking-tight text-primary sm:text-4xl"
-            >
-              Posts
-            </h2>
-            <!--<p class="mt-2 text-lg leading-8 text-gray-600 dark:text-gray-300">
-              Learn how to grow your business with our expert advice.
-            </p> -->
-            <div class="mt-4 space-y-20 lg:mt-8 lg:space-y-20">
-              {posts.map((post) => <BlogPreview post={post} />)}
-            </div>
+<BaseLayout title={title} description={SITE_DESCRIPTION}>
+  <div class="min-w-full min-h-full bg-primary pb-24">
+    <main
+      class="flex flex-col gap-4 align-middle items-center justify-center w-screen max-w-[95vw] bg-primary text-primary min-h-[var(--screen-height)]"
+    >
+      <div class="bg-primary py-4 sm:py-4">
+        <div class="w-full lg:px-8">
+          <h2
+            class="text-3xl font-bold tracking-tight text-primary sm:text-4xl"
+          >
+            Posts
+          </h2>
+          <!-- <BlogFilters filters={filters} pathname="/blog" client:load /> -->
+          <div class="mt-4 space-y-20 lg:mt-8 lg:space-y-20">
+            {posts.map((post) => <BlogPreview post={post} />)}
           </div>
         </div>
-      </main>
-    </div>
-    <Footer />
-  </body>
-</html>
+      </div>
+    </main>
+  </div>
+</BaseLayout>
