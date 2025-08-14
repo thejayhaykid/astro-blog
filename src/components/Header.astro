@@ -7,6 +7,7 @@ const menuLinks = [
   { href: "/", text: "Home" },
   { href: "/blog", text: "Blog" },
   { href: "/services", text: "Services" },
+  { href: "/about", text: "About" },
 ];
 ---
 
@@ -70,7 +71,7 @@ const menuLinks = [
       {
         menuLinks.map((link) => (
           <li class="w-full pb-2 border-b border-primary transition-all duration-300">
-            <a href={link.href} class="hover:text-secondary">
+            <a href={link.href} class="hover:text-secondary block">
               {link.text}
             </a>
           </li>
