@@ -6,6 +6,7 @@ heroImage: "/blog-images/tech/2024/environment.jpg"
 category: "How-to"
 tags: ["how-to", "webpack", "webdev"]
 draft: false
+imageCaption: "Photo from [Unsplash](https://unsplash.com)"
 ---
 Adding environment variables to your Webpack project is simple and easy. All you need to do is add `dotenv-webpack` into the dev dependencies in your `package.json`
 

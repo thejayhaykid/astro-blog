@@ -7,6 +7,7 @@ heroImage: "/blog-images/tech/2024/2024-goals.png"
 category: "Engineering Life"
 tags: ["goals", "apps", "reading"]
 draft: false
+imageCaption: "Photo from [Unsplash](https://unsplash.com)"
 ---
 
 I have spent a significant amount of time over the last month considering what my goals for the year should be. One thing that continued to come to mind was to [Learn in public](https://twitter.com/swyx/status/1009174159690264579) (Thanks to Kent C. Dodds for introducing me to that).

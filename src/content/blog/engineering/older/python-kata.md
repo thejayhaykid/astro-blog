@@ -7,9 +7,10 @@ heroImage: "/blog-images/tech/2020/03/kata-cover-image.jpg"
 category: "Programming Exercise"
 tags: ["Python", "Exercise", "CLI"]
 draft: false
+imageCaption: "Photo from [Unsplash](https://unsplash.com)"
 ---
 
-### [Description of the Problem](https://github.com/PillarTechnology/kata-babysitter):
+### [Description of the Problem](https://github.com/PillarTechnology/kata-babysitter)
 
 > # Babysitter Kata
 >

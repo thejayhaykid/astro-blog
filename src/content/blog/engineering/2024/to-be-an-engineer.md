@@ -6,6 +6,7 @@ heroImage: "/blog-images/tech/2024/pine.jpg"
 category: "Engineering Life"
 tags: ["career", "engineering", "learning"]
 draft: false
+imageCaption: "Photo from [Unsplash](https://unsplash.com)"
 ---
 I have been getting ever closer to being a software engineer for a full decade now. And there's one thing about the near-infinite stream of recruiters that has been bothering me for years. The question of 'have you ever worked in X technology before?' and the immediate disqualification if I haven't worked many years in the entire stack.
 
