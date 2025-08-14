@@ -7,6 +7,7 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 
 import { SITE_DESCRIPTION } from "../../consts";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const posts = await getCollection("blog");
 let postPage: any = undefined;
@@ -26,18 +27,8 @@ const { Content } = await postPage.render();
 const title = `${postPage.data.title} | JH`;
 ---
 
-<head>
-<BaseHead
-  title={title}
-  description={SITE_DESCRIPTION}
-  image={postPage.data.heroImage}
-/>
-  </head>
-<body>
-<ViewTransitions />
-<Header />
+<BaseLayout title={title} description={postPage.data.description || SITE_DESCRIPTION} image={postPage.data.heroImage}>
 <BlogPost {...postPage.data}>
   <Content />
 </BlogPost>
-<Footer />
-</body>
+</BaseLayout>

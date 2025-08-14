@@ -5,6 +5,7 @@ description: "Adding new skills that's a fun new challenge"
 heroImage: "/blog-images/tech/2025/shopify.jpg"
 category: "Consulting"
 tags: ["consulting", "freelancing", "shopify"]
+imageCaption: "Photo by [Metin Ozer](https://unsplash.com/@metinozer?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/a-close-up-of-a-green-sign-with-a-yellow-arrow-CDJdY99SVu4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)"
 draft: false
 ---
 
@@ -16,7 +17,7 @@ Not every company needs a 100% custom solution because their web presence or tec
 
 ## It gives me perspectives on a successful tech company
 
-I completed the [Shopify Development Fundamentals Path](https://www.shopifyacademy.com/path/shopify-development-fundamentals) and just going through that, I could see some of the architecture decisions made at Shopify. They clearly have some things figured out as they are the best online store SaaS out there. So taking the time to look at how they have structured their plugin system, and their databases that users have access to is just another example of how to architect an application. I’m always interested in seeing how successful companies architect their tech as I try to become a skilled software architect myself.)
+I completed the [Shopify Development Fundamentals Path](https://www.shopifyacademy.com/path/shopify-development-fundamentals) and just going through that, I could see some of the architecture decisions made at Shopify. They clearly have some things figured out as they are the best online store SaaS out there. So taking the time to look at how they have structured their plugin system, and their databases that users have access to is just another example of how to architect an application. I’m always interested in seeing how successful companies architect their tech as I try to become a skilled software architect myself.
 
 ## Learning is just fun
 
