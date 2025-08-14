@@ -5,17 +5,22 @@ const faqs = [
   {
     question: "Can you help my small business?",
     answer:
-      "Absolutely! Any questions you have that are software related, I can get answers for. Just ask!",
+      "Yes! I work with small businesses to create custom software solutions that fit your needs.",
   },
   {
     question: "What is your experience?",
     answer:
-      "I am a staff software engineer with a decade of experience. I have also worked with multiple early stage, or even stealth mode startups either writing code or consulting on a higher level. Whatever you need, I can make work.",
+      "I have over 10 years of software engineering experience across many industries and company sizes.",
   },
   {
-    question: "What is your preferred tech stack?",
+    question: "What technologies do you use?",
     answer:
-      "I am a Subject Matter Expert in React, TypeScript, and overall front-end development. But I have a wide and varied range of experience in other technologies. Such as JavaScript, Node.js, Nest.js, C#, Python, Java, Swift with SwiftUI, COBOL, and many more.",
+      "I’m proficient in a broad range of tools and languages — I pick the best fit for your project.",
+  },
+  {
+    question: "How do you charge?",
+    answer:
+      "Rates depend on project scope and complexity. I provide detailed estimates after requirements gathering.",
   },
 ];
 
