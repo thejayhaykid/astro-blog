@@ -6,6 +6,7 @@ heroImage: "/blog-images/tech/2024/freelancing.jpg"
 category: "Freelancing"
 tags: ["freelancing", "smbs", "web"]
 draft: false
+imageCaption: "Photo by [Fotis Fotopoulos](https://unsplash.com/@ffstop?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/black-computer-keyboard-DuHKoV44prg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)"
 ---
 
 Hey everyone,

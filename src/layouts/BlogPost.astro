@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { marked } from "marked";
 import type { CollectionEntry } from "astro:content";
 import Disqus from "../components/Disqus.tsx";
 import RelatedPosts from "../components/RelatedPosts.astro";
@@ -12,8 +13,10 @@ import me from "../assets/me.png";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, pubDate, updatedDate, heroImage, tags, category, description } =
+const { title, pubDate, updatedDate, heroImage, tags, category, description, imageCaption, imageAlt } =
   Astro.props;
+
+const htmlCaption = imageCaption ? marked.parse(imageCaption) : "";
 
 const relatedPosts = await getRelatedPosts(title, category, tags);
 ---
@@ -21,12 +24,22 @@ const relatedPosts = await getRelatedPosts(title, category, tags);
 <main class="bg-primary text-primary flex flex-col items-center max-w-[100vw]">
   {
     heroImage && (
-      <img
-        class="object-cover border-b-2 shadow-md dark:shadow-sm w-screen max-h-96 mb-8"
-        src={heroImage}
-        alt={title}
-        transition:name={heroImage}
-      />
+      <>
+        <img
+          class="object-cover border-b-2 shadow-md dark:shadow-sm w-screen max-h-96 mb-0"
+          src={heroImage}
+          alt={imageAlt ?? title}
+          transition:name={heroImage}
+        />
+        {
+          imageCaption && (
+            <div
+              class="text-sm italic text-center mt-0 mb-8 max-w-[100vw] px-4"
+              set:html={htmlCaption}
+            />
+          )
+        }
+      </>
     )
   }
   <div
@@ -40,9 +53,7 @@ const relatedPosts = await getRelatedPosts(title, category, tags);
     <div class="flex items-center gap-x-6 max-w-[100vw]">
       <Image class="h-28 w-28 rounded-full object-cover" src={me} alt="" />
       <div class="flex flex-col items-start">
-        <h3
-          class="text-base font-semibold leading-7 tracking-tight text-primary"
-        >
+        <h3 class="text-base font-semibold leading-7 tracking-tight text-primary">
           Jake Hayes
         </h3>
         <!-- <p class="text-sm font-semibold leading-6 text-highlight mt-2">

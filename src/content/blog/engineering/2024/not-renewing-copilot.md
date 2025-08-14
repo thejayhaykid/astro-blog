@@ -6,6 +6,7 @@ heroImage: "/blog-images/tech/2024/copilot.jpg"
 category: "Engineering Life"
 tags: ["AI", "copilot", "engineering-life"]
 draft: false
+imageCaption: "Photo by [Gerard Siderius](https://unsplash.com/@siderius_creativ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/a-robot-holding-a-gun-next-to-a-pile-of-rolls-of-toilet-paper-YeoSV_3Up-k?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)"
 ---
 
 _I honestly tried to ironically have Microsoft Copilot make the hero image for this post. But they were all terrible so I gave up. Credit [Gerard Siderius on Unsplash](https://unsplash.com/@siderius_creativ)_
@@ -28,7 +29,7 @@ Both of those methods turned out to be faster than Copilot because of...
 
 I don't want to add a bunch of packages to my already bloated React project. But Copilot is absolutely insistent on add more packages first. Then I have to actually find out what the package it's recommending is, are there better packages that do the same thing, down down down...
 
-> Absolutely! All you need to do is install [package A], [package B], and [package C]. Then, adjust your dev server (and, of course, your build pipeline 🤭) and then add the following block of code: > > `js > // …. > `
+> Absolutely! All you need to do is install [package A], [package B], and [package C]. Then, adjust your dev server (and, of course, your build pipeline 🤭) and then add the following block of code:>> `js> // ….>`
 
 Except Copilot didn't tell me the package I had mentioned by name could do what I asked without any other changes. Read the docs, kids.
 

@@ -36,6 +36,7 @@
     "disqus-react": "^1.1.5",
     "fast-xml-parser": "^4.2.6",
     "markdown-it": "^14.0.0",
+    "marked": "^16.1.2",
     "postcss": "^8.4.24",
     "prettier-plugin-astro": "^0.9.1",
     "react": "^18.2.0",
