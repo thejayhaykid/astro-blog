@@ -1,0 +1,92 @@
+---
+title: "Custom Software Development"
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PricingCard from "../../components/services/PricingCard.astro";
+import CTA from "../../components/services/CTA.astro";
+import Divider from "../../components/Divider.astro";
+import type { PricingCard as PricingCardType } from "../../types/PricingCard.type";
+
+export const customSoftwarePricing: PricingCardType[] = [
+  {
+    title: "MVP Build",
+    subtitle: "Turn your idea into a usable product quickly",
+    price: 5000,
+    monthly: false,
+    starting: true,
+    features: [
+      "Design and build a minimal viable product",
+      "Focus on speed to market and core features",
+      "Free initial consultation to define scope",
+      "Clean, scalable codebase for future growth",
+    ],
+  },
+  {
+    title: "Project-Based Development",
+    subtitle: "Custom applications tailored to your business needs",
+    price: 100,
+    monthly: false,
+    hourly: true,
+    starting: true,
+    features: [
+      "Full-stack development experience",
+      "Architect solutions for scale and performance",
+      "Fixed-price or hourly engagement options",
+      "Transparent estimates and milestones",
+    ],
+  },
+  {
+    title: "Ongoing Development Partner",
+    subtitle: "Keep evolving your product with continuous support",
+    price: 4000,
+    monthly: true,
+    starting: true,
+    features: [
+      "Monthly retainer for iterative improvements",
+      "New features, bug fixes, and optimizations",
+      "Available for architecture guidance and scaling",
+      "Long-term technical partnership",
+    ],
+  },
+];
+---
+
+<BaseLayout title="Custom Software Development">
+  <section class="bg-primary py-16">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">Custom Software Development</h1>
+      <p class="max-w-2xl mx-auto text-secondary text-base md:text-lg mb-12">
+        Whether you need an MVP to test your idea or a fully custom application, I can help you build software that’s clean, scalable, and ready to grow. I’ll bring my full-stack engineering and architecture expertise to your project so you can focus on your business.
+      </p>
+    </div>
+  </section>
+
+  <Divider />
+
+  <section class="container mx-auto px-4 pb-12">
+    <div class="isolate mx-auto mt-10 flex flex-wrap justify-center items-stretch gap-8">
+      {customSoftwarePricing.map((card) => (
+        <PricingCard
+          title={card.title}
+          subtitle={card.subtitle}
+          price={card.price}
+          monthly={card.monthly}
+          hourly={card.hourly}
+          starting={card.starting}
+          features={card.features}
+        />
+      ))}
+    </div>
+  </section>
+
+  <Divider />
+
+  <section class="py-16 bg-primary">
+    <div class="container mx-auto px-4 flex flex-col items-center">
+      <CTA
+        headline="Let’s Talk About Your Project"
+        text="Ready to bring your idea to life? Let’s build it together."
+        buttonText="Book a Free Consult"
+      />
+    </div>
+  </section>
+</BaseLayout>

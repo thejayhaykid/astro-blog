@@ -1,0 +1,133 @@
+---
+import Bento from "../../components/Bento.astro";
+import Divider from "../../components/Divider.astro";
+import CTA from "../../components/services/CTA.astro";
+import PricingCard from "../../components/services/PricingCard.astro";
+import { SITE_TITLE } from "../../consts";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import type { PricingCard as PricingCardType } from "../../types/PricingCard.type";
+
+const title = `Fractional CTO for Startups | ${SITE_TITLE}`;
+const description = "Expert technical leadership—without the full-time cost. I help early-stage founders move fast, avoid costly mistakes, and build tech that scales.";
+
+export const fractionalCtoPricing: PricingCardType[] = [
+  {
+    title: "Advisory Call",
+    subtitle: "Quick strategy session to point you in the right direction",
+    price: 200,
+    monthly: false,
+    starting: true,
+    features: [
+      "60-minute call with prep if you share context",
+      "Ask me about technical strategy, team, or roadmap",
+      "Get clarity on next steps",
+    ],
+  },
+  {
+    title: "Fractional CTO (Monthly)",
+    subtitle: "Ongoing technical leadership without the full-time cost",
+    price: 5000,
+    monthly: true,
+    starting: true,
+    features: [
+      "Part-time CTO involvement (4–6 strategy hours/week)",
+      "Technical strategy and roadmap guidance",
+      "Team mentorship and support",
+      "Available for async questions and reviews",
+    ],
+  },
+  {
+    title: "Project-Based CTO",
+    subtitle: "Hands-on leadership for a specific product or launch",
+    price: 150,
+    monthly: false,
+    hourly: true,
+    starting: true,
+    features: [
+      "Hourly or fixed-price depending on scope",
+      "System design and architecture decisions",
+      "Code reviews and technical oversight",
+      "Guidance through launch or scaling milestone",
+    ],
+  },
+];
+
+const bentoCards = [
+        {
+          img: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80",
+          headline: "Strategy",
+          title: "Define and validate your technical strategy",
+          desc: "Get a clear, actionable plan for your product and tech stack."
+        },
+        {
+          img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80",
+          headline: "Architecture",
+          title: "Architect systems that scale",
+          desc: "Build a foundation that grows with your business."
+        },
+        {
+          img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
+          headline: "Roadmap",
+          title: "Translate vision into an actionable roadmap",
+          desc: "Turn ideas into milestones and deliverables."
+        },
+        {
+          img:"https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
+          headline: "Team",
+          title: "Guide hiring and mentor your team",
+          desc: "Interview technical talent and level up your developers."
+        },
+        {
+          img: "https://images.unsplash.com/photo-1465101178521-c1a9136a3c5a?auto=format&fit=crop&w=400&q=80",
+          headline: "Risk",
+          title: "Spot risks before they become problems",
+          desc: "Proactive risk management saves time and money."
+        }
+      ]
+---
+
+<BaseLayout title={title} description={description}>
+<section class="bg-primary py-16">
+  <div class="container mx-auto px-4 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">Fractional CTO for Startups</h1>
+    <p class="text-lg md:text-xl text-secondary mb-8">Expert technical leadership—without the full-time cost. I help early-stage founders move fast, avoid costly mistakes, and build tech that scales.</p>
+    <p class="max-w-2xl mx-auto text-secondary text-base md:text-lg mb-12">Many early-stage startups start with a great idea and quick code, but scaling that idea into a business takes more than just development—it requires technical strategy, product foresight, and leadership. As your Fractional CTO, I bridge the gap between vision and execution so you can focus on growing your business.</p>
+  </div>
+</section>
+
+<section class="py-4 bg-secondary">
+  <div class="container mx-auto px-4">
+    <Bento
+      sectionHeadline="Fractional CTO Benefits"
+      sectionTitle="How I help founders and startups succeed"
+      cards={bentoCards}
+    />
+  </div>
+</section>
+
+<section class="container mx-auto px-4 pb-12">
+  <div class="isolate mx-auto mt-10 flex flex-wrap justify-center items-stretch gap-8">
+    {fractionalCtoPricing.map((card) => (
+      <PricingCard
+        title={card.title}
+        subtitle={card.subtitle}
+        price={card.price}
+        monthly={card.monthly}
+        hourly={card.hourly}
+        starting={card.starting}
+        features={card.features}
+      />
+    ))}
+  </div>
+</section>
+
+<section class="py-16 bg-primary">
+  <div class="container mx-auto px-4 flex flex-col items-center">
+    <CTA
+      headline="Let’s Talk About Your Startup"
+      text="If you’ve started building but need help making it real, let’s chat. I offer a free consult to understand your challenges and see if I’m the right fit."
+      buttonText="Book a Free Consult"
+    />
+  </div>
+</section>
+</BaseLayout>

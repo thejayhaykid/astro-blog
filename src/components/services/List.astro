@@ -6,20 +6,25 @@ const services = [
     title: "Software Development",
     subhead: "Web and native apps for startups and businesses, all tailored to your unique needs.",
     iconName:IconName.ARCHITECTURE,
+    href: "/services/custom-software",
   },
   {
     title: "Shopify Consulting",
     subhead: "Helping you optimize, customize, and grow your Shopify store.",
     iconName:IconName.MENTORING,
+    href: "/services/shopify",
   },
   {
     title: "Fractional CTO & Technical Advisory",
     subhead: "Strategic leadership, technical roadmapping, mentoring, and team guidance.",
-    iconName:IconName.CONSULTING, },
+    iconName:IconName.CONSULTING,
+    href: "/services/fractional-cto",
+  },
   {
     title: "Consulting & Technical Writing",
     subhead: "Problem-solving for specific projects, documentation, blog posts, and more.",
     iconName:IconName.WRITING,
+    href: "/services/consulting",
   },
 ];
 ---
@@ -43,17 +48,19 @@ const services = [
     >
       {
         services.map((service) => (
-          <li class="hover:border-secondary border border-transparent dark:hover:shadow-gray-700 hover:shadow-xl transition-all hover:cursor-pointer p-4 rounded-xl">
-            <Icon name={service.iconName} />
-            <div>
-              <h3 class="text-base font-semibold leading-7 tracking-tight text-primary">
-                {service.title}
-              </h3>
-              <p class="text-sm font-semibold leading-6 text-highlight">
-                {service.subhead}
-              </p>
-            </div>
-          </li>
+          <a href={service.href} class="block">
+            <li class="hover:border-secondary border border-transparent hover:shadow-xl dark:hover:shadow-black/40 transition-all hover:cursor-pointer p-4 rounded-xl">
+              <Icon name={service.iconName} />
+              <div>
+                <h3 class="text-base font-semibold leading-7 tracking-tight text-primary">
+                  {service.title}
+                </h3>
+                <p class="text-sm font-semibold leading-6 text-highlight">
+                  {service.subhead}
+                </p>
+              </div>
+            </li>
+          </a>
         ))
       }
     </ul>

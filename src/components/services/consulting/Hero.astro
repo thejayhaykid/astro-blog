@@ -1,5 +1,9 @@
 ---
 import PillButton from "../../PillButton.astro";
+import niagra from '../../../assets/services/niagra.png'
+import { Image } from "astro:assets";
+
+const { title, description } = Astro.props;
 ---
 
 <div class="bg-primary">
@@ -23,12 +27,10 @@ import PillButton from "../../PillButton.astro";
             <h1
               class="text-4xl font-bold tracking-tight text-primary sm:text-6xl"
             >
-              Need help with a specific technical problem?
+            {title}
             </h1>
             <p class="mt-6 text-lg leading-8 text-secondary">
-              Do you have a technical project that needs some extra hands? Want
-              help in making your estimate for a customer? Need a React SME to
-              step in and get some work done?
+              {description}
             </p>
             <div class="mt-10 flex items-center gap-x-6">
               <a
@@ -46,9 +48,9 @@ import PillButton from "../../PillButton.astro";
       </div>
     </div>
     <div class="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-      <img
+      <Image
         class="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full"
-        src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80"
+        src={niagra}
         alt=""
       />
     </div>

@@ -1,0 +1,125 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PricingCard from "../../components/services/PricingCard.astro";
+import CTA from "../../components/services/CTA.astro";
+import type { PricingCard as PricingCardType } from "../../types/PricingCard.type";
+import { SITE_TITLE } from "../../consts";
+import Hero from "../../components/services/consulting/Hero.astro";
+import List from "../../components/services/golf/List.astro";
+import putting from '../../assets/services/golf/wyandot.png';
+
+const title = `Software Consulting Services | ${SITE_TITLE}`;
+const description = "Whether you’re scaling a team, reviewing your architecture, or just need a second set of eyes on a decision, I provide pragmatic consulting to help you move forward with confidence.";
+
+export const consultingPricing: PricingCardType[] = [
+  {
+    title: "One-Time Consultation",
+    subtitle: "Get clarity on your software challenges and next steps",
+    price: 200,
+    monthly: false,
+    starting: true,
+    features: [
+      "60-minute consultation with prep if context is provided",
+      "Actionable recommendations tailored to your business",
+      "Follow-up notes included",
+    ],
+  },
+  {
+    title: "Ongoing Consulting (Monthly)",
+    subtitle: "Steady guidance to keep your team moving in the right direction",
+    price: 3000,
+    monthly: true,
+    starting: true,
+    features: [
+      "Weekly check-ins or syncs",
+      "Hands-on advice for architecture, scaling, or product direction",
+      "Available for async questions and reviews",
+    ],
+  },
+  {
+    title: "Deep Dive Project Review",
+    subtitle: "Independent review of your current product or system",
+    price: 150,
+    monthly: false,
+    hourly: true,
+    starting: true,
+    features: [
+      "Architecture and codebase review",
+      "Identify risks and bottlenecks",
+      "Written recommendations with clear next steps",
+      "Option for follow-up consulting",
+    ],
+  },
+];
+
+const listFeatures = [
+  {
+    title: "Tailored Guidance",
+    desc: "I don’t give cookie-cutter advice. I’ll analyze your specific situation and provide recommendations that actually fit your goals.",
+    icon: "clipboard",
+  },
+  {
+    title: "Problem Solving",
+    desc: "Bring me your hardest technical or strategic challenges — I thrive on untangling complexity into clear solutions.",
+    icon: "puzzle",
+  },
+  {
+    title: "Flexible Scheduling",
+    desc: "Book sessions when you need them, whether it’s a quick one-off call or ongoing advisory support.",
+    icon: "calendar",
+  },
+  {
+    title: "Clear Documentation",
+    desc: "I’ll leave you with notes, diagrams, or action items so you have concrete next steps instead of vague ideas.",
+    icon: "pencil",
+  },
+  {
+    title: "Fast Impact",
+    desc: "You don’t need to wait weeks for results — I focus on immediate wins while setting you up for long-term success.",
+    icon: "lightning",
+  },
+  {
+    title: "Scalable Support",
+    desc: "Start with a single consultation, then add more sessions, workshops, or project reviews as your needs grow.",
+    icon: "addOn",
+  },
+];
+
+---
+
+<BaseLayout title={title} description={description}>
+  <Hero title="Software Consulting Services" description="Whether you’re scaling a team, reviewing your architecture, or just need a second set of eyes on a decision, I provide pragmatic consulting to help you move forward with confidence." />
+
+  <List 
+    sectionTitle="Why Choose My Consulting Services?"
+    sectionDesc="With years of experience building and scaling software products, I bring practical, actionable advice that helps you avoid pitfalls and accelerate growth."
+    features={listFeatures} 
+    image={putting}
+    />
+
+  <section class="container mx-auto px-4 pb-12">
+    <div class="isolate mx-auto mt-10 flex flex-wrap justify-center items-stretch gap-8">
+      {consultingPricing.map((card) => (
+        <PricingCard
+          title={card.title}
+          subtitle={card.subtitle}
+          price={card.price}
+          monthly={card.monthly}
+          hourly={card.hourly}
+          starting={card.starting}
+          features={card.features}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="py-16 bg-primary">
+    <div class="container mx-auto px-4 flex flex-col items-center">
+      <CTA
+        headline="Let’s Talk About Your Project"
+        text="Schedule a consultation today and unblock your roadmap."
+        buttonText="Book a Consultation"
+      />
+    </div>
+  </section>
+</BaseLayout>
