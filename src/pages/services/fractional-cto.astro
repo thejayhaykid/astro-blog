@@ -1,11 +1,17 @@
 ---
 import Bento from "../../components/Bento.astro";
-import Divider from "../../components/Divider.astro";
 import CTA from "../../components/services/CTA.astro";
 import PricingCard from "../../components/services/PricingCard.astro";
 import { SITE_TITLE } from "../../consts";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import type { PricingCard as PricingCardType } from "../../types/PricingCard.type";
+
+// Images from Unsplash under CC0 license
+import strategyImg from '../../assets/strategy.jpg'
+import architectureImg from '../../assets/architecture.jpg'
+import mapImg from '../../assets/map.jpg'
+import teamImg from '../../assets/team.jpg'
+import riskImg from '../../assets/risk.jpg'
 
 const title = `Fractional CTO for Startups | ${SITE_TITLE}`;
 const description = "Expert technical leadership—without the full-time cost. I help early-stage founders move fast, avoid costly mistakes, and build tech that scales.";
@@ -54,31 +60,31 @@ export const fractionalCtoPricing: PricingCardType[] = [
 
 const bentoCards = [
         {
-          img: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80",
+          img: strategyImg,
           headline: "Strategy",
           title: "Define and validate your technical strategy",
           desc: "Get a clear, actionable plan for your product and tech stack."
         },
         {
-          img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80",
+          img: architectureImg,
           headline: "Architecture",
           title: "Architect systems that scale",
           desc: "Build a foundation that grows with your business."
         },
         {
-          img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
+          img: mapImg,
           headline: "Roadmap",
           title: "Translate vision into an actionable roadmap",
           desc: "Turn ideas into milestones and deliverables."
         },
         {
-          img:"https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
+          img: teamImg,
           headline: "Team",
           title: "Guide hiring and mentor your team",
           desc: "Interview technical talent and level up your developers."
         },
         {
-          img: "https://images.unsplash.com/photo-1465101178521-c1a9136a3c5a?auto=format&fit=crop&w=400&q=80",
+          img: riskImg,
           headline: "Risk",
           title: "Spot risks before they become problems",
           desc: "Proactive risk management saves time and money."

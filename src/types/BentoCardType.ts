@@ -1,8 +1,5 @@
 export type BentoCardType = {
-    img: {
-        light: string;
-        dark: string;
-    };
+    img: ImageMetadata;
     headline: string;
     title: string;
     desc: string;
