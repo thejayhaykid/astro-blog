@@ -35,10 +35,10 @@
   resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-2.12.2.tgz#5913b6ec7efffebdfb37fae9a50122802ae08c64"
   integrity sha512-w2zfvhjNCkNMmMMOn5b0J8+OmUaBL1o40ipMvqcG6NRpdC+lKxmTi48DT8Xw0SzJ3AfmeFLB45zXZXtmbsjcgw==
 
-"@astrojs/internal-helpers@0.7.1":
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/@astrojs/internal-helpers/-/internal-helpers-0.7.1.tgz#50ce657c415b18b88369e9c6eeb12da208783905"
-  integrity sha512-7dwEVigz9vUWDw3nRwLQ/yH/xYovlUA0ZD86xoeKEBmkz9O6iELG1yri67PgAPW6VLL/xInA4t7H0CK6VmtkKQ==
+"@astrojs/internal-helpers@0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@astrojs/internal-helpers/-/internal-helpers-0.7.2.tgz#e7915913a9ad0b6e56d2c89bcc26b22d36006f27"
+  integrity sha512-KCkCqR3Goym79soqEtbtLzJfqhTWMyVaizUi35FLzgGSzBotSw8DB1qwsu7U96ihOJgYhDk2nVPz+3LnXPeX6g==
 
 "@astrojs/language-server@^2.15.0":
   version "2.15.4"
@@ -64,12 +64,12 @@
     vscode-html-languageservice "^5.2.0"
     vscode-uri "^3.0.8"
 
-"@astrojs/markdown-remark@6.3.5":
-  version "6.3.5"
-  resolved "https://registry.yarnpkg.com/@astrojs/markdown-remark/-/markdown-remark-6.3.5.tgz#4049142d402cd5de28b2dbc7cf3cb8d25df866d3"
-  integrity sha512-MiR92CkE2BcyWf3b86cBBw/1dKiOH0qhLgXH2OXA6cScrrmmks1Rr4Tl0p/lFpvmgQQrP54Pd1uidJfmxGrpWQ==
+"@astrojs/markdown-remark@6.3.6":
+  version "6.3.6"
+  resolved "https://registry.yarnpkg.com/@astrojs/markdown-remark/-/markdown-remark-6.3.6.tgz#f2fca6d291559df9a428dc01cb371a31ee12f3f6"
+  integrity sha512-bwylYktCTsLMVoCOEHbn2GSUA3c5KT/qilekBKA3CBng0bo1TYjNZPr761vxumRk9kJGqTOtU+fgCAp5Vwokug==
   dependencies:
-    "@astrojs/internal-helpers" "0.7.1"
+    "@astrojs/internal-helpers" "0.7.2"
     "@astrojs/prism" "3.3.0"
     github-slugger "^2.0.0"
     hast-util-from-html "^2.0.3"
@@ -91,12 +91,12 @@
     unist-util-visit-parents "^6.0.1"
     vfile "^6.0.3"
 
-"@astrojs/mdx@4.3.3":
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@astrojs/mdx/-/mdx-4.3.3.tgz#0dc84fbd49fe268b328e2430f64c458be32c3def"
-  integrity sha512-+9+xGP2TBXxcm84cpiq4S9JbuHOHM1fcvREfqW7VHxlUyfUQPByoJ9YYliqHkLS6BMzG+O/+o7n8nguVhuEv4w==
+"@astrojs/mdx@4.3.4":
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/@astrojs/mdx/-/mdx-4.3.4.tgz#bb87e32694a70a6b9a8b5459abf835a8d4e7b927"
+  integrity sha512-Ew3iP+6zuzzJWNEH5Qr1iknrue1heEfgmfuMpuwLaSwqlUiJQ0NDb2oxKosgWU1ROYmVf1H4KCmS6QdMWKyFjw==
   dependencies:
-    "@astrojs/markdown-remark" "6.3.5"
+    "@astrojs/markdown-remark" "6.3.6"
     "@mdx-js/mdx" "^3.1.0"
     acorn "^8.14.1"
     es-module-lexer "^1.6.0"
@@ -110,12 +110,12 @@
     unist-util-visit "^5.0.0"
     vfile "^6.0.3"
 
-"@astrojs/netlify@6.5.6":
-  version "6.5.6"
-  resolved "https://registry.yarnpkg.com/@astrojs/netlify/-/netlify-6.5.6.tgz#a95a9511cefdcd89902f7fca1b2aac0c5d062766"
-  integrity sha512-v3TGphYLYQqE18WsyHz2ZCIJU7nF4YX0k175TBjLYhclPS/vieGTQ31iru6/eN3Ufsd+Ki8izEIQw/DG+D/j6w==
+"@astrojs/netlify@6.5.8":
+  version "6.5.8"
+  resolved "https://registry.yarnpkg.com/@astrojs/netlify/-/netlify-6.5.8.tgz#16c9f14255af0ae79b66a9658c8a85dc9b4029de"
+  integrity sha512-K/JHskrCWQ0ApKiKwn4Fh3YDDAwD9dxUHt0M6Oo0cDQ/qHBJmL2hXEUMFt/qw1FMTBR2VlrHDYaD7SjCDRLeHw==
   dependencies:
-    "@astrojs/internal-helpers" "0.7.1"
+    "@astrojs/internal-helpers" "0.7.2"
     "@astrojs/underscore-redirects" "1.0.0"
     "@netlify/blobs" "^10.0.5"
     "@netlify/functions" "^4.1.11"
@@ -157,10 +157,10 @@
     fast-xml-parser "^5.2.0"
     kleur "^4.1.5"
 
-"@astrojs/sitemap@3.4.2":
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/@astrojs/sitemap/-/sitemap-3.4.2.tgz#f44e8fe3d855000106cf86b18f2e97ead8339ad0"
-  integrity sha512-wfN2dZzdkto6yaMtOFa/J9gc60YE3wl3rgSBoNJ+MU3lJVUMsDY9xf9uAVi8Mp/zEQKFDSJlQzBvqQUpw0Hf6g==
+"@astrojs/sitemap@3.5.1":
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/sitemap/-/sitemap-3.5.1.tgz#70dac9eee4fdfd9da9e1809e107d6747652332fc"
+  integrity sha512-uX5z52GLtQTgOe8r3jeGmFRYrFe52mdpLYJzqjvL1cdy5Kg3MLOZEvaZ/OCH0fSq0t7e50uJQ6oBMZG0ffszBg==
   dependencies:
     sitemap "^8.0.0"
     stream-replace-string "^2.0.0"
@@ -2571,14 +2571,14 @@ astring@^1.8.0:
   resolved "https://registry.yarnpkg.com/astring/-/astring-1.8.6.tgz#2c9c157cf1739d67561c56ba896e6948f6b93731"
   integrity sha512-ISvCdHdlTDlH5IpxQJIex7BWBywFWgjJSVdwst+/iQCoEYnyOaQ95+X1JGshuBjGp6nxKUy1jMgE3zPqN7fQdg==
 
-astro@5.12.8:
-  version "5.12.8"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-5.12.8.tgz#ddccb1e1b9ffc07bbfa3eb512cfded8bf0f319b4"
-  integrity sha512-KkJ7FR+c2SyZYlpakm48XBiuQcRsrVtdjG5LN5an0givI/tLik+ePJ4/g3qrAVhYMjJOxBA2YgFQxANPiWB+Mw==
+astro@5.13.3:
+  version "5.13.3"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-5.13.3.tgz#5f5aface205a1b41d6e098a35662a02ea89e35fc"
+  integrity sha512-V0mUOUK70UZ7xqXp5Noqse/SREU0P756KgFufBEluq5LkmBejzC2GENMUA2Na+PFwUjemElJtRlpKyrnKpFhSQ==
   dependencies:
     "@astrojs/compiler" "^2.12.2"
-    "@astrojs/internal-helpers" "0.7.1"
-    "@astrojs/markdown-remark" "6.3.5"
+    "@astrojs/internal-helpers" "0.7.2"
+    "@astrojs/markdown-remark" "6.3.6"
     "@astrojs/telemetry" "3.3.0"
     "@capsizecss/unpack" "^2.4.0"
     "@oslojs/encoding" "^1.1.0"

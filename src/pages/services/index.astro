@@ -5,6 +5,7 @@ import FAQ from "../../components/services/FAQ.tsx";
 import CTA from "../../components/services/CTA.astro";
 import List from "../../components/services/List.astro";
 import CardHeader from "../../components/services/CardHeader.astro";
+import OverallPricing from "../../components/services/OverallPricing.astro";
 ---
 
 <BaseLayout
@@ -13,6 +14,7 @@ import CardHeader from "../../components/services/CardHeader.astro";
 >
   <CardHeader />
   <List />
+  <OverallPricing />
   <Testimonial />
   <FAQ client:load={true} />
   <CTA />

@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets";
+import type { BentoCardType } from "../types/BentoCardType";
+
+const {
+  sectionHeadline = "Deploy faster",
+  sectionTitle = "Everything you need to deploy your app",
+  cards = [],
+} = Astro.props as {
+  sectionHeadline?: string;
+  sectionTitle?: string;
+  cards?: BentoCardType[];
+};
+
+---
+
+<div class="bg-secondary py-24 sm:py-32">
+  <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+  <h2 class="text-base/7 font-semibold text-highlight dark:text-primary">{sectionHeadline}</h2>
+  <p class="mt-2 max-w-lg text-4xl font-semibold tracking-tight text-pretty text-primary sm:text-5xl">{sectionTitle}</p>
+    <div class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
+  {cards.map((card, i: number) => (
+        <div class={`relative ${i === 0 ? 'lg:col-span-3' : i === 1 ? 'lg:col-span-3' : 'lg:col-span-2'}`.trim()}>
+          <div class="absolute inset-0 rounded-lg bg-primary"></div>
+          <div class="relative flex h-full flex-col overflow-hidden rounded-lg">
+            <Image src={card.img} alt="" class="h-80 object-cover object-left" />
+            <div class="p-10 pt-4">
+              <h3 class="text-sm/4 font-semibold text-highlight">{card.headline}</h3>
+              <p class="mt-2 text-lg font-medium tracking-tight text-primary">{card.title}</p>
+              <p class="mt-2 max-w-lg text-sm/6 text-secondary">{card.desc}</p>
+            </div>
+          </div>
+          <div class={`pointer-events-none absolute inset-0 rounded-lg shadow-lg shadow-gray-200/40 dark:shadow-gray-900/60`}></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

@@ -1,18 +1,10 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import {  SITE_DESCRIPTION } from "../consts";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <div class="bg-primary min-h-[var(--screen-height)]">
+<BaseLayout title="404" description={SITE_DESCRIPTION}>
+    <div class="bg-primary min-h-[var(--screen-height)] md:pt-36 pt-24">
       <main
         class="grid min-h-full place-items-center bg-primary px-6 py-24 sm:py-32 lg:px-8"
       >
@@ -36,6 +28,4 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         </div>
       </main>
     </div>
-    <Footer />
-  </body>
-</html>
+</BaseLayout>
