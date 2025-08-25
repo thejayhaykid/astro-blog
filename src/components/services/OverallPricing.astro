@@ -4,11 +4,12 @@ import type { PricingCard as PriceType } from "../../types/PricingCard.type";
 
 const products: PriceType[] = [
   {
-    title: "1-Hour Consultation",
+    title: "Consultation",
     subtitle:
       "Quick advice, a second opinion, or help unblocking a technical challenge.",
-    price: 200,
+    price: 100,
     monthly: false,
+    hourly: true,
     starting: true,
     features: [
       "A full hour of focused time with me",
@@ -16,20 +17,6 @@ const products: PriceType[] = [
       "Deep expertise in full-stack development and architecture",
       "Specialist in React and modern JavaScript tooling",
       "Core team member for Single-Spa microfrontend framework",
-    ],
-  },
-  {
-    title: "Multi-Session Pack",
-    subtitle:
-      "Book multiple sessions at once to tackle a series of challenges or projects.",
-    price: 200,
-    monthly: false,
-    starting: true,
-    features: [
-      "Spread sessions out over days or weeks to suit your pace",
-      "Time between sessions to implement and gather feedback",
-      "Discounts available for larger packs",
-      "Custom scheduling to match your availability",
     ],
   },
   {
@@ -80,7 +67,7 @@ const products: PriceType[] = [
       I believe in transparent, flexible pricing that reflects your project’s scope and complexity. Here are general starting points for my services:
     </p>
     <div
-      class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4"
+      class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-3"
     >
       {
         products.map((product) => (
