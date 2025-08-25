@@ -2,13 +2,7 @@
 import { Image } from "astro:assets";
 import HeaderLink from "./HeaderLink.astro";
 import JH from "../assets/JH.png";
-
-const menuLinks = [
-  { href: "/", text: "Home" },
-  { href: "/blog", text: "Blog" },
-  { href: "/services", text: "Services" },
-  { href: "/about", text: "About" },
-];
+import { menuLinks } from "../consts/menuLinks.ts";
 ---
 
 <div class="flex flex-col">

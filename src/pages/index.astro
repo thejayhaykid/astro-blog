@@ -1,9 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
 import Testimonial from "../components/services/Testimonial.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogSection from "../components/BlogSection.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import HomeServices from "../components/HomeServices.astro";
@@ -15,13 +13,7 @@ import lake from "../assets/home/lake.png";
 import cj from "../assets/home/cj.png";
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
+<BaseLayout title='Home' description={SITE_DESCRIPTION} prefetchImages={[golf, wedding, me, lake, cj]}>
     <div class="bg-primary min-h-[var(--screen-height)]">
       <main>
         <div
@@ -160,6 +152,4 @@ import cj from "../assets/home/cj.png";
     <BlogSection />
     <HomeServices />
     <Testimonial />
-    <Footer />
-  </body>
-</html>
+   </BaseLayout>

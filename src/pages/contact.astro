@@ -5,23 +5,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ContactForm from "../components/ContactForm.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const title = `${SITE_TITLE} | Contact`;
 ---
 
-<html lang="en">
-  <head>
-    <BaseHead title={title} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
+<BaseLayout title="Contact" description={SITE_DESCRIPTION}>
     <div
-      class="w-screen dark:bg-gray-900 dark:text-gray-50 flex flex-col align-center"
+      class="w-screen bg-primary text-primary flex flex-col align-center pt-36 sm:pt-24"
     >
-      <div class="dark:bg-gray-900 min-h-[var(--screen-height)]">
+      <div class="bg-primary min-h-[var(--screen-height)]">
         <ContactForm />
       </div>
-      <Footer />
-    </div>
-  </body>
-</html>
+  </div>
+</BaseLayout>

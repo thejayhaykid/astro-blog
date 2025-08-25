@@ -63,7 +63,7 @@ blockquote {
 }
 
 body {
-  @apply bg-primary text-primary;
+  @apply bg-primary text-primary max-w-full;
 }
 
 @layer components {

@@ -1,48 +1,19 @@
 ---
-// import { ViewTransitions } from "astro:transitions";
-import BaseHead from "../../components/BaseHead.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
-// import FormattedDate from "../../components/FormattedDate.astro";
-// import me from "../../assets/me.png";
 import BlogPreview from "../../components/BlogPreview.astro";
 
-import { ViewTransitions } from "astro:transitions";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 const posts = (await getCollection("blog"))
   .filter((post) => process.env.NODE_ENV === "development" || !post.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const title = `${SITE_TITLE} | Blog`;
+// Images for the first 5 posts to prefetch
+const prefetchImages = posts.slice(0, 5).map((post) => post.data.heroImage);
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <BaseHead title={title} description={SITE_DESCRIPTION} />
-    <style>
-      ul {
-        list-style-type: none;
-        padding: unset;
-      }
-      ul li {
-        display: flex;
-      }
-      ul li :global(time) {
-        flex: 0 0 130px;
-        font-style: italic;
-        color: #595959;
-      }
-      ul li a:visited {
-        color: #8e32dc;
-      }
-    </style>
-    <ViewTransitions />
-  </head>
-  <body class="bg-primary">
-    <Header />
-    <div class="min-w-full min-h-full bg-primary pb-24">
+<BaseLayout title="Blog" description={SITE_DESCRIPTION} prefetchImages={prefetchImages}>
+    <div class="min-w-full min-h-full bg-primary py-24">
       <main
         class="flex flex-col gap-4 align-middle items-center justify-center w-screen max-w-[95vw] bg-primary text-primary min-h-[var(--screen-height)]"
       >
@@ -63,6 +34,4 @@ const title = `${SITE_TITLE} | Blog`;
         </div>
       </main>
     </div>
-    <Footer />
-  </body>
-</html>
+</BaseLayout>
