@@ -1,0 +1,109 @@
+---
+import { Image } from "astro:assets";
+import HeaderLink from "./HeaderLink.astro";
+import JH from "../assets/JH.png";
+import { menuLinks } from "../consts/menuLinks.ts";
+import type { MenuLink } from "../types/MenuLink.types";
+---
+
+<div class="flex flex-col">
+  <header
+    class="fixed top-2 left-1/2 -translate-x-1/2 z-50 flex flex-row items-center justify-between px-2 sm:px-4 py-1 rounded-full shadow-lg bg-secondary/90 backdrop-blur-md border border-secondary/30 w-[98vw] sm:w-[95vw] max-w-full sm:max-w-4xl transition-all duration-300"
+  >
+    <a href="/" class="flex pl-2 lg:pl-8 items-center">
+      <Image class="w-8 h-8 sm:w-12 sm:h-12 mr-2 sm:mr-4" src={JH} alt="Icon" loading="eager" />
+    </a>
+
+    <nav class="hidden lg:flex items-center space-x-6">
+      <ul class="flex space-x-6 text-primary">
+        {
+          menuLinks.map((link: MenuLink) => (
+            <HeaderLink href={link.href}>{link.text}</HeaderLink>
+          ))
+        }
+        <li class="mt-4">
+          <a href="/contact" class="btn btn-primary">Contact me</a>
+        </li>
+      </ul>
+    </nav>
+    <button data-mobile-menu-btn class="lg:hidden pr-2 block"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6 cursor-pointer md:hidden block"
+        id="lines"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6 cursor-pointer md:hidden hidden"
+        id="close"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </header>
+  <nav
+    id="mobile-nav"
+    class="bg-secondary/80 backdrop-blur-md border border-secondary/30 text-primary p-2 z-40 fixed top-16 left-1/2 -translate-x-1/2 w-[90vw] max-w-sm rounded-2xl shadow-lg hidden transition-all duration-300"
+  >
+  
+    <ul class="flex flex-col space-y-4 text-primary">
+      {
+        menuLinks.map((link: MenuLink) => (
+          <li class="w-full pb-2 border-b border-primary transition-all duration-300">
+            <a href={link.href} class="hover:text-secondary block">
+              {link.text}
+            </a>
+          </li>
+        ))
+      }
+      <li class="w-full">
+        <a href="/contact" class="btn btn-primary">Contact me</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<script>
+  function showMenu() {
+    const menu = document.getElementById("mobile-nav");
+    menu?.classList.toggle("hidden");
+    menu?.classList.toggle("flex");
+    menu?.classList.toggle("flex-col");
+
+    const hamburger = document.getElementById("lines");
+    const close = document.getElementById("close");
+    hamburger?.classList.toggle("hidden");
+    close?.classList.toggle("hidden");
+  }
+
+  function addListeners() {
+    const menus = document.querySelectorAll("[data-mobile-menu-btn]");
+    menus.forEach((menu) =>
+      menu.addEventListener("click", () => {
+        showMenu();
+      })
+    );
+  }
+
+  document.addEventListener("astro:after-swap", addListeners);
+  addListeners();
+</script>
+
+    
+  </header>
+</div>

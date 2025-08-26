@@ -1,5 +1,19 @@
 ---
 import PillButton from "../../PillButton.astro";
+import niagra from '../../../assets/services/niagra.png'
+import { Image } from "astro:assets";
+
+const { 
+  title = "Software Consulting Services",
+  description = "Whether you're scaling a team, reviewing your architecture, or just need a second set of eyes on a decision, I provide pragmatic consulting to help you move forward with confidence.",
+  primaryButtonText = "Contact me",
+  primaryButtonHref = "/contact?subject=Consult&message=I%20would%20like%20to%20talk%20to%20you%20about%20consulting",
+  secondaryButtonText = "More about me",
+  secondaryButtonHref = "/about",
+  image = niagra,
+  imageAlt = "",
+  showPillButton = true,
+} = Astro.props;
 ---
 
 <div class="bg-primary">
@@ -17,28 +31,28 @@ import PillButton from "../../PillButton.astro";
 
         <div class="relative px-6 py-32 sm:py-40 lg:px-8 lg:py-56 lg:pr-0">
           <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-            <div class="hidden sm:mb-10 sm:flex">
-              <PillButton />
-            </div>
+            {showPillButton && (
+              <div class="hidden sm:mb-10 sm:flex">
+                <PillButton />
+              </div>
+            )}
             <h1
               class="text-4xl font-bold tracking-tight text-primary sm:text-6xl"
             >
-              Need help with a specific technical problem?
+            {title}
             </h1>
             <p class="mt-6 text-lg leading-8 text-secondary">
-              Do you have a technical project that needs some extra hands? Want
-              help in making your estimate for a customer? Need a React SME to
-              step in and get some work done?
+              {description}
             </p>
             <div class="mt-10 flex items-center gap-x-6">
               <a
-                href="/contact?subject=Consult&message=I%20would%20like%20to%20talk%20to%20you%20about%20consulting"
-                class="btn btn-primary">Contact me</a
+                href={primaryButtonHref}
+                class="btn btn-primary">{primaryButtonText}</a
               >
               <a
-                href="/about"
+                href={secondaryButtonHref}
                 class="text-sm font-semibold leading-6 text-primary"
-                >More about me <span aria-hidden="true">→</span></a
+                >{secondaryButtonText} <span aria-hidden="true">→</span></a
               >
             </div>
           </div>
@@ -46,10 +60,11 @@ import PillButton from "../../PillButton.astro";
       </div>
     </div>
     <div class="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-      <img
+      <Image
         class="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full"
-        src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80"
-        alt=""
+        src={image}
+        alt={imageAlt}
+        loading={'eager'}
       />
     </div>
   </div>

@@ -1,21 +1,13 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import { SITE_DESCRIPTION } from "../consts";
 import { Content as ResumeContent } from "../content/general/resume.md";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title = `${SITE_TITLE} | Resume`;
 ---
 
-<html lang="en">
-  <head>
-    <BaseHead title={title} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
+<BaseLayout title="Resume" description={SITE_DESCRIPTION}>
     <div
-      class="flex flex-row w-screen justify-center content-start dark:bg-gray-900"
+      class="flex flex-row w-screen justify-center content-start dark:bg-gray-900 md:pt-36 pt-24"
     >
       <article
         class="prose prose-md prose-h1:underline dark:prose-invert self-center max-w-4xl p-4 dark:bg-gray-900 dark:text-gray-50"
@@ -23,6 +15,4 @@ const title = `${SITE_TITLE} | Resume`;
         <ResumeContent />
       </article>
     </div>
-    <Footer />
-  </body>
-</html>
+</BaseLayout>

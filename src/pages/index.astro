@@ -1,27 +1,19 @@
 ---
 import { Image } from "astro:assets";
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
 import Testimonial from "../components/services/Testimonial.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogSection from "../components/BlogSection.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { SITE_DESCRIPTION } from "../consts";
 import HomeServices from "../components/HomeServices.astro";
 
-import golf from "../assets/home/golf-sm.png";
-import wedding from "../assets/home/wedding.png";
+import tipnap from "../assets/home/tip-nap.jpg";
+import wedding from "../assets/home/will-aly-wedding.jpeg";
 import me from "../assets/home/me-sm.png";
-import lake from "../assets/home/lake.png";
-import cj from "../assets/home/cj.png";
+import lake from "../assets/home/harp-beach.jpg";
+import cj from "../assets/home/disney-parade.jpg";
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
+<BaseLayout title='Home' description={SITE_DESCRIPTION} prefetchImages={[tipnap, wedding, me, lake, cj]}>
     <div class="bg-primary min-h-[var(--screen-height)]">
       <main>
         <div
@@ -81,7 +73,7 @@ import cj from "../assets/home/cj.png";
                 >
                   <div class="relative">
                     <Image
-                      src={golf}
+                      src={tipnap}
                       alt=""
                       class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                       loading="eager"
@@ -157,10 +149,7 @@ import cj from "../assets/home/cj.png";
         </div>
       </main>
     </div>
-    <hr />
     <BlogSection />
     <HomeServices />
     <Testimonial />
-    <Footer />
-  </body>
-</html>
+   </BaseLayout>

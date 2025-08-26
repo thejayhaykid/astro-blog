@@ -1,11 +1,9 @@
 ---
 import BlogPreview from "../../components/BlogPreview.astro";
-import BaseHead from "../../components/BaseHead.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const allPosts = await getCollection("blog");
 const { tag } = Astro.params;
@@ -19,16 +17,11 @@ if (!tag) {
   );
 }
 
-const title = `${SITE_TITLE} | Blog`;
+// Images for the first 5 posts to prefetch
+const prefetchImages = filteredPosts.slice(0, 5).map((post) => post.data.heroImage);
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <BaseHead title={title} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
+<BaseLayout title="Blog" description={SITE_DESCRIPTION} prefetchImages={prefetchImages}>
     <main
       class="flex flex-col gap-4 align-middle items-center justify-center w-screen dark:bg-gray-900 dark:text-gray-50 min-h-[var(--screen-height)]"
     >
@@ -54,6 +47,4 @@ const title = `${SITE_TITLE} | Blog`;
         </div>
       </div>
     </main>
-    <Footer />
-  </body>
-</html>
+</BaseLayout>

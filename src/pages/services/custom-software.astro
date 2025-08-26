@@ -1,0 +1,140 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PricingCard from "../../components/services/PricingCard.astro";
+import CTA from "../../components/services/CTA.astro";
+import Divider from "../../components/Divider.astro";
+import type { PricingCard as PricingCardType } from "../../types/PricingCard.type";
+import OffsetFeatures from "../../components/OffsetFeatures.astro";
+import Hero from "../../components/services/consulting/Hero.astro";
+import boats from "../../assets/services/mass-boats-2.jpg";
+
+export const customSoftwarePricing: PricingCardType[] = [
+  {
+    title: "MVP Build",
+    subtitle: "Turn your idea into a usable product quickly",
+    price: 5000,
+    monthly: false,
+    starting: true,
+    features: [
+      "Design and build a minimal viable product",
+      "Focus on speed to market and core features",
+      "Free initial consultation to define scope",
+      "Clean, scalable codebase for future growth",
+    ],
+  },
+  {
+    title: "Project-Based Development",
+    subtitle: "Custom applications tailored to your business needs",
+    price: 100,
+    monthly: false,
+    hourly: true,
+    starting: true,
+    features: [
+      "Full-stack development experience",
+      "Architect solutions for scale and performance",
+      "Fixed-price or hourly engagement options",
+      "Transparent estimates and milestones",
+    ],
+  },
+  {
+    title: "Ongoing Development Partner",
+    subtitle: "Keep evolving your product with continuous support",
+    price: 4000,
+    monthly: true,
+    starting: true,
+    features: [
+      "Monthly retainer for iterative improvements",
+      "New features, bug fixes, and optimizations",
+      "Available for architecture guidance and scaling",
+      "Long-term technical partnership",
+    ],
+  },
+];
+
+const features = [
+  {
+    title: "Full-Stack Expertise",
+    desc: "From frontend polish to backend architecture, I can handle every layer of your app.",
+    icon: "layers",
+  },
+  {
+    title: "Native + Web Development",
+    desc: "Whether it’s iOS, tvOS, or web, I build software that feels right at home on the platform.",
+    icon: "devices",
+  },
+  {
+    title: "Scalable Architecture",
+    desc: "I design systems that don’t just work now — they’ll still work when you have 10x the users.",
+    icon: "server",
+  },
+  {
+    title: "Rapid Prototyping",
+    desc: "Get from idea to working software quickly, without cutting corners on quality.",
+    icon: "bolt",
+  },
+  {
+    title: "Modern Tooling",
+    desc: "React, SwiftUI, TypeScript, Supabase, serverless — I use today’s best tech for tomorrow’s problems.",
+    icon: "wrench",
+  },
+  {
+    title: "Performance Minded",
+    desc: "I optimize for speed and efficiency so your users love the experience.",
+    icon: "gauge",
+  },
+  {
+    title: "Clean, Maintainable Code",
+    desc: "Readable, testable, and future-proof — so you’re not stuck with technical debt later.",
+    icon: "book",
+  },
+  {
+    title: "End-to-End Delivery",
+    desc: "I can take your idea from concept through design, build, and deployment to production.",
+    icon: "rocket",
+  },
+];
+
+---
+
+<BaseLayout title="Custom Software Development">
+  <Hero
+  headline="Custom Software Development"
+  description="Whether you need an MVP to test your idea or a fully custom application, I can help you build software that’s clean, scalable, and ready to grow. I’ll bring my full-stack engineering and architecture expertise to your project so you can focus on your business."
+  image={boats}
+  imageAlt="Sailboats floating in the Atlantic Ocean. Taken by me."
+   />
+
+<OffsetFeatures 
+sectionTitle="Why Choose My Development Services?"
+sectionDesc="With years of experience building and scaling software products, I bring practical, actionable solutions."
+sectionHeadline="Why Choose My Development Services?"
+features={features} />
+
+  <section class="container mx-auto px-4 pb-12">
+    <div class="isolate mx-auto mt-10 flex flex-wrap justify-center items-stretch gap-8">
+      {customSoftwarePricing.map((card) => (
+        <PricingCard
+          title={card.title}
+          subtitle={card.subtitle}
+          price={card.price}
+          monthly={card.monthly}
+          hourly={card.hourly}
+          starting={card.starting}
+          features={card.features}
+        />
+      ))}
+    </div>
+  </section>
+
+  <Divider />
+
+  <section class="py-16 bg-primary">
+    <div class="container mx-auto px-4 flex flex-col items-center">
+      <CTA
+        headline="Let’s Talk About Your Project"
+        text="Ready to bring your idea to life? Let’s build it together."
+        buttonText="Book a Free Consult"
+      />
+    </div>
+  </section>
+</BaseLayout>

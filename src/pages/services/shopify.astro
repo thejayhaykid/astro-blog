@@ -1,0 +1,121 @@
+---
+title: "Shopify & E-Commerce Consulting"
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PricingCard from "../../components/services/PricingCard.astro";
+import CTA from "../../components/services/CTA.astro";
+import Divider from "../../components/Divider.astro";
+import type { PricingCard as PricingCardType } from "../../types/PricingCard.type";
+import OffsetFeatures from "../../components/OffsetFeatures.astro";
+import Hero from "../../components/services/Hero.astro";
+
+export const shopifyPricing: PricingCardType[] = [
+  {
+    title: "Shopify Quick Audit",
+    subtitle: "Identify quick wins to improve your store’s performance",
+    price: 500,
+    monthly: false,
+    starting: true,
+    features: [
+      "Review of store setup and theme configuration",
+      "Suggestions for UX and conversion improvements",
+      "Actionable recommendations in a written summary",
+    ],
+  },
+  {
+    title: "Custom Feature Development",
+    subtitle: "Tailored Shopify functionality to fit your business needs",
+    price: 150,
+    monthly: false,
+    hourly: true,
+    starting: true,
+    features: [
+      "Custom theme or app development",
+      "Hands-on implementation",
+      "Focus on performance and scalability",
+      "Estimate provided before starting",
+    ],
+  },
+  {
+    title: "Ongoing Shopify Support",
+    subtitle: "Continuous help to evolve your store over time",
+    price: 2000,
+    monthly: true,
+    starting: true,
+    features: [
+      "Monthly retainer for store updates and improvements",
+      "Priority support and fixes",
+      "Proactive recommendations to grow sales",
+      "Covers development, configuration, and integrations",
+    ],
+  },
+];
+
+const shopifyProps = {
+  sectionHeadline: "Shopify Consulting",
+  sectionTitle: "Build, Scale, and Optimize Your Shopify Store",
+  sectionDesc:
+    "Whether you’re just starting out or looking to scale your existing Shopify business, I help you streamline operations, improve performance, and unlock new growth opportunities.",
+  features: [
+    {
+      title: "Store Setup & Migration",
+      desc: "Get your Shopify store up and running quickly or migrate from another platform with minimal downtime.",
+    },
+    {
+      title: "Theme Customization",
+      desc: "Make your storefront stand out with custom themes and UI/UX enhancements that align with your brand.",
+    },
+    {
+      title: "App Integration",
+      desc: "Seamlessly connect the apps you need for analytics, marketing, fulfillment, and customer experience.",
+    },
+    {
+      title: "Performance Optimization",
+      desc: "Improve page load times, checkout flow, and overall customer experience to boost conversions.",
+    },
+    {
+      title: "Technical Guidance",
+      desc: "Get help with APIs, custom apps, and backend integrations tailored to your business model.",
+    },
+  ],
+};
+
+---
+
+<BaseLayout title="Shopify & E-Commerce Consulting">
+  <Hero
+    title="Shopify & E-Commerce Consulting"
+    description="From quick audits to ongoing support, I help e-commerce brands unlock growth through Shopify. Whether you need a conversion boost, custom features, or a steady technical partner, I’ll make sure your store keeps up with your vision."
+  />
+
+  <OffsetFeatures {...shopifyProps} />
+
+  <Divider />
+
+  <section class="container mx-auto px-4 pb-12">
+    <div class="isolate mx-auto mt-10 flex flex-wrap justify-center items-stretch gap-8">
+      {shopifyPricing.map((card) => (
+        <PricingCard
+          title={card.title}
+          subtitle={card.subtitle}
+          price={card.price}
+          monthly={card.monthly}
+          hourly={card.hourly}
+          starting={card.starting}
+          features={card.features}
+        />
+      ))}
+    </div>
+  </section>
+
+  <Divider />
+
+  <section class="py-16 bg-primary">
+    <div class="container mx-auto px-4 flex flex-col items-center">
+      <CTA
+        headline="Let’s Talk About Your Store"
+        text="Let’s optimize your Shopify store together."
+        buttonText="Book a Free Consult"
+      />
+    </div>
+  </section>
+</BaseLayout>
