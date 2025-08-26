@@ -1,11 +1,12 @@
 ---
-title: "Custom Software Development"
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PricingCard from "../../components/services/PricingCard.astro";
 import CTA from "../../components/services/CTA.astro";
 import Divider from "../../components/Divider.astro";
 import type { PricingCard as PricingCardType } from "../../types/PricingCard.type";
 import OffsetFeatures from "../../components/OffsetFeatures.astro";
+import Hero from "../../components/services/consulting/Hero.astro";
+import boats from "../../assets/services/mass-boats-2.jpg";
 
 export const customSoftwarePricing: PricingCardType[] = [
   {
@@ -96,14 +97,12 @@ const features = [
 ---
 
 <BaseLayout title="Custom Software Development">
-  <section class="bg-primary pb-16 md:pt-36 pt-24">
-    <div class="container mx-auto px-4 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">Custom Software Development</h1>
-      <p class="max-w-2xl mx-auto text-secondary text-base md:text-lg mb-12">
-        Whether you need an MVP to test your idea or a fully custom application, I can help you build software that’s clean, scalable, and ready to grow. I’ll bring my full-stack engineering and architecture expertise to your project so you can focus on your business.
-      </p>
-    </div>
-  </section>
+  <Hero
+  headline="Custom Software Development"
+  description="Whether you need an MVP to test your idea or a fully custom application, I can help you build software that’s clean, scalable, and ready to grow. I’ll bring my full-stack engineering and architecture expertise to your project so you can focus on your business."
+  image={boats}
+  imageAlt="Sailboats floating in the Atlantic Ocean. Taken by me."
+   />
 
 <OffsetFeatures 
 sectionTitle="Why Choose My Development Services?"
