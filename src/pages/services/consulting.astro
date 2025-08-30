@@ -7,6 +7,7 @@ import { SITE_TITLE } from "../../consts";
 import Hero from "../../components/services/consulting/Hero.astro";
 import List from "../../components/services/golf/List.astro";
 import putting from '../../assets/services/golf/wyandot.png';
+import HostingInfo from "../../components/services/consulting/HostingInfo.astro";
 
 const title = `Software Consulting Services | ${SITE_TITLE}`;
 const description = "Whether you’re scaling a team, reviewing your architecture, or just need a second set of eyes on a decision, I provide pragmatic consulting to help you move forward with confidence.";
@@ -101,7 +102,7 @@ const listFeatures = [
     />
 
   <section class="container mx-auto px-4 pb-12">
-    <div class="isolate mx-auto mt-10 flex flex-wrap justify-center items-stretch gap-8">
+    <div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-3">
       {consultingPricing.map((card) => (
         <PricingCard
           title={card.title}
@@ -115,6 +116,10 @@ const listFeatures = [
       ))}
     </div>
   </section>
+
+  <!-- <section class="py-16 bg-primary">
+    <HostingInfo />
+  </section> -->
 
   <section class="py-16 bg-primary">
     <div class="container mx-auto px-4 flex flex-col items-center">

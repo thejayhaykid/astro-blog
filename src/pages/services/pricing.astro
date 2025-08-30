@@ -1,0 +1,127 @@
+---
+import StripedTable from "../../components/StripedTable.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const pricingGroups = [
+  {
+    name: "Fractional CTO",
+    rows: [
+      {
+        Service: "Ongoing advisory (monthly)",
+        Offering: "Custom scope; weekly strategy calls",
+        Price: "Starting at $3,000/month"
+      },
+      {
+        Service: "Startup package",
+        Offering: "Roadmap, architecture review, team guidance",
+        Price: "Starting at $1,500"
+      }
+    ]
+  },
+  {
+    name: "Consulting",
+    rows: [
+      {
+        Service: "1-hour meeting",
+        Offering: "Includes prep and follow-up notes",
+        Price: "$200/hr"
+      },
+      {
+        Service: "Multi-meeting pack",
+        Offering: "Rate improves with more sessions",
+        Price: "Discounted"
+      },
+      {
+        Service: "Project review",
+        Offering: "Postmortems, tech review, lessons learned",
+        Price: "$50/hr"
+      },
+      {
+        Service: "Project work",
+        Offering: "Hourly or project-based",
+        Price: "Starting at $150/hr"
+      }
+    ]
+  },
+  {
+    name: "Shopify",
+    rows: [
+      {
+        Service: "Setup & theme customization",
+        Offering: "Builds, checkout flow, CRO",
+        Price: "Starting at $150/hr"
+      },
+      {
+        Service: "Performance optimization",
+        Offering: "Speed and conversion improvements",
+        Price: "Starting at $150/hr"
+      },
+      {
+        Service: "App integrations",
+        Offering: "Payments, subscriptions, custom apps",
+        Price: "Starting at $150/hr"
+      },
+      {
+        Service: "Maintenance & support",
+        Offering: "Ongoing store health and updates",
+        Price: "Starting at $500/mo"
+      }
+    ]
+  },
+  {
+    name: "Software Development",
+    rows: [
+      {
+        Service: "Full-stack development",
+        Offering: "React, Swift, backend, infra",
+        Price: "Starting at $150/hr"
+      },
+      {
+        Service: "Native apps (iOS/tvOS)",
+        Offering: "Includes App Store support",
+        Price: "Starting at $150/hr"
+      },
+      {
+        Service: "Architecture & scaling",
+        Offering: "System design and scalability",
+        Price: "Starting at $200/hr"
+      },
+      {
+        Service: "Custom project work",
+        Offering: "Pricing based on scope",
+        Price: "Quote-based"
+      }
+    ]
+  },
+  {
+    name: "Hosting & Care Plans",
+    rows: [
+      {
+        Service: "Basic",
+        Offering: "Hosting included (Netlify/Vercel), Security patches & SSL, Uptime monitoring",
+        Price: "$49/mo"
+      },
+      {
+        Service: "Standard",
+        Offering: "Everything in Basic, Monthly content updates (1 hr included), Dependency & plugin updates",
+        Price: "$149/mo"
+      },
+      {
+        Service: "Premium",
+        Offering: "Everything in Standard, Priority support, Up to 3 hrs/month included, Proactive SEO & analytics checks",
+        Price: "$299/mo"
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title="Pricing" description="Transparent pricing for fractional CTO, consulting, Shopify, and software development services.">
+    <section class="mt-48">
+        <StripedTable
+            title="Jake Hayes Works – Pricing Overview"
+            description="Transparent pricing for fractional CTO, consulting, Shopify, and software development services."
+            groups={pricingGroups}
+            />
+    </section>
+</BaseLayout>
