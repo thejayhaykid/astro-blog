@@ -35,7 +35,7 @@ This is much closer to a flavor of the month. I watched a ton of different types
 
 How is that related to F1? Just watch a Grand Prix and lookup the brands you don’t recognize that advertise on the cars. Or maybe you do recognize. I barely knew any of them at first. Rolex doesn’t sponsor F1 anymore, and that was really the only watch brand that  I knew that made expensive watches that you can’t buy at Walmart. Well, they don’t sponsor F1 currently at least, watching every season of DTS I know they used to be where Tag Heuer is now.
 
-But not just Tag Heuer; Richard Mille, IWC, Tudor, and others are all major sponsors on F1 cars. So I look them up, and they’re expensive watches. Too expensive for me. But this coincided with other forces in my life, in fact, I’m writing another post right now that will dive much deeper into this that I’ll link here when finished.
+But not just Tag Heuer; Richard Mille, IWC, Tudor, and others are all major sponsors on F1 cars. So I look them up, and they’re expensive watches. Too expensive for me. But this coincided with other forces in my life, in fact, I wrote about those forces [here](/blog/tech-life/2025/simplifying-my-life/).
 
 Suffice to say, after 10 years of wearing an Apple Watch, I thought it was time to go back to a non-smartwatch. I’ve always worn a watch, prior to the Apple Watch, my watches came to me at an average cost floating around $10 and didn’t last very long sold by stores that don’t exist anymore (RIP K-Mart).
 

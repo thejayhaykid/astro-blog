@@ -1,5 +1,5 @@
 ---
-title: "I Took Steps to Simplify My Life"
+title: "Steps to Simplify My Life"
 pubDate: "Sep 4, 2025"
 description: "I wanted to get back to what matters"
 heroImage: "/blog-images/tech/2025/simple-hero.jpg"
