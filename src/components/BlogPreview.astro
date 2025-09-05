@@ -23,9 +23,7 @@ const { post } = Astro.props;
   </a>
   <div>
     <div class="flex items-center gap-x-4 text-xs pl-2 md:pl-0">
-      <time datetime="2020-03-16" class="text-gray-500">
-        <FormattedDate date={post.data.pubDate} />
-      </time>
+      <FormattedDate date={post.data.pubDate} />
       {
         post.data.category && (
           <a
