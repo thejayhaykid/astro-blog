@@ -9,17 +9,17 @@ type Item = {
   href: string;
 };
 
-const heading: string = "Create your first project";
-const subheading: string = "Get started by selecting a template or start from an empty project.";
+const headingDefault: string = "How do I help?";
+const subheadingDefault: string = "Discover some of the ways I assist businesses.";
 const items: Item[] = [
   {
-    title: "Watch Brand?",
+    title: "Watch Brand",
     description: "Read how I help micro watch brands",
     icon: IconName.WATCH,
     href: "/blog/tech-life/2025/how-i-help-micro-watch-brands"
   },
   {
-    title: "Local Golf Brand?",
+    title: "Local Golf Brand",
     description: "Read how I help local golf brands",
     icon: IconName.GOLF,
     href: "/blog/tech-life/2025/how-i-help-golf" 
@@ -27,6 +27,7 @@ const items: Item[] = [
 ];
 
 const itemList: Item[] = (Astro.props?.itemList ?? items);
+const { heading = headingDefault, subheading = subheadingDefault } = Astro.props;
 
 ---
 
