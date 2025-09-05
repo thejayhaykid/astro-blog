@@ -22,19 +22,19 @@ const { post } = Astro.props;
     class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"
   >
   </div>
-  <div class="p-4 rounded bg-gray-900/60 text-secondary backdrop-blur-sm">
+  <div class="p-4 rounded bg-gray-900/60 text-white backdrop-blur-sm">
     <div
       class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-secondary"
     >
-      <FormattedDate date={post.data.pubDate} />
+      <FormattedDate date={post.data.pubDate} classStr="text-white" />
       <div class="-ml-2 flex items-center gap-x-4">
         <svg
           viewBox="0 0 2 2"
-          class="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50"
+          class="-ml-0.5 h-0.5 w-0.5 flex-none fill-clear"
         >
           <circle cx="1" cy="1" r="1"></circle>
         </svg>
-        <div class="flex gap-x-2.5">
+        <div class="flex gap-x-2.5 text-white">
           <Image
             src={me}
             alt="Author"
@@ -44,8 +44,8 @@ const { post } = Astro.props;
         </div>
       </div>
     </div>
-    <h3 class="mt-3 text-lg font-semibold leading-6 text-inverted">
-      <a href={`/blog/${post.slug}/`}>
+    <h3 class="mt-3 text-lg font-semibold leading-6">
+      <a href={`/blog/${post.slug}`} class="text-highlight-lighten">
         <span class="absolute inset-0"></span>
         {post.data.title}
       </a>

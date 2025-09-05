@@ -6,45 +6,40 @@ export const getRelatedPosts = async (
   tags?: string[]
 ) => {
   const posts = await getCollection("blog");
-
   if (!posts) return [];
 
-  if (category === undefined && tags === undefined) {
-    return posts.filter((p: any) => p.data.title !== title).slice(0, 3);
+  // Exclude the current post
+  const filteredPosts = posts.filter((p: any) => p.data.title !== title);
+
+  // 1. Find posts with the same category
+  let related: any[] = [];
+  if (category) {
+    related = filteredPosts.filter((p: any) => p.data.category === category);
   }
 
-  let relatedPosts = posts.filter((p: any) => {
-    return p.data.category === category && p.data.title !== title;
-  });
-
-  if (relatedPosts.length > 3) {
-    return relatedPosts.slice(0, 3);
+  // 2. If less than 3, add posts with matching tags (not already included)
+  if (tags && related.length < 3) {
+    const tagMatches = filteredPosts.filter(
+      (p: any) =>
+        p.data.tags?.some((tag: string) => tags.includes(tag)) &&
+        !related.includes(p)
+    );
+    related = related.concat(tagMatches);
   }
 
-  if (tags === undefined) return relatedPosts;
-
-  relatedPosts = relatedPosts.concat(
-    posts.filter((p: any) => {
-      return (
-        p.data.title !== title &&
-        p.data.tags &&
-        p.data.tags.some((tag: string) => tags.includes(tag))
-      );
-    })
-  );
-
-  if (relatedPosts.length >= 3) {
-    return relatedPosts.slice(0, 3);
+  // 3. If still less than 3, add most recent posts (not already included)
+  if (related.length < 3) {
+    // Sort by pubDate descending
+    const recentPosts = filteredPosts
+      .filter((p: any) => !related.includes(p))
+      .sort((a: any, b: any) => {
+        const dateA = new Date(a.data.pubDate).getTime();
+        const dateB = new Date(b.data.pubDate).getTime();
+        return dateB - dateA;
+      });
+    related = related.concat(recentPosts);
   }
 
-  // If there are less than 3 related posts, fill in with any other posts
-  relatedPosts = relatedPosts
-    .concat(
-      posts.filter((p: any) => {
-        return p.data.title !== title && !relatedPosts.includes(p);
-      })
-    )
-    .slice(0, 3);
-
-  return relatedPosts;
+  // Always return exactly 3 posts, no duplicates
+  return related.slice(0, 3);
 };

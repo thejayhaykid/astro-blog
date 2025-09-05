@@ -16,7 +16,7 @@ export async function GET(context) {
       .map((post) => ({
         ...post.data,
         content: sanitizeHtml(parser.render(post.body)),
-        link: `/blog/${post.slug}/`,
+        link: `/blog/${post.slug}`,
       })),
   });
 }
