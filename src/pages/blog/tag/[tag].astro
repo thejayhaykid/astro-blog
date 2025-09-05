@@ -1,9 +1,9 @@
 ---
-import BlogPreview from "../../components/BlogPreview.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import BlogPreview from "../../../components/BlogPreview.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
 
 const allPosts = await getCollection("blog");
 const { tag } = Astro.params;
