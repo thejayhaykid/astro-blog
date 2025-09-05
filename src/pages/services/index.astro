@@ -6,6 +6,7 @@ import CTA from "../../components/services/CTA.astro";
 import List from "../../components/services/List.astro";
 import CardHeader from "../../components/services/CardHeader.astro";
 import OverallPricing from "../../components/services/OverallPricing.astro";
+import SeeHow from "../../components/services/SeeHow.astro";
 ---
 
 <BaseLayout
@@ -16,6 +17,7 @@ import OverallPricing from "../../components/services/OverallPricing.astro";
   <List />
   <OverallPricing />
   <Testimonial />
+  <SeeHow />
   <FAQ client:load={true} />
   <CTA />
 </BaseLayout>
