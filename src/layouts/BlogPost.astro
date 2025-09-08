@@ -99,7 +99,7 @@ const relatedPosts = await getRelatedPosts(title, category, tags);
       )
     }
     <hr class="my-4 max-w-[100vw] px-4" />
-    <article class="prose dark:prose-invert prose-base w-full">
+    <article class="prose dark:prose-invert prose-base w-full p-2 max-w-[100vw] md:prose-lg lg:prose-xl">
       <slot />
     </article>
     <ShareButtons title={title} description={description} />
