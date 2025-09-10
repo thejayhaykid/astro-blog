@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { Button } from "@/components/ui/button";
 
 type Props = HTMLAttributes<"a">;
 
@@ -9,13 +10,13 @@ const { pathname } = Astro.url;
 const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 ---
 
-<div>
+<Button variant="ghost" className="h-auto">
   <a
     href={href}
     class:list={[
       className,
       { active: isActive },
-      "p-4 md:flex md:justify-between decoration-none md:mx-4 bg-clear text-primary hover:bg-gray-100 rounded hover:drop-shadow dark:hover:bg-gray-700 dark:hover:text-gray-100",
+      "px-4 py-2 decoration-none",
     ]}
     {...props}
   >
@@ -27,4 +28,4 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
       text-decoration: underline;
     }
   </style>
-</div>
+</Button>

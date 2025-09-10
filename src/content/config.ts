@@ -1,4 +1,4 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, z, type CollectionEntry } from "astro:content";
 
 const blog = defineCollection({
   // Type-check frontmatter using a schema
@@ -30,3 +30,8 @@ const general = defineCollection({
 });
 
 export const collections = { blog, general };
+
+// Export types for use in other files
+export type BlogPost = CollectionEntry<'blog'>;
+export type GeneralEntry = CollectionEntry<'general'>;
+export type BlogPostData = BlogPost['data'];

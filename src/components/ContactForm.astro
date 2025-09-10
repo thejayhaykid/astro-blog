@@ -1,15 +1,16 @@
 ---
 import Calendly from "./Calendly.astro";
+import { Button } from "@/components/ui/button";
 ---
 
-<div class="relative isolate bg-primary">
+<div class="relative isolate bg-background">
   <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
     <div class="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
       <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-        <h2 class="text-3xl font-bold tracking-tight text-primary">
+        <h2 class="text-3xl font-bold tracking-tight text-foreground">
           Get in touch
         </h2>
-        <p class="mt-6 text-lg leading-8 text-secondary">
+        <p class="mt-6 text-lg leading-8 text-secondary-foreground">
           Whether you have a question, a suggestion, or just want to say hi, I’m
           here to help. Just take a moment to fill out the form below, and I’ll
           get back to you as soon as I can. Your feedback helps me make my
@@ -36,7 +37,7 @@ import Calendly from "./Calendly.astro";
               </svg>
             </dt>
             <dd>
-              <a class="hover:text-primary" href="mailto:hello@jakehayes.net"
+              <a class="hover:text-foreground" href="mailto:hello@jakehayes.net"
                 >hello@jakehayes.net</a
               >
             </dd>
@@ -84,7 +85,7 @@ import Calendly from "./Calendly.astro";
           <div>
             <label
               for="first-name"
-              class="block text-sm font-semibold leading-6 text-primary"
+              class="block text-sm font-semibold leading-6 text-foreground"
               >Name</label
             >
             <div class="mt-2.5">
@@ -94,14 +95,14 @@ import Calendly from "./Calendly.astro";
                 id="name"
                 autocomplete="name"
                 required
-                class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
               />
             </div>
           </div>
           <div>
             <label
               for="email"
-              class="block text-sm font-semibold leading-6 text-primary"
+              class="block text-sm font-semibold leading-6 text-foreground"
               >Email</label
             >
             <div class="mt-2.5">
@@ -111,14 +112,14 @@ import Calendly from "./Calendly.astro";
                 id="email"
                 autocomplete="email"
                 required
-                class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
               />
             </div>
           </div>
           <div class="sm:col-span-2">
             <label
               for="subject"
-              class="block text-sm font-semibold leading-6 text-primary"
+              class="block text-sm font-semibold leading-6 text-foreground"
               >Subject</label
             >
             <div class="mt-2.5">
@@ -128,14 +129,14 @@ import Calendly from "./Calendly.astro";
                 id="subject"
                 autocomplete="none"
                 required
-                class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
               />
             </div>
           </div>
           <div class="sm:col-span-2">
             <label
               for="message"
-              class="block text-sm font-semibold leading-6 text-primary"
+              class="block text-sm font-semibold leading-6 text-foreground"
               >Message</label
             >
             <div class="mt-2.5">
@@ -144,13 +145,13 @@ import Calendly from "./Calendly.astro";
                 id="message"
                 rows="4"
                 required
-                class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
               ></textarea>
             </div>
           </div>
         </div>
         <div class="mt-8 flex justify-end">
-          <button type="submit" class="btn btn-primary">Send message</button>
+          <Button type="submit" variant="highlight">Send message</Button>
         </div>
       </div>
     </form>
@@ -161,7 +162,7 @@ import Calendly from "./Calendly.astro";
   const subjectInput: HTMLInputElement | null = document.getElementById(
     "subject"
   ) as HTMLInputElement;
-  let params = new URLSearchParams(document.location.search);
+  const params = new URLSearchParams(document.location.search);
   const subjectParam = params.get("subject");
   if (subjectInput && subjectParam) {
     subjectInput.value = subjectParam;

@@ -1,17 +1,14 @@
 ---
 import { getCollection } from "astro:content";
 import BlogPost from "../../layouts/BlogPost.astro";
-import BaseHead from "../../components/BaseHead.astro";
-import { ViewTransitions } from "astro:transitions";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
+import type { BlogPost as BlogPostType } from "../../content/config";
 
 import { SITE_DESCRIPTION } from "../../consts";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const posts = await getCollection("blog");
-let postPage: any = undefined;
-posts.map((post) => {
+let postPage: BlogPostType | undefined = undefined;
+posts.map((post: BlogPostType) => {
   if (Astro.params.slug === post.slug) {
     if (post.data.draft && process.env.NODE_ENV !== "development")
       Astro.redirect("/blog");
@@ -22,13 +19,14 @@ posts.map((post) => {
 if (!postPage) {
   Astro.redirect("/blog");
 }
-const { Content } = await postPage.render();
 
-const title = `${postPage.data.title} | JH`;
+// TypeScript knows postPage is defined here due to the redirect above
+const { Content } = await postPage!.render();
+const title = `${postPage!.data.title} | JH`;
 ---
 
-<BaseLayout title={title} description={postPage.data.description || SITE_DESCRIPTION} image={postPage.data.heroImage}>
-<BlogPost {...postPage.data}>
+<BaseLayout title={title} description={postPage!.data.description || SITE_DESCRIPTION} image={postPage!.data.heroImage}>
+<BlogPost {...postPage!.data}>
   <Content />
 </BlogPost>
 </BaseLayout>

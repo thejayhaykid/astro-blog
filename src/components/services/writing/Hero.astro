@@ -3,9 +3,10 @@ import { Image } from "astro:assets";
 
 import writing from "../../../assets/writing.jpg";
 import PillButton from "../../PillButton.astro";
+import { Button } from "@/components/ui/button";
 ---
 
-<div class="bg-primary">
+<div class="bg-background">
   <div class="relative">
     <div class="mx-auto max-w-7xl">
       <div class="relative z-10 pt-14 lg:w-full lg:max-w-2xl">
@@ -24,22 +25,23 @@ import PillButton from "../../PillButton.astro";
               <PillButton />
             </div>
             <h1
-              class="text-4xl font-bold tracking-tight text-primary sm:text-6xl"
+              class="text-4xl font-bold tracking-tight text-foreground sm:text-6xl"
             >
               Technical Writing that makes sense
             </h1>
-            <p class="mt-6 text-lg leading-8 text-secondary">
+            <p class="mt-6 text-lg leading-8 text-secondary-foreground">
               As an avid reader with a strong technical background, I have
               worked on my writing ability.
             </p>
             <div class="mt-10 flex items-center gap-x-6">
-              <a
-                href="/contact?subject=Consult&message=I%20would%20like%20to%20talk%20to%20you%20about%20consulting"
-                class="btn btn-primary">Contact me</a
-              >
+              <Button variant="highlight">
+                <a href="/contact?subject=Consult&message=I%20would%20like%20to%20talk%20to%20you%20about%20consulting">
+                  Contact me
+                </a>
+              </Button>
               <a
                 href="/about"
-                class="text-sm font-semibold leading-6 text-primary"
+                class="text-sm font-semibold leading-6 text-foreground"
                 >More about me <span aria-hidden="true">→</span></a
               >
             </div>
@@ -49,7 +51,7 @@ import PillButton from "../../PillButton.astro";
     </div>
     <div class="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
       <Image
-        class="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full"
+        class="aspect-3/2 object-cover lg:aspect-auto lg:h-full lg:w-full"
         src={writing}
         alt="writing background image"
         loading={'eager'}

@@ -1,28 +1,33 @@
 ---
 export const prerender = true;
+import { Button } from "@/components/ui/button";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Success" description="Your message has been sent.">
-    <div class="bg-primary min-h-[var(--screen-height)]">
+    <div class="bg-background min-h-(--screen-height)">
       <main
-        class="grid min-h-full place-items-center bg-primary px-6 py-24 sm:py-32 lg:px-8"
+        class="grid min-h-full place-items-center bg-background px-6 py-24 sm:py-32 lg:px-8"
       >
         <div class="text-center">
           <p class="text-base font-semibold text-highlight">🎊Thank you!🎊</p>
           <h1
-            class="mt-4 text-3xl font-bold tracking-tight text-primary sm:text-5xl"
+            class="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-5xl"
           >
             Your message has been sent!
           </h1>
-          <p class="mt-6 text-base leading-7 text-secondary">
+          <p class="mt-6 text-base leading-7 text-secondary-foreground">
             I will get back to you as soon as possible.
           </p>
           <div class="mt-10 flex items-center justify-center gap-x-6">
-            <a href="/" class="btn btn-primary">Go back home</a>
-            <a href="/contact" class="text-sm font-semibold text-primary"
+            <Button variant="highlight">
+            <a href="/">Go back home</a>
+            </Button>
+            <Button variant="link">
+            <a href="/contact"
               >Send me another message <span aria-hidden="true">&rarr;</span></a
             >
+            </Button>
           </div>
         </div>
       </main>

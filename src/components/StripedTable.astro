@@ -1,5 +1,5 @@
 ---
-type TableRow = Record<string, any>;
+type TableRow = Record<string, unknown>;
 type TableGroup = {
   name: string;
   rows: TableRow[];
@@ -12,39 +12,39 @@ interface Props {
   groups: TableGroup[];
 }
 
-const { title = "Table", description = "", buttonLabel = "Add row", groups = [] }: Props = Astro.props;
+const { title = "Table", description = "", groups = [] }: Props = Astro.props;
 ---
 
 <div class="px-4 sm:px-6 lg:px-8">
   <div class="sm:flex sm:items-center">
     <div class="sm:flex-auto">
-      <h1 class="text-4xl font-semibold text-primary">{title}</h1>
-      {description && <p class="mt-2 text-sm text-secondary">{description}</p>}
+      <h1 class="text-4xl font-semibold text-foreground">{title}</h1>
+      {description && <p class="mt-2 text-sm text-secondary-foreground">{description}</p>}
     </div>
   </div>
   <div class="mt-8 flow-root">
     <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
       <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
         <table class="relative min-w-full">
-          <thead class="bg-primary">
+          <thead class="bg-background">
             <tr>
               {groups.length > 0 && groups[0].rows.length > 0 &&
                 Object.keys(groups[0].rows[0]).map((key) => (
-                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-primary">{key.charAt(0).toUpperCase() + key.slice(1)}</th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-foreground">{key.charAt(0).toUpperCase() + key.slice(1)}</th>
                 ))
               }
             </tr>
           </thead>
-          <tbody class="bg-primary">
+          <tbody class="bg-background">
             {groups.map(group => (
               <>
                 <tr class="border-t border-secondary">
-                  <th scope="colgroup" colspan={groups[0].rows.length > 0 ? Object.keys(groups[0].rows[0]).length : 1} class="bg-secondary py-2 pr-3 pl-4 text-left text-sm font-semibold text-primary sm:pl-3">{group.name}</th>
+                  <th scope="colgroup" colspan={groups[0].rows.length > 0 ? Object.keys(groups[0].rows[0]).length : 1} class="bg-secondary py-2 pr-3 pl-4 text-left text-sm font-semibold text-foreground sm:pl-3">{group.name}</th>
                 </tr>
                 {group.rows.map((row) => (
-                  <tr class="border-t border-secondary even:bg-gray-200/40 even:dark:bg-gray-600/40">
+                  <tr class="border-t border-secondary even:bg-gray-200/40 dark:even:bg-gray-600/40">
                     {Object.keys(row).map((key) => (
-                      <td class="px-3 py-4 text-sm whitespace-nowrap text-secondary">{row[key]}</td>
+                      <td class="px-3 py-4 text-sm whitespace-nowrap text-secondary-foreground">{row[key]}</td>
                     ))}
                   </tr>
                 ))}

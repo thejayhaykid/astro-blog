@@ -26,10 +26,10 @@ const faqs = [
 
 export default function Example() {
   return (
-    <div className="bg-primary">
+    <div className="bg-background">
       <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-4xl divide-y divide-gray-900/10 dark:divide-gray-50/20">
-          <h2 className="text-2xl font-bold leading-10 tracking-tight text-primary">
+          <h2 className="text-2xl font-bold leading-10 tracking-tight text-foreground">
             Frequently asked questions
           </h2>
           <dl className="mt-10 space-y-6 divide-y divide-gray-900/10 dark:divide-gray-50/20">
@@ -38,7 +38,7 @@ export default function Example() {
                 {({ open }) => (
                   <>
                     <dt>
-                      <Disclosure.Button className="flex w-full items-start justify-between text-left text-primary">
+                      <Disclosure.Button className="flex w-full items-start justify-between text-left text-foreground">
                         <span className="text-base font-semibold leading-7">
                           {faq.question}
                         </span>
@@ -69,7 +69,7 @@ export default function Example() {
                             leaveFrom="0"
                             leaveTo="-y-2"
                           >
-                            <p className="text-base leading-7 text-secondary">
+                            <p className="text-base leading-7 text-secondary-foreground">
                               {faq.answer}
                             </p>
                           </Transition.Child>

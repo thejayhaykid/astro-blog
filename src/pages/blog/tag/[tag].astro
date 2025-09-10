@@ -1,6 +1,6 @@
 ---
 import BlogPreview from "../../../components/BlogPreview.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
+import { SITE_DESCRIPTION } from "../../../consts";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
@@ -23,9 +23,9 @@ const prefetchImages = filteredPosts.slice(0, 5).map((post) => post.data.heroIma
 
 <BaseLayout title="Blog" description={SITE_DESCRIPTION} prefetchImages={prefetchImages}>
     <main
-      class="flex flex-col gap-4 align-middle items-center justify-center w-screen dark:bg-gray-900 dark:text-gray-50 min-h-[var(--screen-height)]"
+      class="flex flex-col gap-4 align-middle items-center justify-center w-screen dark:bg-gray-900 dark:text-gray-50 min-h-(--screen-height)"
     >
-      <div class="bg-primary py-4 sm:py-4">
+      <div class="bg-background py-4 sm:py-4">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mx-auto max-w-2xl lg:max-w-4xl">
             <h2
