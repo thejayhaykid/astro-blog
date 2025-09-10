@@ -26,7 +26,7 @@ const title = `${postPage!.data.title} | JH`;
 ---
 
 <BaseLayout title={title} description={postPage!.data.description || SITE_DESCRIPTION} image={postPage!.data.heroImage}>
-<BlogPost {...postPage!.data}>
-  <Content />
-</BlogPost>
+  <BlogPost {...postPage!.data}>
+    <Content />
+  </BlogPost>
 </BaseLayout>
