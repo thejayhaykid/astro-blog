@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import { marked } from "marked";
 import type { CollectionEntry } from "astro:content";
 import Disqus from "../components/Disqus.tsx";
@@ -9,6 +8,7 @@ import { getRelatedPosts } from "../utils/postHelper";
 import ShareButtons from "../components/ShareButtons.astro";
 
 import me from "../assets/me.png";
+import UserAvatar from "../components/UserAvatar.tsx";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -49,8 +49,8 @@ const relatedPosts = await getRelatedPosts(title, category, tags);
     >
       {title}
     </h1>
-    <div class="flex items-center gap-x-6 max-w-screen">
-      <Image class="h-28 w-28 rounded-full object-cover" src={me} alt="" />
+    <div class="flex items-center gap-x-4 max-w-screen">
+        <UserAvatar client:idle src={me.src} fallback="JH" />
       <div class="flex flex-col items-start">
         <h3 class="text-base font-semibold leading-7 tracking-tight text-foreground">
           Jake Hayes
