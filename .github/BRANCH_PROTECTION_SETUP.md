@@ -9,17 +9,21 @@ To require linting to pass before merging PRs, set up branch protection rules:
 3. Click "Add rule" or edit the existing rule for `main`
 4. Configure the following settings:
 
-### Required Settings:
+### Required Settings
+
 - ✅ **Require a pull request before merging**
 - ✅ **Require status checks to pass before merging**
 - ✅ **Require branches to be up to date before merging**
 
-### Required Status Checks:
+### Required Status Checks
+
 Add these status checks that must pass:
+
 - `Lint & Type Check`
 - `Build`
 
-### Additional Recommended Settings:
+### Additional Recommended Settings
+
 - ✅ **Require review from code owners** (if you have CODEOWNERS file)
 - ✅ **Dismiss stale reviews when new commits are pushed**
 - ✅ **Restrict pushes that create files** (optional)
