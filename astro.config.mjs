@@ -10,15 +10,7 @@ export default defineConfig({
   site: "https://www.jakehayes.net",
   integrations: [mdx(), sitemap(), react()],
   output: "server",
-  adapter: netlify({
-    redirects: [
-      {
-        from: "/stats.js",
-        to: "https://cloud.umami.is/script.js",
-        status: 200,
-      },
-    ],
-  }),
+  adapter: netlify(),
   prefetch: true,
   vite: {
     plugins: [tailwindcss()],

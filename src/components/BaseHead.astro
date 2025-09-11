@@ -27,13 +27,15 @@ const {
 <link rel="icon" type="image/svg+xml" href="/JH.png" />
 <meta name="generator" content={Astro.generator} />
 
-<!-- Umami Analytics -->
-<script
-  is:inline
-  async
-  src="/stats.js"
-  data-website-id="d28618c4-8e05-4b9d-b763-d590a0b6821e">
-</script>
+<!-- Umami Analytics - Only in production -->
+{import.meta.env.PROD && (
+  <script
+    is:inline
+    async
+    src="/stats.js"
+    data-website-id="d28618c4-8e05-4b9d-b763-d590a0b6821e">
+  </script>
+)}
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
