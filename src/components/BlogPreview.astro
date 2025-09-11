@@ -1,5 +1,5 @@
 ---
-import FormattedDate from "../components/FormattedDate.astro";
+import FormattedDate from "@/components/FormattedDate.astro";
 
 const { post } = Astro.props;
 ---
@@ -12,11 +12,11 @@ const { post } = Astro.props;
       <img
         src={post.data.heroImage}
         alt={post.data.title}
-        class="absolute inset-0 h-full w-full md:rounded-2xl bg-gray-800 object-cover"
+        class="absolute inset-0 h-full w-full md:rounded-2xl bg-secondary object-cover"
         transition:name={post.data.heroImage}
       />
       <div
-        class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10 dark:ring-gray-50/10"
+        class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-foreground/10"
       >
       </div>
     </div>
@@ -28,7 +28,7 @@ const { post } = Astro.props;
         post.data.category && (
           <a
             href={`/blog/category/${post.data.category}`}
-            class="relative z-10 rounded-full bg-background px-3 py-1.5 font-medium text-secondary-foreground hover:bg-gray-100 dark:hover:bg-gray-700"
+            class="relative z-10 rounded-full bg-background px-3 py-1.5 font-medium text-secondary-foreground hover:bg-secondary"
           >
             {post.data.category}
           </a>
@@ -37,7 +37,7 @@ const { post } = Astro.props;
     </div>
     <div class="group relative max-w-xl">
       <h3
-        class="mt-3 pl-2 md:pl-0 text-lg font-semibold leading-6 text-foreground group-hover:text-gray-600 dark:group-hover:text-gray-300"
+        class="mt-3 pl-2 md:pl-0 text-lg font-semibold leading-6 text-foreground group-hover:text-secondary-foreground"
       >
         <a href={`/blog/${post.slug}`}>
           <span class="absolute inset-0 text-highlight"></span>
@@ -46,35 +46,26 @@ const { post } = Astro.props;
       </h3>
       {
         post.data.tags && (
-          <span class="text-xs pl-2 md:pl-0 text-gray-500 dark:text-gray-400">
+          <span class="text-xs pl-2 md:pl-0 text-secondary-foreground">
             {post.data.tags.join(", ")}
           </span>
         )
       }
       <p
-        class="mt-5 pl-2 md:pl-0 text-sm leading-6 text-gray-600 dark:text-gray-300"
+        class="mt-5 pl-2 md:pl-0 text-sm leading-6 text-foreground"
       >
         {post.data.description}
       </p>
       <div
-        class="mt-6 flex border-t border-gray-900/5 dark:border-gray-100/5 pt-6"
+        class="mt-6 flex border-t border-foreground/5 pt-6"
       >
         <div class="relative flex items-center gap-x-4">
-          <!-- <Image
-            src={me}
-            alt="Author"
-            class="h-10 w-10 ml-2 md:ml-0 rounded-full bg-gray-50 dark:bg-gray-900 object-cover"
-          /> -->
           <div class="text-sm leading-6">
             <p class="font-semibold text-foreground">
-              <a href="/about">
-                <span class="absolute inset-0 text-highlight"></span>
+              <a href="/about" class="hover:underline">
                 Jake Hayes
               </a>
             </p>
-            <!-- <p class="text-gray-600 dark:text-gray-300">
-              {JOB_TITLE}
-            </p> -->
           </div>
         </div>
       </div>
