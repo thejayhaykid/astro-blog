@@ -99,7 +99,7 @@ const relatedPosts = await getRelatedPosts(title, category, tags);
       )
     }
     <hr class="my-4 max-w-screen px-4" />
-    <article class="prose prose-base w-full p-2 max-w-screen md:prose-lg lg:prose-xl text-foreground prose-h1:text-foreground prose-h2:text-foreground prose-h3:text-foreground bg-background prose-a:text-foreground prose-a:underline prose-blockquote:text-foreground prose-code:text-secondary-foreground prose-headings:text-foreground prose-figure:text-foreground prose-figcaption:text-foreground prose-em:text-foreground prose-table:text-foreground prose-b:text-foreground">
+    <article class="w-full p-2 max-w-screen md:prose-lg lg:prose-xl color-prose">
       <slot />
     </article>
     <ShareButtons title={title} description={description} />
