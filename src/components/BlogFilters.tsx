@@ -28,7 +28,7 @@ export default function BlogFilters({ filters, pathname }: Props) {
   return (
     <fieldset aria-label="Choose a memory option">
       <div className="flex items-center justify-between">
-        <div className="text-sm/6 font-medium text-primary">
+        <div className="text-sm/6 font-medium text-foreground">
           Filter by category
         </div>
       </div>
@@ -39,18 +39,18 @@ export default function BlogFilters({ filters, pathname }: Props) {
             <label
               key={option.id}
               aria-label={option.name}
-              className={`flex-shrink-0 relative flex items-center justify-center rounded-md border p-2 w-auto 
+              className={`shrink-0 relative flex items-center justify-center rounded-md border p-2 w-auto 
               ${isChecked
                   ? "border-highlight bg-highlight"
-                  : "border-primary bg-primary"
+                  : "border-primary bg-background"
                 }
               focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-highlight
                           `}
             >
               <a
                 href={option.id === 'all' ? '/blog' : `/blog/category/${encodeURIComponent(option.name!)}`}
-                className={`focus:outline-none text-sm font-medium uppercase 
-                ${isChecked ? "text-white" : "text-primary"}
+                className={`focus:outline-hidden text-sm font-medium uppercase 
+                ${isChecked ? "text-white" : "text-foreground"}
               `}
               >
                 {option.name}

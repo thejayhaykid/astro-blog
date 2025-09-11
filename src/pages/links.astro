@@ -2,7 +2,6 @@
 import {  SITE_DESCRIPTION } from "../consts";
 import type { Link } from "../types/Link.types";
 import LinkGroup from "../components/LinkGroup.astro";
-import { Image } from "astro:assets";
 
 // Images
 import JH from "../assets/JH.png";
@@ -14,7 +13,6 @@ import redbubble from "../assets/link-images/redbubble.png";
 import gumroad from "../assets/link-images/gumroad.png";
 import buymeacoffee from "../assets/link-images/buy-me-a-coffee.png";
 import paypal from "../assets/logos/paypal.png";
-import stickermule from "../assets/link-images/sticker-mule.png";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 // General website, twitter (x?), stashtag.app, letterboxd, redbubble, gumroad, amazon (once I have things to sell on there)
@@ -108,15 +106,15 @@ const prefetchImages: string[] = [...generalLinks, ...portfolioLinks, ...selling
 
 <BaseLayout title="Links" description={SITE_DESCRIPTION} prefetchImages={prefetchImages}>
     <div
-      class="flex flex-col w-screen overflow-y-auto items-center min-h-[var(--screen-height)] dark:bg-gray-900 dark:text-gray-200 md:pt-36 pt-24 px-4"
+      class="flex flex-col w-screen overflow-y-auto items-center min-h-(--screen-height) dark:bg-gray-900 dark:text-gray-200 md:pt-36 pt-24 px-4"
     >
       {generalLinks.length > 0 && <div class="my-8">
         <h2
-          class="text-2xl font-bold pb-2 text-gray-950 dark:text-gray-50 pl-2 md:pl-0"
+          class="text-2xl font-bold pb-2 text-muted-foreground pl-2 md:pl-0"
         >
           General Links
         </h2>
-        <h6 class="text-sm text-gray-500 dark:text-gray-400 pb-2 pl-2 md:pl-0">
+        <h6 class="text-sm text-card-foreground pb-2 pl-2 md:pl-0">
           <em>These are links to my profiles on other websites</em>
         </h6>
         <LinkGroup links={generalLinks} />
@@ -124,33 +122,33 @@ const prefetchImages: string[] = [...generalLinks, ...portfolioLinks, ...selling
       </div>}
       {portfolioLinks.length > 0 && <div class="my-8">
         <h2
-          class="text-2xl font-bold pb-2 text-gray-950 dark:text-gray-50 pl-2 md:pl-0"
+          class="text-2xl font-bold pb-2 text-muted-foreground pl-2 md:pl-0"
         >
           Things I've made
         </h2>
-        <h6 class="text-sm text-gray-500 dark:text-gray-400 pb-2 pl-2 md:pl-0">
+        <h6 class="text-sm text-card-foreground pb-2 pl-2 md:pl-0">
           <em>Hopefully this list continues growing</em>
         </h6>
         <LinkGroup links={portfolioLinks} />
       </div>}
       {sellingLinks.length > 0 && <div class="my-8">
         <h2
-          class="text-2xl font-bold pb-2 text-gray-950 dark:text-gray-50 pl-2 md:pl-0"
+          class="text-2xl font-bold pb-2 text-muted-foreground pl-2 md:pl-0"
         >
           Buy some stuff
         </h2>
-        <h6 class="text-sm text-gray-500 dark:text-gray-400 pb-2 pl-2 md:pl-0">
+        <h6 class="text-sm text-card-foreground pb-2 pl-2 md:pl-0">
           <em>Or not, but here are some options</em>
         </h6>
         <LinkGroup links={sellingLinks} />
       </div>}
       {affiliateLinks.length > 0 &&<div class="my-8">
         <h2
-          class="text-2xl font-bold pb-2 text-gray-950 dark:text-gray-50 pl-2 md:pl-0"
+          class="text-2xl font-bold pb-2 text-muted-foreground pl-2 md:pl-0"
         >
           Affiliate Links
         </h2>
-        <h6 class="text-sm text-gray-500 dark:text-gray-400 pb-2 pl-2 md:pl-0">
+        <h6 class="text-sm text-card-foreground pb-2 pl-2 md:pl-0">
           <em
             >A random smattering of brands that I really like and have affiliate
             programs</em

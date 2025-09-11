@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { DiscussionEmbed } from "disqus-react";
+import { Button } from "@/components/ui/button";
 
 const config = {
   disqus: {
@@ -37,12 +38,13 @@ const Disqus = ({ className, title }: DisqusProps) => {
             />
           ) : (
             <div className="w-full flex justify-center">
-              <button
+              <Button
                 onClick={() => setOpenDisqus(true)}
-                className="w-96 btn btn-primary"
+                className="w-96"
+                variant="highlight"
               >
                 Show Comments
-              </button>
+              </Button>
             </div>
           )}
         </>

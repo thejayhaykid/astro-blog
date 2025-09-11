@@ -24,7 +24,7 @@ interface IconProps {
 
 const Icon = ({
   name,
-  classStr = "w-10 h-10 bg-primary text-highlight fill-current",
+  classStr = "w-10 h-10 bg-background text-highlight fill-current",
   viewBox = "0 0 24 24",
   wideViewBox = "0 0 36 36",
 }: IconProps): JSX.Element => {

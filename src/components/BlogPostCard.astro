@@ -7,7 +7,7 @@ const { post } = Astro.props;
 ---
 
 <article
-  class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
+  class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-card px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
 >
   <img
     src={post.data.heroImage}
@@ -15,16 +15,16 @@ const { post } = Astro.props;
     class="absolute inset-0 -z-10 h-full w-full object-cover"
   />
   <div
-    class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"
+    class="absolute inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-900/40"
   >
   </div>
   <div
     class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"
   >
   </div>
-  <div class="p-4 rounded bg-gray-900/60 text-white backdrop-blur-sm">
+  <div class="p-4 rounded-sm bg-gray-900/60 text-card-foreground backdrop-blur-xs">
     <div
-      class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-secondary"
+      class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-secondary-foreground"
     >
       <FormattedDate date={post.data.pubDate} classStr="text-white" />
       <div class="-ml-2 flex items-center gap-x-4">
@@ -38,7 +38,7 @@ const { post } = Astro.props;
           <Image
             src={me}
             alt="Author"
-            class="h-6 w-6 flex-none rounded-full bg-white/10 object-cover"
+            class="h-6 w-6 flex-none rounded-full bg-foreground/10 object-cover"
           />
           Jake Hayes
         </div>

@@ -45,7 +45,7 @@ function classNames(...classes: string[]) {
 ---
 
 <div
-  class="divide-y-2 divide-secondary overflow-hidden rounded-lg bg-secondary shadow-sm sm:grid sm:grid-cols-2 sm:gap-px sm:divide-y-0 border-t-2 border-b-2"
+  class="divide-y-2 divide-secondary overflow-hidden rounded-lg bg-secondary shadow-xs sm:grid sm:grid-cols-2 sm:gap-px sm:divide-y-0 border-t-2 border-b-2"
 >
   {
     actions.map((action, actionIdx) => (
@@ -59,7 +59,7 @@ function classNames(...classes: string[]) {
           actionIdx === actions.length - 1
             ? "rounded-br-lg rounded-bl-lg sm:rounded-bl-none"
             : "",
-          "group relative bg-primary p-6 focus-within:ring-2 focus-within:ring-highlight focus-within:ring-inset"
+          "group relative bg-background p-6 focus-within:ring-2 focus-within:ring-highlight focus-within:ring-inset"
         )}
       >
         <div>
@@ -68,13 +68,13 @@ function classNames(...classes: string[]) {
           </span>
         </div>
         <div class="mt-8">
-          <h3 class="text-base font-semibold text-primary">
+          <h3 class="text-base font-semibold text-foreground">
             <a href={action.href} class="focus:outline-hidden">
               <span class="absolute inset-0" aria-hidden="true" />
               {action.title}
             </a>
           </h3>
-          <p class="mt-2 text-sm text-secondary">{action.description}</p>
+          <p class="mt-2 text-sm text-secondary-foreground">{action.description}</p>
         </div>
         <span
           aria-hidden="true"

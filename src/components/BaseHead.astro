@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from "astro:transitions";
 import type { ImageMetadata } from "astro";
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
@@ -28,11 +27,15 @@ const {
 <link rel="icon" type="image/svg+xml" href="/JH.png" />
 <meta name="generator" content={Astro.generator} />
 
-<!-- Umami via Partytown -->
-<script
-  type="text/partytown"
-  src="https://cloud.umami.is/script.js"
-  data-website-id="d28618c4-8e05-4b9d-b763-d590a0b6821e"></script>
+<!-- Umami Analytics - Only in production -->
+{import.meta.env.PROD && (
+  <script
+    is:inline
+    async
+    src="/stats.js"
+    data-website-id="d28618c4-8e05-4b9d-b763-d590a0b6821e">
+  </script>
+)}
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -62,16 +65,11 @@ const {
 <!-- Prefetch Images -->
 {
   prefetchImages.length > 0 && (
-    <script is:inline>
-      {`
-        const imageUrls = ${JSON.stringify(
-          prefetchImages.map((img) => img.src)
-        )};
-        imageUrls.forEach(url => {
-          const img = new Image();
-          img.src = url;
-        });
-      `}
+    <script is:inline define:vars={{ imageUrls: prefetchImages.map((img) => img.src) }}>
+      imageUrls.forEach(url => {
+        const img = new Image();
+        img.src = url;
+      });
     </script>
   )
 }

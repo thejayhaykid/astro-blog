@@ -1,0 +1,12 @@
+[build]
+publish = "dist"
+command = "yarn build"
+
+[[redirects]]
+from = "/stats.js"
+to = "https://cloud.umami.is/script.js"
+status = 200
+force = true
+
+[dev]
+command = "yarn start"

@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import { marked } from "marked";
 import type { CollectionEntry } from "astro:content";
 import Disqus from "../components/Disqus.tsx";
@@ -9,6 +8,7 @@ import { getRelatedPosts } from "../utils/postHelper";
 import ShareButtons from "../components/ShareButtons.astro";
 
 import me from "../assets/me.png";
+import UserAvatar from "../components/UserAvatar.tsx";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -20,12 +20,12 @@ const htmlCaption = imageCaption ? marked.parse(imageCaption) : "";
 const relatedPosts = await getRelatedPosts(title, category, tags);
 ---
 
-<main class="bg-primary text-primary flex flex-col items-center max-w-[100vw]">
+<main class="bg-background text-foreground flex flex-col items-center max-w-screen">
   {
     heroImage && (
       <>
         <img
-          class="object-cover border-b-2 shadow-md dark:shadow-sm w-screen max-h-96 mb-0"
+          class="object-cover border-b-2 shadow-md w-screen max-h-96 mb-0"
           src={heroImage}
           alt={imageAlt ?? title}
           transition:name={heroImage}
@@ -33,7 +33,7 @@ const relatedPosts = await getRelatedPosts(title, category, tags);
         {
           imageCaption && (
             <div
-              class="text-sm italic text-center mt-0 mb-8 max-w-[100vw] px-4"
+              class="text-sm italic text-center mt-0 mb-8 max-w-screen px-4"
               set:html={htmlCaption}
             />
           )
@@ -45,14 +45,14 @@ const relatedPosts = await getRelatedPosts(title, category, tags);
     class="flex flex-col p-4 pr-0 mr-0 md:p-0 max-w-prose w-full md:w-3/4 lg:w-1/2 xl:w-1/3ç"
   >
     <h1
-      class="text-3xl font-semibold mt-2 mb-6 max-w-[100vw] flex overflow-x-clip px-1"
+      class="text-3xl font-semibold mt-2 mb-6 max-w-screen flex overflow-x-clip px-1"
     >
       {title}
     </h1>
-    <div class="flex items-center gap-x-6 max-w-[100vw]">
-      <Image class="h-28 w-28 rounded-full object-cover" src={me} alt="" />
+    <div class="flex items-center gap-x-4 max-w-screen">
+        <UserAvatar client:idle src={me.src} fallback="JH" />
       <div class="flex flex-col items-start">
-        <h3 class="text-base font-semibold leading-7 tracking-tight text-primary">
+        <h3 class="text-base font-semibold leading-7 tracking-tight text-foreground">
           Jake Hayes
         </h3>
         <!-- <p class="text-sm font-semibold leading-6 text-highlight mt-2">
@@ -98,12 +98,12 @@ const relatedPosts = await getRelatedPosts(title, category, tags);
         </ul>
       )
     }
-    <hr class="my-4 max-w-[100vw] px-4" />
-    <article class="prose dark:prose-invert prose-base w-full p-2 max-w-[100vw] md:prose-lg lg:prose-xl">
+    <hr class="my-4 max-w-screen px-4" />
+    <article class="w-full p-2 max-w-screen md:prose-lg lg:prose-xl color-prose">
       <slot />
     </article>
     <ShareButtons title={title} description={description} />
-    <Disqus client:only title={title} className="mt-20" />
+    <Disqus client:only="react" title={title} className="mt-20" />
   </div>
   <RelatedPosts relatedPosts={relatedPosts} />
 </main>
