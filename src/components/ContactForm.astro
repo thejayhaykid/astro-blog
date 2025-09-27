@@ -1,6 +1,6 @@
 ---
 import Calendly from "./Calendly.astro";
-import { Button } from "@/components/ui/button";
+import ContactFormReact from "./ContactFormReact";
 ---
 
 <div class="relative isolate bg-background">
@@ -11,8 +11,8 @@ import { Button } from "@/components/ui/button";
           Get in touch
         </h2>
         <p class="mt-6 text-lg leading-8 text-secondary-foreground">
-          Whether you have a question, a suggestion, or just want to say hi, I’m
-          here to help. Just take a moment to fill out the form below, and I’ll
+          Whether you have a question, a suggestion, or just want to say hi, I'm
+          here to help. Just take a moment to fill out the form below, and I'll
           get back to you as soon as I can. Your feedback helps me make my
           services even better and fit your needs perfectly. Looking forward to
           working with you!
@@ -56,7 +56,7 @@ import { Button } from "@/components/ui/button";
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5a2.25 2.25 0 002.25-2.25m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5a2.25 2.25 0 012.25 2.25v7.5"
+                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5a2.25 2.25 0 002.25-2.25m-18 0v-7.5A2.25 2.25 0 715.25 9h13.5a2.25 2.25 0 712.25 2.25v7.5"
                 />
               </svg>
             </dt>
@@ -67,110 +67,6 @@ import { Button } from "@/components/ui/button";
         </dl>
       </div>
     </div>
-    <form
-      data-netlify="true"
-      netlify-honeypot
-      name="contact_form"
-      method="POST"
-      action="/success"
-      class="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
-    >
-      <p class="hidden">
-        <label>
-          Don’t fill this out if you’re human: <input name="bot-field" />
-        </label>
-      </p>
-      <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
-        <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-          <div>
-            <label
-              for="first-name"
-              class="block text-sm font-semibold leading-6 text-foreground"
-              >Name</label
-            >
-            <div class="mt-2.5">
-              <input
-                type="text"
-                name="name"
-                id="name"
-                autocomplete="name"
-                required
-                class="block w-full rounded-md border-0 px-3.5 py-2 bg-input text-foreground shadow-xs ring-1 ring-inset ring-border placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-ring sm:text-sm sm:leading-6"
-              />
-            </div>
-          </div>
-          <div>
-            <label
-              for="email"
-              class="block text-sm font-semibold leading-6 text-foreground"
-              >Email</label
-            >
-            <div class="mt-2.5">
-              <input
-                type="email"
-                name="email"
-                id="email"
-                autocomplete="email"
-                required
-                class="block w-full rounded-md border-0 px-3.5 py-2 bg-input text-foreground shadow-xs ring-1 ring-inset ring-border placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-ring sm:text-sm sm:leading-6"
-              />
-            </div>
-          </div>
-          <div class="sm:col-span-2">
-            <label
-              for="subject"
-              class="block text-sm font-semibold leading-6 text-foreground"
-              >Subject</label
-            >
-            <div class="mt-2.5">
-              <input
-                type="text"
-                name="subject"
-                id="subject"
-                autocomplete="none"
-                required
-                class="block w-full rounded-md border-0 px-3.5 py-2 bg-input text-foreground shadow-xs ring-1 ring-inset ring-border placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-ring sm:text-sm sm:leading-6"
-              />
-            </div>
-          </div>
-          <div class="sm:col-span-2">
-            <label
-              for="message"
-              class="block text-sm font-semibold leading-6 text-foreground"
-              >Message</label
-            >
-            <div class="mt-2.5">
-              <textarea
-                name="message"
-                id="message"
-                rows="4"
-                required
-                class="block w-full rounded-md border-0 px-3.5 py-2 bg-input text-foreground shadow-xs ring-1 ring-inset ring-border placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-ring sm:text-sm sm:leading-6"
-              ></textarea>
-            </div>
-          </div>
-        </div>
-        <div class="mt-8 flex justify-end">
-          <Button type="submit" variant="highlight">Send message</Button>
-        </div>
-      </div>
-    </form>
+    <ContactFormReact client:load />
   </div>
 </div>
-
-<script>
-  const subjectInput: HTMLInputElement | null = document.getElementById(
-    "subject"
-  ) as HTMLInputElement;
-  const params = new URLSearchParams(document.location.search);
-  const subjectParam = params.get("subject");
-  if (subjectInput && subjectParam) {
-    subjectInput.value = subjectParam;
-  }
-
-  const messageInput: HTMLInputElement | null = document.getElementById(
-    "message"
-  ) as HTMLInputElement;
-  const messageParam = params.get("message");
-  if (messageInput && messageParam) messageInput.value = messageParam;
-</script>
