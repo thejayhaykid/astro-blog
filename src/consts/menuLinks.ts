@@ -5,4 +5,5 @@ export const menuLinks: MenuLink[] = [
     { href: "/blog", text: "Blog" },
     { href: "/services", text: "Services" },
     { href: "/about", text: "About" },
+    // { href: "/apps", text: "Apps" }
 ];
