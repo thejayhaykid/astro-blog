@@ -3,7 +3,8 @@
         "astro",
         "astrojs",
         "Bento",
-        "disqus"
+        "disqus",
+        "frontmatter"
     ],
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {

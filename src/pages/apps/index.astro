@@ -1,6 +1,14 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 import { Button } from "@/components/ui/button";
+import LogoCloud from "@/components/apps/LogoCloud.astro";
+
+// Import logo assets
+import gymClockLogo from "@/assets/apps/gym-clock/App Icon Square 3x.png";
+import stashtagLogo from "@/assets/logos/stashtag.app.png";
+import stashtagScreenshot from "@/assets/apps/stashtag-screenshot.png";
+import stashtagScreenshotDark from "@/assets/apps/stashtag-screenshot-dark.png";
 
 // Page metadata
 const title = "Apps";
@@ -10,7 +18,7 @@ const description = "Apps I've built";
 const badgeText = "What's new";
 const badgeSubtext = "GymClock just shipped the beta!";
 const heroTitle = "Apps that solve real problems";
-const heroDescription = "I start with trying to fix my own problems. GymClock is just the beginning.";
+const heroDescription = "I start with trying to fix my own problems.";
 
 // Button content
 const primaryButtonText = "Get in touch";
@@ -18,8 +26,28 @@ const primaryButtonHref = "/contact";
 const secondaryButtonText = "More about me";
 const secondaryButtonHref = "/about";
 
-// Placeholder content
-const placeholderText = "App screenshots coming soon";
+// Apps data for LogoCloud
+const apps = [
+  {
+    name: "GymClock",
+    subtitle: "Fitness Timer App",
+    href: "/apps/gym-clock",
+    logo: {
+      light: gymClockLogo.src,
+      dark: gymClockLogo.src
+    }
+  },
+  {
+    name: "Stashtag",
+    subtitle: "A random collection of tools",
+    href: "https://stashtag.app",
+    logo: {
+      light: stashtagLogo.src,
+      dark: stashtagLogo.src
+    }
+  }
+  // Add more apps here as you build them
+];
 
 ---
 
@@ -55,18 +83,25 @@ const placeholderText = "App screenshots coming soon";
         <div class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:mt-0 lg:mr-0 lg:ml-10 lg:max-w-none lg:flex-none xl:ml-32">
           <div class="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
             <div class="-m-2 rounded-xl bg-muted/5 p-2 ring-1 ring-border ring-inset lg:-m-4 lg:rounded-2xl lg:p-4">
-              <div class="w-304 h-72 rounded-md bg-muted shadow-xl ring-1 ring-border flex items-center justify-center">
-                <div class="text-center">
-                  <svg class="w-16 h-16 mx-auto text-muted-foreground mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                  </svg>
-                  <p class="text-muted-foreground">{placeholderText}</p>
-                </div>
+              <div class="w-304 h-200 rounded-md bg-muted shadow-xl ring-1 ring-border overflow-hidden">
+                <Image 
+                  src={stashtagScreenshot} 
+                  alt="Stashtag app screenshot" 
+                  class="w-full h-full object-cover object-left-top dark:hidden"
+                />
+                <Image 
+                  src={stashtagScreenshotDark} 
+                  alt="Stashtag app screenshot (dark mode)" 
+                  class="w-full h-full object-cover object-left-top hidden dark:block"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    
+    <!-- Apps LogoCloud Section -->
+    <LogoCloud items={apps} />
   </main>
 </BaseLayout>
