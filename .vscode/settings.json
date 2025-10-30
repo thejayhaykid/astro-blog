@@ -7,6 +7,7 @@
         "frontmatter"
     ],
     "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit"
     },
@@ -16,5 +17,16 @@
         "typescript",
         "typescriptreact",
         "astro"
+    ],
+    "[astro]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.documentSelectors": [
+        "**/*.astro",
+        "**/*.js",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.json",
+        "**/*.md"
     ]
 }
