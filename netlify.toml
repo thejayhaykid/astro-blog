@@ -2,6 +2,9 @@
 publish = "dist"
 command = "yarn build"
 
+[build.environment]
+SECRETS_SCAN_OMIT_KEYS = "PUBLIC_WEB3FORMS_ACCESS_KEY"
+
 [[redirects]]
 from = "/stats.js"
 to = "https://cloud.umami.is/script.js"
