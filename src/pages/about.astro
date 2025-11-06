@@ -5,6 +5,8 @@ import { Content } from "../content/general/about.md";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import AboutExtras from "../components/about/AboutExtras.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Stamp from "@/assets/stamp.png";
+import StampInverted from "@/assets/stamp-inverted.png";
 
 const title = `${SITE_TITLE} | About`;
 
@@ -30,24 +32,48 @@ import golf from "../assets/golf.png";
           class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
         >
           <div class="lg:pr-4">
-            <div class="lg:max-w-lg">
-              <article
-                class="text-left prose-lg max-w-4xl p-4 color-prose"
-              >
+            <div class="lg:max-w-lg relative">
+              <article class="text-left prose-lg max-w-4xl p-4 color-prose">
                 <Content />
               </article>
+              <!-- Stamp -->
+              <div class="stamp-container absolute -left-2 -bottom-72 z-20">
+                <!-- Light mode stamp -->
+                <Image
+                  src={Stamp}
+                  alt="Stamp"
+                  class="stamp-light h-72 w-72 transform rotate-5"
+                  loading="eager"
+                />
+                <!-- Dark mode stamp -->
+                <Image
+                  src={StampInverted}
+                  alt="Stamp"
+                  class="stamp-dark h-72 w-72 transform rotate-5"
+                  loading="eager"
+                />
+              </div>
             </div>
           </div>
         </div>
         <div
-          class="-ml-12 -mt-12 p-0 md:p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden"
+          class="-ml-12 -mt-12 p-0 md:p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden relative"
         >
+          <!-- Placeholder with shimmer effect -->
+          <div
+            class="absolute inset-0 bg-linear-to-br from-muted/50 to-muted rounded-xl animate-pulse image-placeholder"
+            style="background-image: linear-gradient(135deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%); background-size: 200% 200%; animation: shimmer 2s infinite;"
+          >
+          </div>
           <Image
-            class="w-3xl max-w-none rounded-xl bg-muted shadow-xl ring-1 ring-border sm:w-228"
+            class="w-3xl max-w-none rounded-xl bg-muted shadow-xl ring-1 ring-border sm:w-228 relative z-10 image-main"
             src={golf}
             alt="me"
             transition:animate="fade"
             loading="eager"
+            decoding="async"
+            quality={85}
+            format="webp"
           />
         </div>
         <div
@@ -63,6 +89,83 @@ import golf from "../assets/golf.png";
       </div>
     </div>
   </div>
-<!-- <AboutFunFacts /> -->
+  <!-- <AboutFunFacts /> -->
   <AboutExtras />
 </BaseLayout>
+
+<style>
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .image-main {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .image-main.loaded {
+    opacity: 1;
+  }
+
+  .rotate-30 {
+    transform: rotate(30deg);
+  }
+
+  .stamp-container.visible {
+    opacity: 1;
+    transform: translateY(0) rotate(30deg);
+  }
+
+  .stamp-container {
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  /* Light mode: show light stamp, hide dark stamp */
+  .stamp-light {
+    display: block;
+  }
+  .stamp-dark {
+    display: none;
+  }
+
+  /* Dark mode: hide light stamp, show dark stamp */
+  :global(.dark) .stamp-light {
+    display: none;
+  }
+  :global(.dark) .stamp-dark {
+    display: block;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const image = document.querySelector(".image-main") as HTMLImageElement;
+    const placeholder = document.querySelector(
+      ".image-placeholder"
+    ) as HTMLElement;
+
+    // Image loading logic
+    if (image && placeholder) {
+      image.addEventListener("load", () => {
+        image.classList.add("loaded");
+        setTimeout(() => {
+          placeholder.style.opacity = "0";
+          setTimeout(() => {
+            placeholder.style.display = "none";
+          }, 500);
+        }, 100);
+      });
+
+      // If image is already cached and loaded
+      if (image.complete) {
+        image.classList.add("loaded");
+        placeholder.style.display = "none";
+      }
+    }
+  });
+</script>
