@@ -1,8 +1,7 @@
 ---
 import { Button } from "@/components/ui/button";
-import { Image } from "astro:assets";
+import Cardinal from "./cardinal.astro";
 import HeaderLink from "./HeaderLink.astro";
-import Cardinal from "../assets/cardinal.svg";
 import { menuLinks } from "../consts/menuLinks.ts";
 import type { MenuLink } from "../types/MenuLink.types";
 ---
@@ -13,12 +12,7 @@ import type { MenuLink } from "../types/MenuLink.types";
     class="fixed top-2 left-1/2 -translate-x-1/2 z-50 flex flex-row items-center justify-between px-2 sm:px-4 py-1 rounded-xs shadow-lg bg-secondary/90 backdrop-blur-md border border-secondary/30 md:w-[98vw] w-[95vw] transition-all duration-300 md:max-w-7xl"
   >
     <a href="/" class="flex pl-2 items-center">
-      <Image
-        class="w-8 h-8 sm:w-12 sm:h-12 mr-2 sm:mr-4"
-        src={Cardinal}
-        alt="Icon"
-        loading="eager"
-      />
+      <Cardinal />
     </a>
 
     <nav class="hidden lg:flex items-center space-x-6">
