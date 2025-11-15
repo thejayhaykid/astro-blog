@@ -53,15 +53,9 @@
   img {
     max-width: 100%;
     height: auto;
-    /* Dark Academia / Autumn Filter */
-    filter: contrast(1.1) brightness(0.9) saturate(1.2) sepia(0.15)
+    filter: contrast(1.1) brightness(0.8) saturate(1.4) sepia(0.35)
       hue-rotate(10deg);
     transition: filter 0.2s ease;
-  }
-
-  /* Optional: Hover effect to remove filter */
-  img:hover {
-    filter: none;
   }
 
   /* Exclude certain images from the filter if needed */
