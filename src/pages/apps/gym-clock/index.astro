@@ -1,24 +1,23 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Hero from "@/components/services/Hero.astro";
-
-
 ---
 
-<BaseLayout title="Gym Clock" description="A simple web app to track your workouts and rest times.">
+<BaseLayout
+  title="Gym Clock"
+  description="A simple web app to track your workouts and rest times."
+>
   <main>
-     <Hero
+    <Hero
       title="GymClock"
       description="A simple web app to track your workouts and rest times."
       primaryButtonText="See the Privacy Policy"
       primaryButtonHref="/apps/gym-clock/privacy-policy"
-      secondaryButtonText="Provide Beta Feedback"
-      secondaryButtonHref="/apps/gym-clock/beta-feedback"
       imageAlt="Screenshot of Gym Clock app"
       imageSrc=""
-      pillText="GymClock is now in Beta!"
-      pillLinkText="Join the Beta "
-      pillHref="/apps/gym-clock/beta"
-    /> 
+      pillText="GymClock is coming to the App Store!"
+      pillLinkText="Notify me "
+      pillHref="/contact?subject=Notify%20me%20about%20GymClock!"
+    />
   </main>
 </BaseLayout>
