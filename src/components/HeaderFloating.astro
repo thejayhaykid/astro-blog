@@ -11,8 +11,13 @@ import type { MenuLink } from "../types/MenuLink.types";
   <header
     class="fixed top-2 left-1/2 -translate-x-1/2 z-50 flex flex-row items-center justify-between px-2 sm:px-4 py-1 rounded-full shadow-lg bg-secondary/90 backdrop-blur-md border border-secondary/30 md:w-[98vw] w-[95vw] transition-all duration-300 md:max-w-7xl"
   >
-    <a href="/" class="flex pl-2 lg:pl-8 items-center">
-      <Image class="w-8 h-8 sm:w-12 sm:h-12 mr-2 sm:mr-4" src={JH} alt="Icon" loading="eager" />
+    <a href="/" class="flex pl-2 lg:pl-8 items-center cursor-pointer">
+      <Image
+        class="w-8 h-8 sm:w-12 sm:h-12 mr-2 sm:mr-4"
+        src={JH}
+        alt="Icon"
+        loading="eager"
+      />
     </a>
 
     <nav class="hidden lg:flex items-center space-x-6">
@@ -56,7 +61,7 @@ import type { MenuLink } from "../types/MenuLink.types";
         <path
           stroke-linecap="round"
           stroke-linejoin="round"
-          d="M6 18L18 6M6 6l12 12" />
+          d="M6 18L18 6M6 6l12 12"></path>
       </svg>
     </button>
   </header>
@@ -64,7 +69,6 @@ import type { MenuLink } from "../types/MenuLink.types";
     id="mobile-nav"
     class="bg-white/10 backdrop-blur-xl backdrop-saturate-150 border border-white/20 text-foreground p-2 z-40 fixed top-16 left-1/2 -translate-x-1/2 w-[90vw] max-w-sm rounded-2xl shadow-lg hidden transition-all duration-300"
   >
-  
     <ul class="flex flex-col space-y-4 text-foreground">
       {
         menuLinks.map((link: MenuLink) => (
@@ -101,7 +105,7 @@ import type { MenuLink } from "../types/MenuLink.types";
     menus.forEach((menu) =>
       menu.addEventListener("click", () => {
         showMenu();
-      })
+      }),
     );
   }
 

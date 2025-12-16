@@ -1,12 +1,17 @@
 ---
+const {
+  pillText = "This is one of many different services I offer. ",
+  pillLinkText = "See more ",
+  pillHref = "/services",
+} = Astro.props;
 ---
 
-<div class="border border-border pl-2 pr-4 py-1 text-sm text-muted-foreground rounded-full gap-2 flex justify-start items-center">
-  This is one of many different services I offer. <a
-    href="/services"
-    class="whitespace-nowrap font-semibold text-highlight transition-all ease-in-out hover:translate-x-2"
-    ><span class="absolute inset-0" aria-hidden="true"></span>See more <span
-      aria-hidden="true">&rarr;</span
-    ></a
+<div
+  class="border border-border pl-2 pr-4 py-1 text-sm text-muted-foreground rounded-full gap-2 flex justify-start items-center"
+>
+  {pillText}<a
+    href={pillHref}
+    class="whitespace-nowrap font-semibold text-highlight"
+    >{pillLinkText}<span aria-hidden="true">&rarr;</span></a
   >
 </div>

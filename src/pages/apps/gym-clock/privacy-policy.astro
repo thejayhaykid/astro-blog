@@ -1,0 +1,20 @@
+---
+import { Content, frontmatter } from "@/content/general/gym-clock-privacy-policy.md";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import FormattedDate from "@/components/FormattedDate.astro";
+
+const title = "Privacy Policy | Gym Clock";
+const description = "Privacy Policy for Gym Clock app";
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="bg-background text-foreground md:pt-36 pt-24 flex flex-row justify-center">
+    <div class="relative isolate overflow-hidden px-6 py-8 sm:py-12 lg:overflow-visible lg:px-0">
+        <article class="text-left prose-lg max-w-4xl p-4 color-prose">
+            <h1 class="text-foreground">Gym Clock Privacy Policy</h1>
+            <p class="text-foreground"><span class="font-bold">Last updated:</span> <FormattedDate date={new Date(frontmatter.updatedDate)} /></p>
+            <Content />
+        </article>
+    </div>
+  </div>
+</BaseLayout>

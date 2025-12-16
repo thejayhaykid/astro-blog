@@ -14,6 +14,9 @@ const {
   image = coffee,
   imageAlt = "This was taken in Thompson Library at The Ohio State University",
   showPillButton = true,
+  pillText = undefined,
+  pillLinkText = undefined,
+  pillHref = undefined,
 } = Astro.props;
 ---
 
@@ -25,7 +28,7 @@ const {
       <div class="mx-auto max-w-2xl lg:mx-0">
         {showPillButton && (
           <div class="hidden sm:mt-32 sm:flex lg:mt-16">
-            <PillButton />
+            <PillButton pillText={pillText} pillLinkText={pillLinkText} pillHref={pillHref} />
           </div>
         )}
         <h1

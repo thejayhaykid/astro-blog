@@ -1,0 +1,52 @@
+---
+export interface LogoItem {
+  name: string;
+  subtitle?: string;
+  href: string;
+  logo: {
+    light: string;
+    dark: string;
+  };
+}
+
+export interface Props {
+  items: LogoItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="bg-background py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="-mx-6 grid grid-cols-2 gap-0.5 overflow-hidden sm:mx-0 sm:rounded-2xl md:grid-cols-3">
+      {items.map((item) => (
+        <a href={item.href} class="bg-muted/50 p-6 sm:p-10 group hover:bg-muted/70 hover:scale-105 transition-all duration-300 ease-in-out">
+          <div class="flex flex-col items-center text-center">
+            <img 
+              width="158" 
+              height="48" 
+              src={item.logo.light} 
+              alt={item.name} 
+              class="max-h-12 w-full object-contain dark:hidden mb-2" 
+            />
+            <img 
+              width="158" 
+              height="48" 
+              src={item.logo.dark} 
+              alt={item.name} 
+              class="max-h-12 w-full object-contain hidden dark:block mb-2" 
+            />
+            <h3 class="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+              {item.name}
+            </h3>
+            {item.subtitle && (
+              <p class="text-xs text-muted-foreground mt-1">
+                {item.subtitle}
+              </p>
+            )}
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
