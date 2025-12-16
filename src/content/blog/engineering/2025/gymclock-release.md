@@ -2,11 +2,11 @@
 title: "My first solo app is being reviewed for Release!"
 pubDate: "Dec 14, 2025"
 description: "Gym Clock Is Coming to Apple TV"
-heroImage: "/blog-images/tech/2025/copilot.jpg"
-category: "Engineering Life"
+heroImage: "/blog-images/tech/2025/GymClock.png"
+category: "Jake Hayes Works"
 tags: ["App Store", "tvOS", "gym-clock", "gym", "timer", "stopwatch"]
 draft: false
-imageCaption: "Photo by [Jan Huber](https://unsplash.com/@jan_huber?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/two-men-sitting-on-aircraft-control-panel-0xNbk7D_s6U?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)"
+imageCaption: "Photo by [Me](/about)"
 ---
 
 I’m excited to share that **Gym Clock**, a simple workout clock designed for Apple TV, has been submitted to the App Store and is currently pending review.
@@ -46,6 +46,6 @@ Once the app is approved, it will be available on the App Store for Apple TV. I�
 
 After launch, I plan to keep the app focused and simple while continuing to improve polish, performance, and usability based on real-world use.
 
-If you’re interested in trying it out or have feedback once it’s live, I’d love to hear from you.
+If you're interested in trying it out or have feedback once it's live, I'd love to [hear from you](/contact?subject=Tell%20me%20when%20GymClock%20is%20live).
 
 Thanks for reading — and for supporting independent builders.
