@@ -53,7 +53,7 @@ const { title, subtitle, featuredTestimonial, testimonials } = Astro.props;
       class="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm/6 text-foreground sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4"
     >
       <figure
-        class="rounded-2xl bg-card shadow-lg ring-1 ring-border sm:col-span-2 xl:col-start-2 xl:row-end-1"
+        class="rounded bg-card shadow-lg ring-1 ring-border sm:col-span-2 xl:col-start-2 xl:row-end-1"
       >
         <div
           class="p-6 text-lg font-semibold tracking-tight text-foreground sm:p-12 sm:text-xl/8"
@@ -70,8 +70,8 @@ const { title, subtitle, featuredTestimonial, testimonials } = Astro.props;
                   `data:image/svg+xml;utf8,${encodeURIComponent(
                     minidenticon(
                       featuredTestimonial.author.handle ||
-                        featuredTestimonial.author.name
-                    )
+                        featuredTestimonial.author.name,
+                    ),
                   )}`
                 }
                 class="size-10 flex-none rounded-full bg-secondary"
@@ -109,7 +109,7 @@ const { title, subtitle, featuredTestimonial, testimonials } = Astro.props;
                 } space-y-8`}
               >
                 {column.map((testimonial) => (
-                  <figure class="rounded-2xl bg-background p-6 shadow-lg ring-1 ring-border">
+                  <figure class="rounded bg-background p-6 shadow-lg ring-1 ring-border">
                     {testimonial.icon && (
                       <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-secondary">
                         <Icon name={testimonial.icon} />
@@ -139,8 +139,8 @@ const { title, subtitle, featuredTestimonial, testimonials } = Astro.props;
                             `data:image/svg+xml;utf8,${encodeURIComponent(
                               minidenticon(
                                 testimonial.author.handle ||
-                                  testimonial.author.name
-                              )
+                                  testimonial.author.name,
+                              ),
                             )}`
                           }
                           class="size-10 rounded-full bg-secondary"
