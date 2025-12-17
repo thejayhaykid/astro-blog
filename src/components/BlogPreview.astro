@@ -12,11 +12,11 @@ const { post } = Astro.props;
       <img
         src={post.data.heroImage}
         alt={post.data.title}
-        class="absolute inset-0 h-full w-full md:rounded-2xl bg-secondary object-cover"
+        class="absolute inset-0 h-full w-full bg-secondary object-cover"
         transition:name={post.data.heroImage}
       />
       <div
-        class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-foreground/10"
+        class="absolute inset-0 ring-1 ring-inset ring-foreground/10"
       >
       </div>
     </div>
