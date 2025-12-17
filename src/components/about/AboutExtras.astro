@@ -38,55 +38,33 @@ const actions: Action[] = [
       "Have a question or want to work together? Get in touch with me through my contact form.",
   },
 ];
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
 ---
 
-<div
-  class="divide-y-2 divide-secondary overflow-hidden rounded-sm bg-secondary shadow-xs sm:grid sm:grid-cols-2 sm:gap-px sm:divide-y-0 border-t-2 border-b-2"
->
-  {
-    actions.map((action, actionIdx) => (
-      <div
-        class={classNames(
-          actionIdx === 0
-            ? "rounded-tl-lg rounded-tr-lg sm:rounded-tr-none"
-            : "",
-          actionIdx === 1 ? "sm:rounded-tr-lg" : "",
-          actionIdx === actions.length - 2 ? "sm:rounded-bl-lg" : "",
-          actionIdx === actions.length - 1
-            ? "rounded-br-lg rounded-bl-lg sm:rounded-bl-none"
-            : "",
-          "group relative bg-background p-6 focus-within:ring-2 focus-within:ring-highlight focus-within:ring-inset"
-        )}
-      >
-        <div>
-          <span class="inline-flex rounded-sm p-3">
-            <Icon name={action.icon} />
-          </span>
-        </div>
-        <div class="mt-8">
-          <h3 class="text-base font-semibold text-foreground">
-            <a href={action.href} class="focus:outline-hidden">
-              <span class="absolute inset-0" aria-hidden="true" />
-              {action.title}
-            </a>
-          </h3>
-          <p class="mt-2 text-sm text-secondary-foreground">
-            {action.description}
-          </p>
-        </div>
-        <span
-          aria-hidden="true"
-          class="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400"
-        >
-          <svg viewBox="0 0 24 24" fill="currentColor" class="size-6">
-            <path d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z" />
-          </svg>
-        </span>
-      </div>
-    ))
-  }
+<div class="bg-background py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div
+      class="-mx-6 grid grid-cols-2 gap-0.5 overflow-hidden sm:mx-0 md:grid-cols-3"
+    >
+      {
+        actions.map((action) => (
+          <a
+            href={action.href}
+            class="bg-muted/50 p-6 sm:p-10 group hover:bg-muted/70 hover:scale-105 transition-all duration-300 ease-in-out"
+          >
+            <div class="flex flex-col items-center text-center">
+              <div class="mb-2">
+                <Icon name={action.icon} classStr="w-12 h-12 text-foreground" />
+              </div>
+              <h3 class="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                {action.title}
+              </h3>
+              <p class="text-xs text-muted-foreground mt-1">
+                {action.description}
+              </p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
 </div>
