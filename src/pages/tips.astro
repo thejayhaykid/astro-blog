@@ -1,0 +1,56 @@
+---
+import { SITE_DESCRIPTION } from "../consts";
+import type { Link } from "../types/Link.types";
+import LinkGroup from "../components/LinkGroup.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Images
+import buymeacoffee from "../assets/link-images/buy-me-a-coffee.png";
+import paypal from "../assets/logos/paypal.png";
+
+const tipLinks: Link[] = [
+  {
+    primaryHeader: "Buy Me A Coffee",
+    secondaryHeader:
+      "Nothing to buy, but if you like what I do, you can support me here",
+    imageUrl: buymeacoffee.src,
+    linkUrl: "https://www.buymeacoffee.com/jakehayes",
+  },
+  {
+    primaryHeader: "PayPal",
+    secondaryHeader: "A second place to support me",
+    imageUrl: paypal.src,
+    linkUrl: "https://paypal.me/thejayhaykid",
+  },
+];
+
+// Prefetch images for better performance
+const prefetchImages: string[] = tipLinks.map((link) => link.imageUrl ?? "");
+---
+
+<BaseLayout
+  title="Tips"
+  description={SITE_DESCRIPTION}
+  prefetchImages={prefetchImages}
+>
+  <div
+    class="flex flex-col w-screen overflow-y-auto items-center min-h-(--screen-height) dark:bg-gray-900 dark:text-gray-200 md:pt-36 pt-24 px-4"
+  >
+    {
+      tipLinks.length > 0 && (
+        <div class="my-8">
+          <h2 class="text-2xl font-bold pb-2 text-muted-foreground pl-2 md:pl-0">
+            Tip Jar
+          </h2>
+          <h6 class="text-sm text-card-foreground pb-2 pl-2 md:pl-0">
+            <em>
+              I am an independent creator. If you like what I do, you can
+              support me here.
+            </em>
+          </h6>
+          <LinkGroup links={tipLinks} />
+        </div>
+      )
+    }
+  </div>
+</BaseLayout>
