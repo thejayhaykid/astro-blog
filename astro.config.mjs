@@ -12,6 +12,9 @@ export default defineConfig({
   output: "server",
   adapter: netlify(),
   prefetch: true,
+  redirects: {
+    "/apps/gymclock": "/apps/gym-clock",
+  },
   vite: {
     plugins: [tailwindcss()],
   },

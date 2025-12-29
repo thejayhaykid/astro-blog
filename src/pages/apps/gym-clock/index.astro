@@ -1,23 +1,26 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Hero from "@/components/services/Hero.astro";
+import gymClockHero from "@/assets/apps/gym-clock/App Icon Square 3x.png";
 ---
 
 <BaseLayout
-  title="Gym Clock"
-  description="A simple web app to track your workouts and rest times."
+  title="GymClock"
+  description="A wall-style workout clock and timer built for Apple TV."
 >
   <main>
     <Hero
-      title="GymClock"
-      description="A simple web app to track your workouts and rest times."
-      primaryButtonText="See the Privacy Policy"
-      primaryButtonHref="/apps/gym-clock/privacy-policy"
-      imageAlt="Screenshot of Gym Clock app"
-      imageSrc=""
-      pillText="GymClock is coming to the App Store!"
-      pillLinkText="Notify me "
-      pillHref="/contact?subject=Notify%20me%20about%20GymClock!"
+      title="GymClock for Apple TV"
+      description="Big, glanceable timing for home and garage gyms — wall clock, stopwatch with laps, and custom countdowns."
+      primaryButtonText="App Store link (live Monday)"
+      primaryButtonHref="/contact?subject=Notify%20me%20when%20GymClock%20is%20live"
+      secondaryButtonText="View Privacy Policy"
+      secondaryButtonHref="/apps/gym-clock/privacy-policy"
+      image={gymClockHero}
+      imageAlt="GymClock app icon on Apple TV"
+      pillText="Launches Monday"
+      pillLinkText="Get launch updates"
+      pillHref="/contact?subject=Tell%20me%20when%20GymClock%20is%20live"
     />
   </main>
 </BaseLayout>
