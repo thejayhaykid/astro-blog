@@ -50,7 +50,7 @@ const ContactFormReact: React.FC = () => {
       });
 
       const result = await response.json();
-      
+
       if (result.success) {
         // Redirect to success page
         window.location.href = '/success';
@@ -69,7 +69,7 @@ const ContactFormReact: React.FC = () => {
     const params = new URLSearchParams(window.location.search);
     const subjectParam = params.get('subject');
     const messageParam = params.get('message');
-    
+
     if (subjectParam || messageParam) {
       setFormData(prev => ({
         ...prev,
@@ -102,7 +102,7 @@ const ContactFormReact: React.FC = () => {
                 onChange={handleChange}
                 autoComplete="name"
                 required
-                className="block w-full rounded-md border-0 px-3.5 py-2 bg-input text-foreground shadow-xs ring-1 ring-inset ring-border placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-ring sm:text-sm sm:leading-6"
+                className="block w-full rounded-xs border-0 px-3.5 py-2 bg-input text-foreground shadow-xs ring-1 ring-inset ring-border placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-ring sm:text-sm sm:leading-6"
               />
             </div>
           </div>
@@ -122,7 +122,7 @@ const ContactFormReact: React.FC = () => {
                 onChange={handleChange}
                 autoComplete="email"
                 required
-                className="block w-full rounded-md border-0 px-3.5 py-2 bg-input text-foreground shadow-xs ring-1 ring-inset ring-border placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-ring sm:text-sm sm:leading-6"
+                className="block w-full rounded-xs border-0 px-3.5 py-2 bg-input text-foreground shadow-xs ring-1 ring-inset ring-border placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-ring sm:text-sm sm:leading-6"
               />
             </div>
           </div>
@@ -142,7 +142,7 @@ const ContactFormReact: React.FC = () => {
                 onChange={handleChange}
                 autoComplete="none"
                 required
-                className="block w-full rounded-md border-0 px-3.5 py-2 bg-input text-foreground shadow-xs ring-1 ring-inset ring-border placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-ring sm:text-sm sm:leading-6"
+                className="block w-full rounded-xs border-0 px-3.5 py-2 bg-input text-foreground shadow-xs ring-1 ring-inset ring-border placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-ring sm:text-sm sm:leading-6"
               />
             </div>
           </div>
@@ -161,12 +161,12 @@ const ContactFormReact: React.FC = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="block w-full rounded-md border-0 px-3.5 py-2 bg-input text-foreground shadow-xs ring-1 ring-inset ring-border placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-ring sm:text-sm sm:leading-6"
+                className="block w-full rounded-xs border-0 px-3.5 py-2 bg-input text-foreground shadow-xs ring-1 ring-inset ring-border placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-ring sm:text-sm sm:leading-6"
               />
             </div>
           </div>
         </div>
-        
+
         {error && (
           <div className="mt-6">
             <Alert variant="destructive">
@@ -174,7 +174,7 @@ const ContactFormReact: React.FC = () => {
             </Alert>
           </div>
         )}
-        
+
         <div className="mt-8 flex justify-end">
           <Button type="submit" variant="highlight" disabled={isSubmitting}>
             {isSubmitting ? 'Sending...' : 'Send message'}

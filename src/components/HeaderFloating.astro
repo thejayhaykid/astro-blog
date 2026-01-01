@@ -1,23 +1,18 @@
 ---
 import { Button } from "@/components/ui/button";
-import { Image } from "astro:assets";
+import Cardinal from "./cardinal.astro";
 import HeaderLink from "./HeaderLink.astro";
-import JH from "../assets/JH.png";
 import { menuLinks } from "../consts/menuLinks.ts";
 import type { MenuLink } from "../types/MenuLink.types";
 ---
 
 <div class="flex flex-col w-full">
   <header
-    class="fixed top-2 left-1/2 -translate-x-1/2 z-50 flex flex-row items-center justify-between px-2 sm:px-4 py-1 rounded-full shadow-lg bg-secondary/90 backdrop-blur-md border border-secondary/30 md:w-[98vw] w-[95vw] transition-all duration-300 md:max-w-7xl"
+    id="floating-header"
+    class="fixed top-2 left-1/2 -translate-x-1/2 z-50 flex flex-row items-center justify-between px-2 sm:px-4 py-1 rounded-xs shadow-lg bg-secondary/90 backdrop-blur-md border border-secondary/30 md:w-[98vw] w-[95vw] transition-all duration-300 md:max-w-7xl"
   >
-    <a href="/" class="flex pl-2 lg:pl-8 items-center cursor-pointer">
-      <Image
-        class="w-8 h-8 sm:w-12 sm:h-12 mr-2 sm:mr-4"
-        src={JH}
-        alt="Icon"
-        loading="eager"
-      />
+    <a href="/" class="flex pl-2 items-center">
+      <Cardinal />
     </a>
 
     <nav class="hidden lg:flex items-center space-x-6">
@@ -67,7 +62,7 @@ import type { MenuLink } from "../types/MenuLink.types";
   </header>
   <nav
     id="mobile-nav"
-    class="bg-white/10 backdrop-blur-xl backdrop-saturate-150 border border-white/20 text-foreground p-2 z-40 fixed top-16 left-1/2 -translate-x-1/2 w-[90vw] max-w-sm rounded-2xl shadow-lg hidden transition-all duration-300"
+    class="bg-white/10 backdrop-blur-xl backdrop-saturate-150 border border-white/20 text-foreground p-2 z-40 fixed top-16 left-1/2 -translate-x-1/2 w-[90vw] max-w-sm rounded shadow-lg hidden transition-all duration-300"
   >
     <ul class="flex flex-col space-y-4 text-foreground">
       {
@@ -100,6 +95,76 @@ import type { MenuLink } from "../types/MenuLink.types";
     close?.classList.toggle("hidden");
   }
 
+  function initScrollBehavior() {
+    let lastScrollY = window.scrollY;
+    let isScrollingDown = false;
+    let scrollTimeout: ReturnType<typeof setTimeout>;
+
+    const header = document.getElementById("floating-header");
+    if (!header) return;
+
+    function handleScroll() {
+      if (!header) return;
+
+      const currentScrollY = window.scrollY;
+      const scrollDifference = Math.abs(currentScrollY - lastScrollY);
+
+      // Only react to meaningful scroll movements
+      if (scrollDifference < 5) return;
+
+      // Determine scroll direction
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down and past initial threshold
+        if (!isScrollingDown) {
+          isScrollingDown = true;
+          header.style.transform = "translateY(-120%)";
+          header.style.opacity = "0";
+        }
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up
+        if (isScrollingDown) {
+          isScrollingDown = false;
+          header.style.transform = "translateY(0%)";
+          header.style.opacity = "1";
+        }
+      }
+
+      // Always show header when at top of page
+      if (currentScrollY <= 50) {
+        isScrollingDown = false;
+        header.style.transform = "translateY(0%)";
+        header.style.opacity = "1";
+      }
+
+      lastScrollY = currentScrollY;
+
+      // Clear existing timeout
+      clearTimeout(scrollTimeout);
+
+      // Show header briefly after scroll stops
+      scrollTimeout = setTimeout(() => {
+        if (header && (!isScrollingDown || currentScrollY <= 50)) {
+          header.style.transform = "translateY(0%)";
+          header.style.opacity = "1";
+        }
+      }, 150);
+    }
+
+    // Throttled scroll handler
+    let ticking = false;
+    function requestScrollUpdate() {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    window.addEventListener("scroll", requestScrollUpdate, { passive: true });
+  }
+
   function addListeners() {
     const menus = document.querySelectorAll("[data-mobile-menu-btn]");
     menus.forEach((menu) =>
@@ -107,6 +172,9 @@ import type { MenuLink } from "../types/MenuLink.types";
         showMenu();
       }),
     );
+
+    // Initialize scroll behavior
+    initScrollBehavior();
   }
 
   document.addEventListener("astro:after-swap", addListeners);
