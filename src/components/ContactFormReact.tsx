@@ -50,14 +50,14 @@ const ContactFormReact: React.FC = () => {
       });
 
       const result = await response.json();
-      
+
       if (result.success) {
         // Redirect to success page
         window.location.href = '/success';
       } else {
         setError(result.message || 'Something went wrong. Please try again.');
       }
-    } catch (err) {
+    } catch {
       setError('Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
@@ -69,7 +69,7 @@ const ContactFormReact: React.FC = () => {
     const params = new URLSearchParams(window.location.search);
     const subjectParam = params.get('subject');
     const messageParam = params.get('message');
-    
+
     if (subjectParam || messageParam) {
       setFormData(prev => ({
         ...prev,
@@ -166,7 +166,7 @@ const ContactFormReact: React.FC = () => {
             </div>
           </div>
         </div>
-        
+
         {error && (
           <div className="mt-6">
             <Alert variant="destructive">
@@ -174,7 +174,7 @@ const ContactFormReact: React.FC = () => {
             </Alert>
           </div>
         )}
-        
+
         <div className="mt-8 flex justify-end">
           <Button type="submit" variant="highlight" disabled={isSubmitting}>
             {isSubmitting ? 'Sending...' : 'Send message'}
