@@ -18,8 +18,6 @@ const {
   pillLinkText = undefined,
   pillHref = undefined,
 } = Astro.props;
-
-const showPB = !!(showPillButton && pillText);
 ---
 
 <div class="relative bg-background">
@@ -29,7 +27,7 @@ const showPB = !!(showPillButton && pillText);
     >
       <div class="mx-auto max-w-2xl lg:mx-0">
         {
-          showPB && (
+          showPillButton && (
             <div class="hidden sm:mt-32 sm:flex lg:mt-16">
               <PillButton
                 pillText={pillText}
