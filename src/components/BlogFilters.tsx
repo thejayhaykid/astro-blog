@@ -39,7 +39,7 @@ export default function BlogFilters({ filters, pathname }: Props) {
             <label
               key={option.id}
               aria-label={option.name}
-              className={`shrink-0 relative flex items-center justify-center rounded-md border p-2 w-auto 
+              className={`shrink-0 relative flex items-center justify-center rounded-xs border p-2 w-auto 
               ${isChecked
                   ? "border-highlight bg-highlight"
                   : "border-primary bg-background"

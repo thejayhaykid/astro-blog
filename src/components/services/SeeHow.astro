@@ -1,5 +1,5 @@
 ---
-import Icon  from "../Icon";
+import Icon from "../Icon";
 import { IconName } from "../Icon";
 
 type Item = {
@@ -10,60 +10,85 @@ type Item = {
 };
 
 const headingDefault: string = "How do I help?";
-const subheadingDefault: string = "Discover some of the ways I assist businesses.";
+const subheadingDefault: string =
+  "Discover some of the ways I assist businesses.";
 const items: Item[] = [
   {
     title: "Watch Brand",
     description: "Read how I help micro watch brands",
     icon: IconName.WATCH,
-    href: "/blog/tech-life/2025/how-i-help-micro-watch-brands"
+    href: "/blog/tech-life/2025/how-i-help-micro-watch-brands",
   },
   {
     title: "Local Golf Brand",
     description: "Read how I help local golf brands",
     icon: IconName.GOLF,
-    href: "/blog/tech-life/2025/how-i-help-golf" 
+    href: "/blog/tech-life/2025/how-i-help-golf",
   },
 ];
 
-const itemList: Item[] = (Astro.props?.itemList ?? items);
-const { heading = headingDefault, subheading = subheadingDefault } = Astro.props;
-
+const itemList: Item[] = Astro.props?.itemList ?? items;
+const { heading = headingDefault, subheading = subheadingDefault } =
+  Astro.props;
 ---
 
 <div class="mx-4 md:mx-auto max-w-lg bg-background">
   <h2 class="text-base font-semibold text-foreground">{heading}</h2>
   <p class="mt-1 text-sm text-secondary-foreground">{subheading}</p>
-  <ul role="list" class="mt-6 divide-y divide-secondary border-y border-secondary">
-    {itemList.map(item => (
-      <li>
-        <a href={item.href}>
+  <ul
+    role="list"
+    class="mt-6 divide-y divide-secondary border-y border-secondary"
+  >
+    {
+      itemList.map((item) => (
+        <li>
+          <a href={item.href}>
             <div class="group relative flex items-start space-x-3 py-4">
-                <div class="shrink-0">
-                    <span class="inline-flex size-10 items-center justify-center rounded-lg bg-highlight">
-                    <Icon name={item.icon} viewBox="0 0 24 24" classStr="size-6 text-white icon-center" />
+              <div class="shrink-0">
+                <span class="inline-flex size-10 items-center justify-center rounded-sm bg-highlight">
+                  <Icon
+                    name={item.icon}
+                    viewBox="0 0 24 24"
+                    classStr="size-6 text-white icon-center"
+                  />
                 </span>
+              </div>
+              <div class="min-w-0 flex-1">
+                <div class="text-sm font-medium text-foreground">
+                  <span aria-hidden="true" class="absolute inset-0" />
+                  {item.title}
                 </div>
-                <div class="min-w-0 flex-1">
-                    <div class="text-sm font-medium text-foreground">
-                        <span aria-hidden="true" class="absolute inset-0"></span>
-                        {item.title}
-                    </div>
-                    <p class="text-sm text-secondary-foreground">{item.description}</p>
-                </div>
-                <div class="shrink-0 self-center">
-                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 text-secondary-foreground group-hover:text-highlight">
-                    <path d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
-                    </svg>
-                </div>
+                <p class="text-sm text-secondary-foreground">
+                  {item.description}
+                </p>
+              </div>
+              <div class="shrink-0 self-center">
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  data-slot="icon"
+                  aria-hidden="true"
+                  class="size-5 text-secondary-foreground group-hover:text-highlight"
+                >
+                  <path
+                    d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                    clip-rule="evenodd"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
             </div>
-        </a>
-      </li>
-    ))}
+          </a>
+        </li>
+      ))
+    }
   </ul>
   <div class="mt-6 flex">
-    <a href="/blog" class="text-sm font-medium text-highlight hover:text-highlight-lighten">
-        Check out the rest of my blog
+    <a
+      href="/blog"
+      class="text-sm font-medium text-highlight hover:text-highlight-lighten"
+    >
+      Check out the rest of my blog
       <span aria-hidden="true"> &rarr;</span>
     </a>
   </div>
