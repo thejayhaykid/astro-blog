@@ -12,7 +12,7 @@ const services: Service[] = [
       "Team mentorship and support",
       "Fractional technical leadership (without the bloat)",
     ],
-    url: "/services/fractional-cto",
+    url: "/services",
     primary: true,
   },
 ];
@@ -55,13 +55,11 @@ const services: Service[] = [
             <p class="mt-4 text-sm h-20 leading-6 text-secondary-foreground">
               {service.description}
             </p>
-            <Button 
-              variant={service.primary ? "highlight" : "outline"} 
+            <Button
+              variant={service.primary ? "highlight" : "outline"}
               className="mt-6 block w-full text-center"
-              >
-                <a href={service.url}>
-              See more
-                </a>
+            >
+              <a href={service.url}>See more</a>
             </Button>
             <ul
               role="list"
