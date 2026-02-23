@@ -4,7 +4,7 @@ import PillButton from "../PillButton.astro";
 import { Button } from "@/components/ui/button";
 import coffee from "../../assets/services/smb/stacks.png";
 
-const { 
+const {
   title = "Software Services",
   description = "Professional software development and consulting services to help your business grow.",
   primaryButtonText = "Contact me",
@@ -18,6 +18,8 @@ const {
   pillLinkText = undefined,
   pillHref = undefined,
 } = Astro.props;
+
+const showPB = !!(showPillButton && pillText);
 ---
 
 <div class="relative bg-background">
@@ -26,11 +28,17 @@ const {
       class="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-56 lg:pt-48 xl:col-span-6"
     >
       <div class="mx-auto max-w-2xl lg:mx-0">
-        {showPillButton && (
-          <div class="hidden sm:mt-32 sm:flex lg:mt-16">
-            <PillButton pillText={pillText} pillLinkText={pillLinkText} pillHref={pillHref} />
-          </div>
-        )}
+        {
+          showPB && (
+            <div class="hidden sm:mt-32 sm:flex lg:mt-16">
+              <PillButton
+                pillText={pillText}
+                pillLinkText={pillLinkText}
+                pillHref={pillHref}
+              />
+            </div>
+          )
+        }
         <h1
           class="mt-24 text-4xl font-bold tracking-tight text-foreground sm:mt-10 sm:text-6xl"
         >
@@ -44,9 +52,10 @@ const {
             <a href={primaryButtonHref}>{primaryButtonText}</a>
           </Button>
           <Button variant="link">
-          <a href={secondaryButtonHref}
-            >{secondaryButtonText} <span aria-hidden="true">→</span></a
-          ></Button>
+            <a href={secondaryButtonHref}
+              >{secondaryButtonText} <span aria-hidden="true">→</span></a
+            ></Button
+          >
         </div>
       </div>
     </div>
@@ -57,7 +66,7 @@ const {
         class="aspect-3/2 w-full bg-gray-50 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"
         src={image}
         alt={imageAlt}
-        loading={'eager'}
+        loading={"eager"}
       />
     </div>
   </div>
