@@ -6,7 +6,7 @@ heroImage: "/blog-images/tech/2025/shopify.jpg"
 category: "Consulting"
 tags: ["consulting", "freelancing", "shopify"]
 imageCaption: "Photo by [Metin Ozer](https://unsplash.com/@metinozer?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/a-close-up-of-a-green-sign-with-a-yellow-arrow-CDJdY99SVu4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)"
-draft: false
+draft: true
 ---
 
 I am constantly trying to learn and add new skills to my repertoire. There’s just something about a new challenge like trying to master a popular technology to open up new opportunities. Shopify seemed like a great option to be the next one that I tackle for a few reasons.
