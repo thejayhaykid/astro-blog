@@ -13,6 +13,8 @@ import redbubble from "../assets/link-images/redbubble.png";
 import gumroad from "../assets/link-images/gumroad.png";
 import buymeacoffee from "../assets/link-images/buy-me-a-coffee.png";
 import paypal from "../assets/logos/paypal.png";
+import gymclock from "../assets/apps/gym-clock/App Icon Square 3x.png";
+import substack from "../assets/link-images/substack.svg";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 // General website, twitter (x?), stashtag.app, letterboxd, redbubble, gumroad, amazon (once I have things to sell on there)
@@ -23,6 +25,12 @@ const generalLinks: Link[] = [
     imageUrl: JH.src,
     linkUrl: "/",
     sideText2: "Astro + Tailwind",
+  },
+  {
+    primaryHeader: "Substack",
+    secondaryHeader: "I am trying to get more into writing, but everything is crossposted here",
+    imageUrl: substack.src,
+    linkUrl: "https://substack.com/@jakehayes",
   },
   {
     primaryHeader: "Freelance Services",
@@ -39,6 +47,13 @@ const generalLinks: Link[] = [
 ];
 
 const portfolioLinks: Link[] = [
+  {
+    primaryHeader: "GymClock",
+    secondaryHeader: "My first app ever published on the Apple App Store (tvOS)",
+    imageUrl: gymclock.src,
+    sideText2: "Swift + SwiftUI",
+    linkUrl: "/apps/gym-clock",
+  },
   {
     primaryHeader: "GitHub",
     secondaryHeader: "Where I store (most of) my code",
