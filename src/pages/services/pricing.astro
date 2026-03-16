@@ -2,6 +2,8 @@
 import StripedTable from "../../components/StripedTable.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
+const description =
+  "Strategic engineering and fractional leadership for high-stakes systems. Transparent, value-based pricing for architecture, infrastructure, and full-stack execution.";
 const pricingGroups = [
   {
     name: "Strategic Advisory",
@@ -92,16 +94,13 @@ const pricingGroups = [
 ];
 ---
 
-<BaseLayout
-  title="Pricing"
-  description="Strategic engineering and fractional leadership for high-stakes systems. Transparent, value-based pricing for architecture, infrastructure, and full-stack execution."
->
+<BaseLayout title="Pricing" description={description}>
   <div class="w-full flex justify-center">
     <section class="mt-48 max-w-7xl">
       <StripedTable
         title="Jake Hayes Works"
         subTitle="Pricing Overview"
-        description="Strategic engineering and fractional leadership for high-stakes systems. Transparent, value-based pricing for architecture, infrastructure, and full-stack execution."
+        description={description}
         groups={pricingGroups}
       />
     </section>
