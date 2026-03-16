@@ -1,0 +1,109 @@
+---
+import StripedTable from "../../components/StripedTable.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const pricingGroups = [
+  {
+    name: "Strategic Advisory",
+    rows: [
+      {
+        Service: "Fractional CTO / Advisory",
+        Offering:
+          "Architecture roadmapping, weekly strategy calls, and senior leadership.",
+        Price: "Starting at $3,000/mo",
+      },
+      {
+        Service: "Technical Health Audit",
+        Offering:
+          "Comprehensive review of infrastructure, security, and scalability bottlenecks.",
+        Price: "Flat fee: $5,000",
+      },
+      {
+        Service: "Consultation Session",
+        Offering:
+          "1-hour deep dive on system design or specific technical challenges.",
+        Price: "$250/hr",
+      },
+    ],
+  },
+  {
+    name: "Software Engineering",
+    rows: [
+      {
+        Service: "High-Concurrency Backend",
+        Offering:
+          "Distributed systems, real-time data pipelines, and fintech infra.",
+        Price: "Starting at $175/hr",
+      },
+      {
+        Service: "Full-Stack Development",
+        Offering:
+          "React/TypeScript, Nest.js, and cloud-native application builds.",
+        Price: "Starting at $150/hr",
+      },
+      {
+        Service: "Native App Development",
+        Offering:
+          "Specialized iOS and tvOS development with App Store lifecycle support.",
+        Price: "Starting at $150/hr",
+      },
+    ],
+  },
+  {
+    name: "Managed Infrastructure & Care",
+    rows: [
+      {
+        Service: "Essential Hosting",
+        Offering:
+          "Managed Vercel/Netlify/AWS, SSL, Uptime monitoring, & Security patches.",
+        Price: "$99/mo",
+      },
+      {
+        Service: "Standard Care",
+        Offering:
+          "Everything in Essential + Monthly dependency updates & 1 hour of tweaks.",
+        Price: "$249/mo",
+      },
+      {
+        Service: "Premium Reliability",
+        Offering:
+          "Priority support, 3 hours included, Proactive performance & SEO audits.",
+        Price: "$499/mo",
+      },
+    ],
+  },
+  {
+    name: "Project-Based Work",
+    rows: [
+      {
+        Service: "Custom Scoped Project",
+        Offering:
+          "Fixed-price delivery for clearly defined technical milestones.",
+        Price: "Min. $5,000 engagement",
+      },
+      {
+        Service: "Legacy Migration",
+        Offering:
+          "Transitioning monolithic apps to modern, scalable architectures.",
+        Price: "Quote-based",
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Pricing"
+  description="Strategic engineering and fractional leadership for high-stakes systems. Transparent, value-based pricing for architecture, infrastructure, and full-stack execution."
+>
+  <div class="w-full flex justify-center">
+    <section class="mt-48 max-w-7xl">
+      <StripedTable
+        title="Jake Hayes Works"
+        subTitle="Pricing Overview"
+        description="Strategic engineering and fractional leadership for high-stakes systems. Transparent, value-based pricing for architecture, infrastructure, and full-stack execution."
+        groups={pricingGroups}
+      />
+    </section>
+  </div>
+</BaseLayout>
