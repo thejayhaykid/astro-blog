@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import BlogPost from "../../layouts/BlogPost.astro";
 import type { BlogPost as BlogPostType } from "../../content/config";
 
@@ -9,7 +9,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 const posts = await getCollection("blog");
 let postPage: BlogPostType | undefined = undefined;
 posts.map((post: BlogPostType) => {
-  if (Astro.params.slug === post.slug) {
+  if (Astro.params.slug === post.id) {
     if (post.data.draft && process.env.NODE_ENV !== "development")
       Astro.redirect("/blog");
     postPage = post;
@@ -21,7 +21,7 @@ if (!postPage) {
 }
 
 // TypeScript knows postPage is defined here due to the redirect above
-const { Content } = await postPage!.render();
+const { Content } = await render(postPage!);
 const title = `${postPage!.data.title} | JH`;
 ---
 
