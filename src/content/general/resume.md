@@ -5,9 +5,21 @@ updatedDate: "May 27 2023"
 
 # RESUME
 
+## Senior Software Engineer
+
+### YipitData, Columbus, OH / March 2026 - Present
+
+- Drive architectural direction and full-stack development for an AI enterprise insights agent within an 11-engineer team; one of two engineers dedicated full-time to the platform
+- Lead high-ambiguity initiatives from concept to production, defining technical approach and standards where requirements are initially undefined
+- Hand-selected to lead rewrite and migration from Python services to a TypeScript monorepo using Fastify, establishing scalable patterns for the broader team
+- Modernize frontend architecture using React, Vite, Tailwind, shadcn/ui, React Query, and Vite federated modules to enable modularity and independent feature delivery
+- Evaluate, prototype, and integrate emerging third-party AI platforms to continuously expand product capabilities at the leading edge of applied AI
+- Refactored a brittle, rapidly-built frontend into a structured, performant, and maintainable application, improving UX, reliability, and developer productivity
+- Partner with Staff Engineer to set long-term platform architecture and engineering standards adopted beyond the immediate group
+
 ## Staff Software Engineer
 
-### Alkami Technology, Inc., Columbus, OH / December 2024 - Present
+### Alkami Technology, Inc., Columbus, OH / December 2024 - March 2026
 
 - Member of the Loans team at MANTL when Alkami acquired MANTL in 2025
 - Helped finished the loan application product and launch it with our first few customers
