@@ -1,4 +1,5 @@
-import { defineCollection, z, type CollectionEntry } from "astro:content";
+import { defineCollection, type CollectionEntry } from "astro:content";
+import { z } from "astro/zod"
 import { glob } from "astro/loaders";
 
 const blog = defineCollection({
@@ -22,6 +23,7 @@ const blog = defineCollection({
     tags: z.array(z.string()).optional(),
     imageCaption: z.string().optional(),
     imageAlt: z.string().optional(),
+    substackLink: z.string().optional(),
   }),
 });
 

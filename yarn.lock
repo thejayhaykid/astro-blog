@@ -2497,6 +2497,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@lucide/astro@npm:^1.31.0":
+  version: 1.31.0
+  resolution: "@lucide/astro@npm:1.31.0"
+  peerDependencies:
+    astro: ^4 || ^5 || ^6 || ^7
+  checksum: 10c0/7726356b2b6ec9f867c43680e926a32b597dc03c07e5220708d71e67408605da93e85b40f1f759f59828791b32810fbe02aed921c30914dfca4d9d3cb8a8f798
+  languageName: node
+  linkType: hard
+
 "@lukeed/ms@npm:^2.0.2":
   version: 2.0.2
   resolution: "@lukeed/ms@npm:2.0.2"
@@ -6616,6 +6625,7 @@ __metadata:
     "@fortawesome/react-fontawesome": "npm:^3.2.0"
     "@headlessui/react": "npm:^1.7.15"
     "@heroicons/react": "npm:^2.1.3"
+    "@lucide/astro": "npm:^1.31.0"
     "@radix-ui/react-avatar": "npm:^1.1.10"
     "@radix-ui/react-slot": "npm:^1.2.3"
     "@react-three/drei": "npm:^10.6.1"

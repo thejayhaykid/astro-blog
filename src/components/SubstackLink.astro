@@ -1,0 +1,34 @@
+---
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "@lucide/astro";
+
+interface Props {
+  substackUrl: string;
+}
+
+const { substackUrl } = Astro.props;
+---
+
+<div
+  class="my-6 rounded-lg border border-border/60 bg-muted/50 px-4 py-3 text-sm text-muted-foreground flex items-center justify-between gap-3"
+>
+  <span>
+    This post was originally published on my Substack page, <a
+      class="font-medium text-foreground hover:underline"
+      href="https://jakehayes.substack.com/"
+      target="_blank">Rays and Fairways</a
+    >.
+  </span>
+
+  <Button variant="ghost">
+    <a
+      href={substackUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-muted-foreground inline-flex items-center gap-1 shrink-0"
+    >
+      View Original
+      <ExternalLink class="h-4 w-4" />
+    </a>
+  </Button>
+</div>
