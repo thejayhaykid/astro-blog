@@ -13,6 +13,15 @@ import UserAvatar from "../components/UserAvatar.tsx";
 
 type Props = CollectionEntry<"blog">["data"];
 
+marked.use({
+  renderer: {
+    link({ href, title, text }) {
+      const titleAttr = title ? ` title="${title}"` : "";
+      return `<a href="${href}"${titleAttr} target="_blank" rel="noopener noreferrer">${text}</a>`;
+    },
+  },
+});
+
 const {
   title,
   pubDate,
@@ -27,6 +36,7 @@ const {
 } = Astro.props;
 
 const htmlCaption = imageCaption ? marked.parse(imageCaption) : "";
+console.log("htmlCaption", typeof htmlCaption);
 
 const relatedPosts = await getRelatedPosts(title, category, tags);
 ---
